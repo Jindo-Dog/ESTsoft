@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<!-- 연습문제1: 유데미나 인프런같은 서비스를 만들고 있어요. 검색창을 구현할겁니다. 알맞은 메서드를 구현하세요. -->
+	<h3>검색창</h3>
+	<form action = "/search" method = "get">
+		<label for = "search">검색창</label>
+		<input id = "search" name = "search" type = "text">
+		<button type = "submit">검색</button>
+	</form>
+	<br>
+	<hr>
+	<!-- 연습문제2: 공개 게시판에 게시물을 올리는 코드를 작성해야 합니다. 알맞은 메서드를 구현하세요. -->
+	<h3>게시글 작성</h3>
+	<form action = "/board" method = "post">
+		<label for = "title">검색창</label>
+		<input id = "title" name = "title" type = "text">
+		<br>
+		<label for = "contents">검색창</label>
+		<input id = "contents" name = "contents" type = "text">
+		<button type = "submit">작성</button>
+	</form>
+	<br>
+	<hr>
+	<!-- 연습문제3: 회원가입을 구현하려고 합니다. 알맞은 메서드를 구현하세요. -->
+	<h3>회원가입</h3>
+	<form action = "/join" method = "post">
+		<label for = "id1">아이디</label>
+		<input id = "id1" name = "id" type = "text">
+		<br>
+		<label for = "password1">비밀번호</label>
+		<input id = "password1" name = "password" type = "password">
+		<br>
+		<label for = "password2">비밀번호 확인</label>
+		<input id = "password2" name = "password" type = "password">
+		<button type = "submit">회원가입</button>
+	</form>
+	<br>
+	<hr>
+	<!-- 연습문제4: 로그인을 구현하려고 합니다. 알맞은 메서드를 구현하세요. -->
+	<h3>로그인</h3>
+	<form action = "/login" method = "post">
+		<label for = "id">아이디</label>
+		<input id = "id" name = "id" type = "text">
+		<br>
+		<label for = "password">비밀번호</label>
+		<input id = "password" name = "password" type = "password">
+		<button type = "submit">로그인</button>
+	</form>
+	<br>
+	<hr>
+	<!-- 연습문제5: 항공권 검색을 하는 코드를 작성하게 되었습니다. 알맞은 메서드를 구현하세요.  -->
+	<h3>항공권 검색</h3>
+	<form action = "/Tickets" method = "post">
+		<label for = "ticket">티켓번호</label>
+		<input id = "ticket" name = "ticket" type = "text">
+		<label for = "name">이름</label>
+		<input id = "name" name = "name" type = "text">
+		<button type = "submit">검색</button>
+	</form>
+	<br>
+</body>
+</html>
