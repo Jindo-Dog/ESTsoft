@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>Title</title>
+	<style>
+		/*자손 선택자
+		기준이 되는 태그의 하위 요소 중에 선택
+		(직계 자식 뿐만 아니라 모든 자손 중에 선택)*/
+		section p {
+			font-weight : bold;
+		}
+
+		/*자식 선택자
+		직계 자식 중에서만 선택*/
+		section > p {
+			color : blue;
+		}
+
+		/*일반 형제 선택자
+		형제 요소 중 기준이 되는 요소의 뒤에 나오는 요소만을 선택*/
+		section ~ p {
+			text-decoration : underline;
+		}
+
+		/*인접 형제 선택자
+		기준이 되는 요소의 바로 뒤에 있는 요소만을 선택*/
+		section + p {
+			background-color : chartreuse;
+		}
+	</style>
+</head>
+<body>
+	<p>lorem ipsum dolor sit amet</p>
+	<p>lorem ipsum dolor sit amet</p>
+	<p>lorem ipsum dolor sit amet</p>
+	<section>
+		<div>
+			<p>lorem ipsum dolor sit amet</p>
+		</div>
+		<p>lorem ipsum dolor sit amet</p>
+		<p>lorem ipsum dolor sit amet</p>
+	</section>
+	<p>lorem ipsum dolor sit amet</p>
+	<p>lorem ipsum dolor sit amet</p>
+	<p>lorem ipsum dolor sit amet</p>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>Title</title>
+	<style>
+		/* 클래스 + 유형 선택자 */
+		/*11*/
+		.ul a {
+			color : yellow;
+		}
+
+		/* 클래스 선택자 */
+		/*10*/
+		.click {
+			color      : green;
+			background : black;
+		}
+
+		/* 유형 선택자 */
+		/* 하위 선택자가 아무리 많아도 상위 선택자를 넘어갈 수 없다*/
+		/* != 12 */
+		html body main section article div ul li p strong span a {
+			background : purple;
+			color      : blue;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<section>
+			<article>
+				<div>
+					<ul class = "ul">
+						<li>
+							<p>
+								<strong>
+                                        <span>
+                                            <a class = "click" href = "#"> 1. 이 글자는 어떤 색일까요? 2. 배경색은 어떤 색일까요? </a>
+                                        </span>
+								</strong>
+							</p>
+						</li>
+					</ul>
+				</div>
+			</article>
+		</section>
+	</main>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>Title</title>
+	<style>
+		.container {
+			width  : 500px;
+			border : 1px solid black;
+		}
+
+		.percent {
+			background-color : aqua;
+			width            : 50%;
+		}
+
+		.vw {
+			width : 50vw;
+		}
+
+		.vh {
+			height : 50vh;
+		}
+	</style>
+</head>
+<body>
+	<!-- 절대 길이 단위: px -->
+	<div class = "container">
+		<strong>width: 500px;</strong>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur dignissimos earum error est fugit iste maxime modi, molestiae mollitia nemo non, odio omnis quibusdam quo reiciendis rem unde voluptas?
+		</p>
+	</div>
+
+	<!-- 상대 길이 단위: % -->
+	<div class = "container">
+		<strong>width: 500px;</strong>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur dignissimos earum error est fugit iste maxime modi, molestiae mollitia nemo non, odio omnis quibusdam quo reiciendis rem unde voluptas?
+		</p>
+		<div class = "percent">hello world</div>
+	</div>
+
+	<!-- 상대 길이 단위: 뷰포트 -->
+
+	<div class = "container vw">
+		<strong>width: 500vw;</strong>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur dignissimos earum error est fugit iste maxime modi, molestiae mollitia nemo non, odio omnis quibusdam quo reiciendis rem unde voluptas?
+		</p>
+	</div>
+
+	<div class = "container vh">
+		<strong>width: 500vh;</strong>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur dignissimos earum error est fugit iste maxime modi, molestiae mollitia nemo non, odio omnis quibusdam quo reiciendis rem unde voluptas?
+		</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>Title</title>
+	<style>
+		body {
+			background-color : #5B2386;
+		}
+
+		.container {
+			display        : flex;
+			height         : 100%;
+			flex-direction : column;
+			position       : relative;
+			align-items    : center;
+		}
+
+		.box {
+
+		}
+
+		#frame1 {
+			position  : absolute;
+			width     : 261px;
+			height    : 265px;
+			transform : translateX(-50%);
+		}
+
+		#frame2 {
+			position  : absolute;
+			width     : 564px;
+			height    : 112px;
+			transform : translateX(-50%);
+			top       : 70px;
+		}
+
+		#text1 {
+			position : relative;
+			color    : #F5DF4D;
+			top      : 510px;
+		}
+
+		#text2 {
+			position   : relative;
+			top        : 628px;
+			text-align : center;
+			font-size  : 18px;
+			color      : white;
+		}
+
+		#text2 > strong {
+			font-size : 24px;
+		}
+
+		#text2 :first-child {
+			position  : absolute;
+			left      : -50px;
+			top       : -30px;
+			font-size : 96px;
+		}
+
+		#text2 :last-child {
+			position  : absolute;
+			right     : -50px;
+			top       : -30px;
+			font-size : 96px;
+		}
+
+		#text3 {
+			position   : relative;
+			top        : 815px;
+			text-align : center;
+			font-size  : 24px;
+			color      : white;
+		}
+
+		#text3 > input {
+			width         : 228px;
+			height        : 57px;
+			font-size     : 24px;
+			text-align    : center;
+			border-radius : 7px;
+		}
+
+		#con1 {
+			position         : relative;
+			top              : 1071px;
+			background-color : #FCEE21;
+			width            : 565px;
+			height           : 66px;
+			border-radius    : 56px;
+			align-content    : center;
+			text-align       : center;
+		}
+
+		#text4 {
+			color       : #5B2386;
+			font-size   : 24px;
+			font-weight : 700;
+		}
+
+		#frame3 {
+			position : absolute;
+			right    : -80px;
+		}
+
+		#text5 {
+			display     : inline-block;
+			position    : relative;
+			top         : 1284px;
+			text-align  : center;
+			font-size   : 24px;
+			color       : white;
+			line-height : 72px;
+		}
+
+		#text5 > span {
+			vertical-align : middle;
+			font-size      : 72px;
+			font-weight    : 700;
+		}
+
+		#text6 {
+			position         : relative;
+			display          : inline-block;
+			width            : 356px;
+			height           : 66px;
+			background-color : #FCEE21;
+			font-size        : 24px;
+			color            : #5B2386;
+			align-content    : center;
+			text-align       : center;
+			border-radius    : 56px;
+			font-weight      : 700;
+			top              : 1572px;
+			margin-right     : 18px;
+		}
+
+		#text7 {
+			position         : relative;
+			display          : inline-block;
+			width            : 191px;
+			height           : 66px;
+			background-color : white;
+			font-size        : 24px;
+			color            : #5B2386;
+			align-content    : center;
+			text-align       : center;
+			border-radius    : 56px;
+			font-weight      : 700;
+			top              : 1572px;
+		}
+
+		#text8 {
+			position       : relative;
+			top            : 1768px;
+			text-align     : center;
+			font-size      : 24px;
+			color          : white;
+			letter-spacing : 6px;
+		}
+
+		#text9 {
+			position       : relative;
+			top            : 1813px;
+			text-align     : center;
+			font-size      : 12px;
+			color          : white;
+			padding-bottom : 70px;
+		}
+	</style>
+</head>
+<body>
+	<div class = "container">
+		<div style = "position: relative; top: 200px">
+			<img alt = "" id = "frame1" src = "taskImg/Frame1.png">
+			<img alt = "" id = "frame2" src = "taskImg/Frame2.png">
+		</div>
+
+		<span id = "text1">"연습은 어제의 당신보다 당신을 더 낫게 만든다."</span>
+
+		<span id = "text2"><span>"</span><strong>1만 시간의 법칙은</strong><br>어떤 분야의 전문가가 되기 위해서는<br>최소한 1만 시간의 훈련이 필요하다는 법칙이다.<span>"</span></span>
+
+		<span id = "text3">나는 <input placeholder = "예)프로그래밍" type = "text"> 전문가가 될 것이다.<br><br>그래서 앞으로 매일 하루에 <input placeholder = "예)5시간" type = "text"> 시간씩 훈련할 것이다.</span>
+
+		<div id = "con1">
+			<span id = "text4">나는 며칠 동안 훈련을 해야 1만 시간이 될까?</span>
+			<img alt = "" id = "frame3" src = "taskImg/Frame3.png">
+		</div>
+
+		<span id = "text5">당신은 <span>프로그래밍</span> 전문가가 되기 위해서<br>대략 <span>5110</span> 일 이상 훈련하셔야 합니다! :)</span>
+
+		<div id = "con2">
+			<span id = "text6">훈련하러 가기 GO!GO!</span>
+			<span id = "text7">공유하기</span>
+		</div>
+
+		<span id = "text8">weniv</span>
+
+		<span id = "text9">※ 본 서비스 내 이미지 및 콘텐츠의 저작권은 주식회사 WeNiv에 있습니다.<br>수정 및 재배포, 무단 도용 시 법적인 문제가 발생할 수 있습니다.</span>
+	</div>
+
+</body>
+</html>

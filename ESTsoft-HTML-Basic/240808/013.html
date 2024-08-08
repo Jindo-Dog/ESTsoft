@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>Title</title>
+	<style>
+		p {
+			width          : 300px;
+			border         : 1px solid black;
+			/*text-align : left;*/
+			/*text-align : right;*/
+			/*text-align : center;*/
+			text-align     : justify;
+			/*!*text-align : justify-all;*! 지원하지 않음*/
+
+			/*행간 설정*/
+			line-height    : 2;
+
+			/*자간 설정*/
+			letter-spacing : 10px;
+		}
+
+		span {
+			font-size : 50px;
+			border    : 1px solid black;
+		}
+
+		.baseline {
+			vertical-align : baseline;
+		}
+
+		.sub {
+			vertical-align : sub;
+		}
+
+		.super {
+			vertical-align : super;
+		}
+
+		.top {
+			vertical-align : top;
+		}
+
+		.middle {
+			vertical-align : middle;
+		}
+
+		.bottom {
+			vertical-align : bottom;
+		}
+	</style>
+</head>
+<body>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut beatae dolor dolorem eaque ex facilis, id incidunt labore laboriosam, magnam magni molestiae mollitia natus optio possimus quaerat qui quia quidem?</p>
+
+	<span>부모<span class = "baseline">baseline</span></span><br><br>
+	<span>부모<span class = "sub">sub</span></span><br><br>
+	<span>부모<span class = "super">super</span></span><br><br>
+	<span>부모<span class = "top">top</span></span><br><br>
+	<span>부모<span class = "middle">middle</span></span><br><br>
+	<span>부모<span class = "bottom">bottom</span></span>
+</body>
+</html>
