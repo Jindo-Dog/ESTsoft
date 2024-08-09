@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>Title</title>
+	<style>
+		/*<p>태그는 블록레벨 요소. 전체 너비를 차지. 줄바꿈 */
+		p {
+			background-color : aqua;
+			display          : inline;
+		}
+
+		/*<span>태그는 인라인레벨 요소. 내용만큼만 너비 차지. 줄바꿈 없음 */
+		span {
+			background-color : blueviolet;
+			/*인라인레벨 요소는 width, height, 상하 margin이 적용되지 않는다*/
+			display          : block;
+			width            : 300px;
+			height           : 100px;
+			margin           : 30px;
+		}
+
+		/*<em>태그는 인라인레벨 요소. 내용만큼만 너비 차지. 줄바꿈 없음 */
+		em {
+			background-color : coral;
+			width            : 100px;
+			/*줄바꿈이 일어나지 않고, width, height, 상하 margin 모두 적용 가능*/
+			display          : inline-block;
+		}
+	</style>
+</head>
+<body>
+	<p>p</p>
+	<p>p</p>
+	<p>p</p>
+	<p>p</p>
+	<span>span</span><span>span</span><span>span</span><span>span</span>
+	<em>em</em><em>em</em><em>em</em><em>em</em>
+</body>
+</html>

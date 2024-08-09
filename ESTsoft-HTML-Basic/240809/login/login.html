@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>Title</title>
+	<link href = "../reset.css" rel = "stylesheet">
+	<link href = '//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel = 'stylesheet' type = 'text/css'>
+	<style>
+		html {
+			box-sizing  : border-box;
+			font-size   : 12px;
+			font-weight : 400;
+			font-family : 'Spoqa Han Sans Neo', 'sans-serif';
+		}
+
+		.blind {
+			/* 레이아웃에 영향을 끼치지 않도록 */
+			position : absolute;
+
+			/* 스크린 리더가 읽을 수 있도록 */
+			width    : 1px;
+			height   : 1px;
+
+			/* 눈에 보이는 부분을 제거 */
+			clip     : rect(0 0 0 0);
+			margin   : -1px;
+			overflow : hidden;
+		}
+
+		.container {
+			box-sizing       : border-box;
+			display          : flex;
+			flex-direction   : column;
+			width            : 350px;
+			height           : 140px;
+			background-color : transparent;
+			gap              : 14px;
+			padding          : 15px;
+			margin           : 100px;
+			border           : 1px solid #DBDBDB;
+			border-radius    : 5px;
+		}
+
+		#welcome {
+			flex        : 1;
+			display     : flex;
+			align-items : center;
+		}
+
+		#login {
+			width            : 318px;
+			height           : 40px;
+			flex             : 2;
+			background-color : #711BFF;
+			border-radius    : 4px;
+			display          : flex;
+			justify-content  : center;
+			align-items      : center;
+			font-weight      : 500;
+			color            : white;
+
+			#logo {
+				width  : 64px;
+				height : 18px;
+			}
+		}
+
+		footer {
+			color           : #767676;
+			display         : flex;
+			justify-content : space-between;
+			flex            : 1;
+
+			.find {
+				display     : flex;
+				align-items : center;
+
+				#iconLock {
+					width  : 16px;
+					height : auto;
+				}
+			}
+
+			.join {
+				display      : flex;
+				align-items  : center;
+				margin-left  : auto;
+				margin-right : 0;
+
+				#iconJoin {
+					width  : 16px;
+					height : auto;
+				}
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class = "container">
+		<!-- ir 기법을 사용해서 헤딩캐그 숨기기 -->
+		<h2 class = "blind">로그인</h2>
+		<span id = "welcome">더 편리해진 위니브에 오신 것을 환영합니다.</span>
+
+		<a href = "#" id = "login">
+			<img alt = "" id = "logo" src = "taskImg/weniv-logo.png">
+			<span id = "loginText">&nbsp로그인</span>
+		</a>
+
+		<footer>
+			<div class = "find">
+				<img alt = "" id = "iconLock" src = "taskImg/icon-lock.png">
+				<a href = "#" id = "idFind">&nbsp아이디</a>
+				<span>&nbsp|&nbsp</span>
+				<a href = "#" id = "pwFind">비밀번호찾기</a>
+			</div>
+
+			<a class = "join" href = "#">
+				<img alt = "" id = "iconJoin" src = "taskImg/icon-user.png">
+				<span id = "textJoin">&nbsp회원가입</span>
+			</a>
+		</footer>
+	</div>
+</body>
+</html>

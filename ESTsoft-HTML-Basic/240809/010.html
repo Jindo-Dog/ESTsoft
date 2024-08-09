@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>Title</title>
+	<style>
+		div:not([class="parent"]) {
+			width            : 100px;
+			height           : 100px;
+			background-color : blue;
+			opacity          : 0.5;
+		}
+
+		.parent {
+			z-index : 3;
+		}
+
+		.box1 {
+			position : absolute;
+			top      : 30px;
+			left     : 30px;
+		}
+
+		.box4 {
+			position         : absolute;
+			top              : 20px;
+			left             : 20px;
+			z-index          : 1;
+			background-color : crimson !important;
+
+		}
+	</style>
+</head>
+<body>
+	<div class = "parent">
+		<div class = "box1">box1</div>
+		<div class = "box2">box2</div>
+		<div class = "box3">box3</div>
+	</div>
+
+	<div class = "box4">box4</div>
+</body>
+</html>
