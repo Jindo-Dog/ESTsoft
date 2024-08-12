@@ -2,65 +2,20 @@
 <html lang = "en">
 <head>
 	<meta charset = "UTF-8">
-	<title>문자열 메소드</title>
+	<title>템플릿 리터럴</title>
 </head>
 <body>
 	<script>
-		// 문자열 메소드
-
-		// 1. indexOf(): 문자열에서 특정 문자열의 위치를 반환한다. 없으면 -1을 반환한다.
-		let s1 = 'hello world';
-		console.log(s1.indexOf('world'));	// 6
-		console.log(s1.indexOf('ceo'));		// -1
-
-		// 2. replace(): 문자열에서 특정 문자열을 찾아 다른 문자열로 바꾼다.
-		let s2 = 'weniv CEO licat';
-		console.log(s2.replace('licat', 'mura'));	// weniv CEO mura
-
-		// 정규표현식 예제
-		let s3 = 'hel1lo wo2rl3d';
-		console.log(s3.replace(/[0-9]/g, ''));	// hello world
-
-		// 메소드 체이닝(replace)
-		let s4 = 'weniv CEO licat';
-		console.log(s4.replace('lecat', 'mura').replace('CEO', 'CTO'));	// weniv CTO mura
-
-		// 3. slice(): 문자열에서 특정 부분을 추출한다.
-		let s5 = 'hello world';
-		console.log(s5.slice(0, 3));	// hel	3번 인덱스는 포함하지 않는다
-
-		// 마이너스 슬라이싱은
-		let s6 = 'licat.png';
-		console.log(s6.slice(0, -4));	// licat
-		console.log(s6.slice(0, 5));	// licat
-		console.log(s6.slice(-4));		// .png
-
-		// 다음 자료형에서 jpeg를 뽑아내는 코드를 작성해주세요
-		let s7 = 'image.jpeg';
-		let s8 = 'imagehello.jpeg';
-		console.log(s7.slice(-4));
-		// console.log(s7.slice(6, 10));
-		console.log(s8.slice(-4));
-
-		// 위 문자열에서 파일명을 출력하세요
-		console.log(s7.slice(0, -5));
-		console.log(s8.slice(0, -5));
-
-		// 아래 문자열에서 파일명을 출력하세요
-		let s9 = 'imagehello.jpeg';
-		let s10 = 'image.png';
-		console.log(s9.slice(0, s9.indexOf('.')));
-		console.log(s10.slice(0, s10.indexOf('.')));
-
-		// 4. split(): 문자열을 특정 기준으로 나눈다.
-		let s11 = 'hello world nice to meet you';
-		console.log(s11.split(' '));
-		let phone = '010-1234-5678';
-		console.log(phone.split('-'));
-
-		// 5. trim(): 문자열 앞 뒤의 공백을 제거한다.
-		let s12 = '    hello world    ';
-		console.log(s12.trim());
+		// 템플릿 리터럴 문법
+		let name = '김철수';
+		let age = 20;
+		console.log(name + '님의 나이는 ' + age + '세 입니다.');
+		console.log(`${name}님의 나이는 ${age}세 입니다.`);
+		console.log(`1 + ! = 2`);
+		// 개행 문자를 그대로 출력하고 싶을 때
+		console.log(`Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+A corporis cum distinctio fugiat nulla odio perferendis praesentium provident,
+ratione sit? Facilis fugit ipsam iure nisi odit omnis quibusdam quo repudiandae.`);
 	</script>
 </body>
 </html>

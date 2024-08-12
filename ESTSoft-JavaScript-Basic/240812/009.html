@@ -2,49 +2,22 @@
 <html lang = "en">
 <head>
 	<meta charset = "UTF-8">
-	<title>변수의 타입</title>
+	<title>원시타입과 문자열 자료형</title>
 </head>
 <body>
+	<!--
+	자바스크립트의 데이터 타입은 크게 두 가지로 나눌 수 있다
+
+	원시타입 (Primitive types): 간단한 값을 저장한다
+	참조타입 (Reference types): 복잡한 데이터를 저장한다
+	-->
+
 	<script>
-		let a = 10;
-		let b = '10';
-
-		console.log(a + a);		// 20
-		console.log(b + b);		// 1010
-		console.log(a + b);		// 1010
-		console.log(a == b);	// true
-		console.log(a === b);	// false
-
-		// 왜 이렇게 나왔을까?
-		// a는 숫자고 b는 문자이니까?
-		// 컴퓨터 입장에서 a도 숫자고 b도 숫자다
-
-		//type이 있기 때문에
-		// a는 이어붙이지 않고 더하고
-		// b는 더하지 않고 이어붙인 것이다
-
-		let age = 10;
-		console.log(typeof age);	// number (정수와 실수를 모두 포함)
-
-		let name = 'Jun';
-		console.log(typeof name);	// string (문자열)
-
-		// typeof로 모든 변수의 타입을 알 수 없다
-		// 나중에 type을 정확하게 찍을 수 있는 함수를 다시 살펴보게 된다
-		function typeCheck(value) {
-			const return_value = Object.prototype.toString.call(value);
-			const type = return_value.substring(
-					return_value.indexOf(" ") + 1,
-					return_value.indexOf("]")
-			);
-			return type.toLowerCase();
-		}
-
-		typeof (value) === 'number'
-		typeCheck(value) === 'number'
-		isNaN(value) // value '', ' ', '1', '2', '3'이 false이고 'a', 'b', 'c' true입니다.
-		arr.constructor === Array
-		arr instanceof Array
+		let age = 10;			// number
+		let name = 'Jun';		// string
+		let isMan = true;		// boolean
+		let value; 				// undefined 값이 정의되지 않음
+		let emptyValue = null;	// null 값이 없음
 	</script>
 </body>
 </html>

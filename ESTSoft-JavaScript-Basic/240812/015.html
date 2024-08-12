@@ -2,35 +2,25 @@
 <html lang = "en">
 <head>
 	<meta charset = "UTF-8">
-	<title>숫자 자료형</title>
+	<title>증감연산자</title>
 </head>
 <body>
 	<script>
-		// 산술 연산
-		console.log(`10 + 3 = ${10 + 3}`);
-		console.log(`10 - 3 = ${10 - 3}`);
-		console.log(`10 / 3 = ${10 / 3}`);
-		console.log(`10 * 3 = ${10 * 3}`);
-		console.log(`10 ** 3 = ${10 ** 3}`); // 10의 3승
-		console.log(`10 % 3 = ${10 % 3}`); // 나머지
+		// +플러스의 위치에 따라 스트레스를 받지 마라
+		// 결과는 대부분 같다
+		for (let i = 0; i < 5; i++) {
+			console.log(i);
+		}
 
-		// 0.1 + 0.2는 연산할 수 없다
-		console.log(0.1 + 0.2); 		// 0.30000000000000004
-		console.log(0.1 + 0.1 + 0.1);	// 0.30000000000000004
-		// 부동소수점 문제(국제표준(IEEE754)이다)
-		// 이 표준은 10진수 숫자를 표현하는데 완벽하지 못한다
-		// 0.1이 무한대수로 표현됨
-		// https://0.30000000000000004.com/
+		for (let i = 0; i < 5; ++i) {
+			console.log(i);
+		}
 
-		// 단항 연산자
-		console.log(-2); // -2 (음수로 변환)
-		console.log(-(-2)); // 2 (양수로 변환)
-		console.log(+4); // 4 (양수로 유지)
-		console.log(+'4'); // 4 (문자열 '4'를 숫자 4로 변환) 권장하는 방법이 아님
-
-		parseInt('4');	// 형변환이라고 한다
-		parseInt('4') + parseInt('4'); // 8
-		'4' + '4' // 44
+		let num = 3;
+		console.log(`증감연산 : ${++num}`); // 4 (num을 먼저 증가시키고 출력) 권장하는 방법은 ++num => num += 1 이다
+		console.log(`증감연산 : ${num++}`); // 4 (출력 후 num을 증가시킴, 결과적으로 num은 5)
+		console.log(`증감연산 : ${--num}`); // 4 (num을 먼저 감소시키고 출력)
+		console.log(`증감연산 : ${num--}`); // 4 (출력 후 num을 감소시킴, 결과적으로 num은 3)
 	</script>
 </body>
 </html>

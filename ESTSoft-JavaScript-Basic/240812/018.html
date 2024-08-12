@@ -2,43 +2,41 @@
 <html lang = "en">
 <head>
 	<meta charset = "UTF-8">
-	<title>형변환</title>
+	<title>논리 연산자</title>
 </head>
 <body>
 	<script>
-		// 문자열을 숫자로 변환
-		console.log(`parseInt('hello') : ${parseInt('hello')}`);		// NaN (문자열 'hello'는 숫자로 변환 불가)
-		console.log(`parseInt('30hello') : ${parseInt('30hello')}`);	// 30 (문자열 '30b'에서 숫자 부분만 변환)
-		console.log(`parseFloat('45.4') : ${parseFloat('45.4')}`);		// 45.4 (문자열 '45.4'를 실수로 변환)
-		console.log(`parseInt('45.4') : ${parseInt('45.4')}`);			// 45 (문자열 '45.4'에서 정수 부분만 변환)
+		// 중요!
+		let x = true;	// 참, 1, 전기가 통한다
+		let y = false;	// 거짓, 0, 전기가 통하지 않는다
 
-		// 숫자를 문자열로 변환
-		let num = 5;
-		console.log(`num.toString() : ${typeof num.toString()}`); // string (숫자 5를 문자열 '5'로 변환)
-		console.log(`num.toString() : ${(3).toString()}`); // '3' (숫자 3을 문자열 '3'로 변환)
-		console.log(`num.toString(2) : ${(3).toString(2)}`); // '11' (숫자 3을 2진수로 변환하여 '11'로 표현)
-		// 3.toString(); // SyntaxError: Invalid or unexpected token
-		// 자바스크립트 엔진은 숫자 뒤의 점을 소수점으로 인식하기 때문
+		// &&	: 논리곱 연산자, and 연산자
+		// ||	: 논리합 연산자, or 연산자
+		// !	: 논리부정 연산자, not 연산자
 
-		// isNaN() 함수
-		console.log(`isNaN('5') : ${isNaN('5')}`); // false (문자열 '5'는 숫자로 변환 가능)
-		console.log(`isNaN(3) : ${isNaN(3)}`); // false (숫자 3은 숫자)
-		console.log(`isNaN('b3') : ${isNaN('b3')}`); // true (문자열 'b3'는 숫자로 변환 불가)
-		console.log(`isNaN('3b') : ${isNaN('3b')}`); // true (문자열 '3b'는 숫자로 변환 불가)
-		console.log(isNaN(undefined)); // true (undefined는 숫자로 변환 불가)
+		console.log(x && y);	// 모두 true여야만 true
+		console.log(x || y);	// 둘 중 하나만 true여도 true
+		console.log(!x);		// true를 false로, false를 true로
 
-		console.log(Number.isNaN(undefined)); // false (undefined는 NaN이 아님)
-		console.log(Number.isNaN(null)); // false (null은 NaN이 아님)
-		console.log(Number.isNaN(NaN)); // true (NaN은 NaN)
+		// 어떤 조건에 true가 나오는가가 중요하다
+		for (let i = 0; i < 100; i++) {
+			if (i % 3 == 0 && i % 5 == 0) {
+				console.log(i);	// 공배수 또는 15의 배수
+			}
+		}
 
-		// math 객체
-		console.log(Math.pow(2, 3));	// 8 (2의 3승)
-		console.log(Math.sqrt(16));		// 4 (16의 제곱근)
-		console.log(Math.round(10.6));	// 11 (반올림)
-		console.log(Math.ceil(10.2));	// 11 (올림)
-		console.log(Math.floor(10.6));	// 10 (내림)
-		console.log(Math.random());		// 0부터 1 사이의 난수. 난수지만 난수가 아님
-		console.log(Math.PI);			// 3.141592653589793 (원주율)
+		console.log(!true)	// false
+		console.log(!false)	// true
+
+		// 실무에서 자주 사용한다
+		!!'';	// false
+		!!' ';	// true
+		!!0;	// false
+		!!1;	// true
+
+		// 실무에서 자주 사용되진 않음(귀찮을 때)
+		// 사용을 권장하지 않는다
+		~~31.5;	// 31
 	</script>
 </body>
 </html>

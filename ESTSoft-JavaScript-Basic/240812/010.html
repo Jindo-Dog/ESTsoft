@@ -2,22 +2,21 @@
 <html lang = "en">
 <head>
 	<meta charset = "UTF-8">
-	<title>원시타입과 문자열 자료형</title>
+	<title>참조타입</title>
 </head>
 <body>
-	<!--
-	자바스크립트의 데이터 타입은 크게 두 가지로 나눌 수 있다
-
-	원시타입 (Primitive types): 간단한 값을 저장한다
-	참조타입 (Reference types): 복잡한 데이터를 저장한다
-	-->
-
 	<script>
-		let age = 10;			// number
-		let name = 'Jun';		// string
-		let isMan = true;		// boolean
-		let value; 				// undefined 값이 정의되지 않음
-		let emptyValue = null;	// null 값이 없음
+		// 타입들이 어떤 형태인지만 확인한다. 상세 설명은 뒤에 있다
+		let person = {
+			name: 'Bob',
+			age: 30,
+		}; // Object 타입
+
+		let numbers = [1, 2, 3, 4, 5]; // Array 타입
+
+		function hello() {
+			console.log('hello');
+		} // Function 타입
 	</script>
 </body>
 </html>
