@@ -2,9 +2,36 @@
 <html lang = "en">
 <head>
 	<meta charset = "UTF-8">
-	<title>Title</title>
+	<title>변수의 타입</title>
 </head>
 <body>
+	<p id = "hello">hello world</p>
+	<script>
+		// 이렇게 작동은 되지만 사용하지 않습니다.
+		let π = 100;
+		console.log(π + π);
 
+		// 변수명은 대소문자를 가립니다.
+		let Apple = 10;
+		let apple = 20;
+
+		console.log(Apple + apple);
+
+		// 아래 기호는 사용할 수 있는 변수명입니다. 심지어 많이 사용합니다.
+		// 회사마다 사용하는 규칙이 다르니 꼭 이렇게 사용한다고 보기는 어렵습니다.
+		let _apple = 30; // 숨기고 싶은 변수일 때 주로 사용합니다.
+		let $apple = 40; // 문서 내에 어떤 요소를 선택할 때 주로 사용합니다.
+		let _ = 50; // 사용하지 않는 변수일 때 주로 사용합니다.
+
+		console.log(_apple + $apple + _);
+
+		// let 100apple = 100; // 에러가 발생합니다.
+		// let if = 100; // 에러가 발생합니다.
+
+		// 스네이크 표기법
+		let apple_price = 100;
+		// 카멜 표기법
+		let applePrice = 100;
+	</script>
 </body>
 </html>
