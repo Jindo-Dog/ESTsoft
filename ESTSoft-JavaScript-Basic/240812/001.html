@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>Title</title>
+	<!-- 앞에 있을수록 실행이 먼저 된다 -->
+	<!-- 스크립트는 의도에 따라 앞에 올 수도, 뒤에 올 수도 있다 -->
+	<!-- 페이지가 로드되기 전에 시행되어야 하는 스크립트는 앞에, 상관없다면 뒤에 배치한다 -->
+	<script>
+		// 2
+		window.alert('hello world1');
+	</script>
+</head>
+<body>
+	<!-- 이렇게 실무에서 사용하거나 면접관에게 보여주면 마이너스가 많이 된다 -->
+	<!-- 마크업과 CSS와 자바스크립트 코드는 분리하자 -->
+	<script>
+		// 2
+		window.alert('hello world2');
+	</script>
+	<!-- 1 -->
+	<button onclick="window.alert('hello world');">hello</button>
+	<script>
+		// 2
+		window.alert('hello world3');
+	</script>
+	<script src = "test.js"></script>
+</body>
+</html>
