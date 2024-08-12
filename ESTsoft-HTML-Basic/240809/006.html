@@ -3,8 +3,38 @@
 <head>
 	<meta charset = "UTF-8">
 	<title>Title</title>
+	<style>
+		.background {
+			width               : 500px;
+			height              : 300px;
+
+			background-color    : aquamarine;
+			/* 배경에 이미지 적용 */
+			background-image    : url(https://i.namu.wiki/i/pWjwjQ8g8PHy37F-IQvM0qmUH6-NhCH0mLeMGrBArerxV_eATwJT_7rgdHcUhWZrRWG-TF7nMY7BiD0YSu5Tbg.webp);
+			/* 배경 이미지 크기 조정 */
+			background-size     : 200px 100px;
+			/* 이미지 비율을 유지. 여백있게 최대한 꽉차게  */
+			/* background-size: contain; */
+			/* 이미지 비율 유지. 여백 없이 꽉차게 */
+			/* background-size: cover; */
+			/* 이미지를 반복할것인지 반복하지 않을것인지 */
+			background-repeat   : no-repeat;
+			background-position : 100px 200px;
+			background-position : center;
+			background-position : top;
+			background-position : left;
+		}
+
+		.gradient {
+			width      : 500px;
+			height     : 300px;
+			background : rgb(238, 174, 202);
+			background : linear-gradient(90deg, rgba(238, 174, 202, 1) 0%, rgba(117, 122, 231, 1) 49%, rgba(148, 187, 233, 1) 100%);
+		}
+	</style>
 </head>
 <body>
-
+	<div class = "background"></div>
+	<div class = "gradient"></div>
 </body>
 </html>

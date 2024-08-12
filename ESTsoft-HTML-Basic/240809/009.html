@@ -38,17 +38,23 @@
 </head>
 <body>
 	<div class = "parent">
+		<!-- static 기본값. 정상적인 흐름을 유지 -->
 		<div class = "static">static</div>
 		<div class = "static">static</div>
 		<div class = "static">static</div>
 		<div class = "static">static</div>
 		<div class = "static">static</div>
+		<!-- absolute. 정상적인 흐름을 벗어남. 다른 요소의 배치에 영향을 끼치지 않음. -->
+		<!-- 가장 가까운 조상 요소중 static이 아닌 position 속성을 가지고 있는 요소가 기준이 되어 배치. 그러한 요소가 없다면 뷰포트를 기준 배치 -->
 		<div class = "absolute">absolute</div>
+		<!-- fixed. 뷰포트가 기준. 모달창, TOP버튼 과 같은 UI에서 많이 사용 -->
 		<div class = "fixed">fixed</div>
 	</div>
 
 	<div class = "absolute">absolute</div>
-
+	<!-- sticky. 스크롤시 효과가 나타남  -->
+	<!-- 가장 가까운 조상 요소중 static이 아닌 position 속성을 가지고 있는 요소가 기준이 되어 배치. 그러한 요소가 없다면 뷰포트를 기준 배치  -->
+	<div class = "sticky">sticky</div>
 	Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quia beatae error quod quas rerum est pariatur dolorum porro soluta nesciunt natus aperiam assumenda commodi ab, laudantium sint
 	placeat ad! Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quia beatae error quod quas rerum est pariatur dolorum porro soluta nesciunt natus aperiam assumenda commodi ab,
 	laudantium sint placeat ad! Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quia beatae error quod quas rerum est pariatur dolorum porro soluta nesciunt natus aperiam assumenda
