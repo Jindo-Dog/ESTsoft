@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>증감연산자</title>
+</head>
+<body>
+	<script>
+		// +플러스의 위치에 따라 스트레스를 받지 마라
+		// 결과는 대부분 같다
+		for (let i = 0; i < 5; i++) {
+			console.log(i);
+		}
+
+		for (let i = 0; i < 5; ++i) {
+			console.log(i);
+		}
+
+		let num = 3;
+		console.log(`증감연산 : ${++num}`); // 4 (num을 먼저 증가시키고 출력) 권장하는 방법은 ++num => num += 1 이다
+		console.log(`증감연산 : ${num++}`); // 4 (출력 후 num을 증가시킴, 결과적으로 num은 5)
+		console.log(`증감연산 : ${--num}`); // 4 (num을 먼저 감소시키고 출력)
+		console.log(`증감연산 : ${num--}`); // 4 (출력 후 num을 감소시킴, 결과적으로 num은 3)
+	</script>
+</body>
+</html>
