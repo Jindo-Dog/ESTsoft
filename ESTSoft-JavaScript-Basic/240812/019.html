@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>논리 연산자</title>
+</head>
+<body>
+	<script>
+		// 중요!
+		let x = true;	// 참, 1, 전기가 통한다
+		let y = false;	// 거짓, 0, 전기가 통하지 않는다
+
+		// &&	: 논리곱 연산자, and 연산자
+		// ||	: 논리합 연산자, or 연산자
+		// !	: 논리부정 연산자, not 연산자
+
+		console.log(x && y);	// 모두 true여야만 true
+		console.log(x || y);	// 둘 중 하나만 true여도 true
+		console.log(!x);		// true를 false로, false를 true로
+
+		// 어떤 조건에 true가 나오는가가 중요하다
+		for (let i = 0; i < 100; i++) {
+			if (i % 3 == 0 && i % 5 == 0) {
+				console.log(i);	// 공배수 또는 15의 배수
+			}
+		}
+
+		console.log(!true)	// false
+		console.log(!false)	// true
+
+		// 실무에서 자주 사용한다
+		!!'';	// false
+		!!' ';	// true
+		!!0;	// false
+		!!1;	// true
+
+		// 실무에서 자주 사용되진 않음(귀찮을 때)
+		// 사용을 권장하지 않는다
+		~~31.5;	// 31
+	</script>
+</body>
+</html>
