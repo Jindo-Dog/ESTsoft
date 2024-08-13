@@ -31,7 +31,6 @@
 		 * 문제 3번
 		 * 다음 객체에서 직원 나이의 평균을 구하시오
 		 */
-		num = 0;
 		const employees = [{
 			name: 'hojun',
 			age: 27
@@ -43,12 +42,12 @@
 			age: 30
 		}];
 
+		num = 0;
 		/*employees.forEach((v) => {
 			num += v.age;
 		});
 		console.log(num / employees.length);*/
 
-		num = 0;
 		const ages = employees.map(v => v['age']);
 		ages.forEach(v => num += v);
 		console.log(num / employees.length);

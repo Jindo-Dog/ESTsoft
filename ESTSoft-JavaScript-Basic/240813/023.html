@@ -21,7 +21,7 @@
 		// (함수를 리턴할 수도 있다)
 		function licat(func1, func2) {
 			func1(func2("10") + func2("20"));
-
+			return func1;
 		}
 
 		licat(a, d);
