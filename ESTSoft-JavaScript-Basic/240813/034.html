@@ -13,8 +13,8 @@
 		 */
 		const arr = [10, 20, 30, 40, 50];
 		let num = 0;
-		arr.forEach((e) => {
-			num += e;
+		arr.forEach((v) => {
+			num += v;
 		});
 		console.log(num / arr.length);
 
@@ -23,7 +23,9 @@
 		 * 다음 회전초밥 배열에서 3번째로 먹을 수 있는 초밥은 무엇인가
 		 */
 		const sushi = ['연어', '참치', '연어', '대패', '참치', '참치', '참치', '대패', '연어', '참치'];
-		console.log(sushi[2]);
+		sushi.shift();
+		sushi.shift();
+		console.log(sushi.shift());
 
 		/**
 		 * 문제 3번
@@ -40,9 +42,15 @@
 			name: 'jihye',
 			age: 30
 		}];
-		employees.forEach((e) => {
-			num += e.age;
+
+		/*employees.forEach((v) => {
+			num += v.age;
 		});
+		console.log(num / employees.length);*/
+
+		num = 0;
+		const ages = employees.map(v => v['age']);
+		ages.forEach(v => num += v);
 		console.log(num / employees.length);
 
 		/**

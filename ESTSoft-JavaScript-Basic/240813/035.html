@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>조건문</title>
+</head>
+<body>
+	<script>
+		let 초록불 = false;
+		if (초록불) {
+			console.log('횡단보도를 건넙니다.');
+		} else {
+			console.log('기다립니다.');
+		}
+
+		if (true) {
+			console.log('실행합니다')
+		}
+
+		if (false) {
+			console.log('실행합니다1')
+			if (true) {
+				console.log('실행합니다2')
+			}
+		}
+
+		if (3 < 10) {
+			console.log('실행합니다3')
+		}
+
+		const value1 = 'hello';	// Truthy
+		const value2 = '';		// Falsy
+		const value3 = null;	// Falsy
+		const value4 = [];		// 주의!! 빈 배열은 Truthy한 값이다.
+		/**
+		 * 논란이 많았던 구조다.
+		 * 다른 언어는
+		 * 'hello'	=> true
+		 * ''		=> false
+		 * [10, 20]	=> true
+		 * []		=> false
+		 *
+		 * 그런데 왜 자바스크립트에서는
+		 * 'hello'	=> true
+		 * ''		=> false
+		 * [10, 20]	=> true
+		 * []		=> true		할당된 것으로 간주한다
+		 */
+
+		if (value1) {
+			console.log('value1은 Truthy한 값입니다.');
+		}
+
+		// 한 줄의 경우 중괄호를 생략할 수 있다
+		if (true) console.log('중괄호를 생략했습니다.');
+
+
+		// if, else if, else
+		let score = 69;
+		let grade;
+
+		if (score > 90) {
+			grade = 'A';
+		} else if (score > 80) {
+			grade = 'B';
+		} else if (score > 70) {
+			grade = 'C';
+		} else if (score > 60) {
+			grade = 'D';
+		} else {
+			grade = 'F';
+		}
+
+		console.log(`당신의 학점은 ${grade}입니다.`);	// 당신의 학점은 D입니다.
+
+
+		// 만약 if문으로만 되어있다면 무슨 문제가 있을까
+		if (score > 90) {
+			grade = 'A';
+		}
+		if (score > 80) {
+			grade = 'B';
+		}
+		if (score > 70) {
+			grade = 'C';
+		}
+		if (score > 60) {
+			grade = 'D';
+		}
+
+		console.log(`당신의 학점은 ${grade}입니다.`);	// 당신의 학점은 D입니다.
+
+
+		// switch문
+		let fruit = 'apple';
+		switch (fruit) {
+			case 'apple':
+				console.log('사과입니다.');
+				break;
+			case 'banana':
+				console.log('바나나입니다.');
+				break;
+			case 'cherry':
+				console.log('체리입니다.');
+				break;
+			default:
+				console.log('일치하는 과일이 없습니다.');
+		}
+
+		const attackType = '빔공격';
+		switch (attackType) {
+			case '빔공격':
+			case '할퀴기공격':
+				console.log('10에 데미지를 입혔습니다.')
+				break;
+			case '방어막공격':
+				console.log('5에 데미지를 입혔습니다.')
+				break;
+		}
+
+		switch (2) {
+			case 1:
+				console.log('월요일입니다.');
+				break;
+			case 2:
+				console.log('화요일입니다.');
+				break;
+			case 3:
+				console.log('수요일입니다.');
+				break;
+			case 4:
+				console.log('목요일입니다.');
+				break;
+			case 5:
+				console.log('금요일입니다.');
+				break;
+			default:
+				console.log('주말입니다.');
+				break;
+		}
+
+		switch (2) {
+			case 1:
+				console.log('월요일입니다.');
+			case 2:
+				console.log('화요일입니다.');
+			case 3:
+				console.log('수요일입니다.');
+			case 4:
+				console.log('목요일입니다.');
+			case 5:
+				console.log('금요일입니다.');
+			default:
+				console.log('주말입니다.');
+		}
+	</script>
+</body>
+</html>

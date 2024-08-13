@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>반복문</title>
+	<style>
+		table, tr, th, td {
+			border          : 1px solid black;
+			border-collapse : collapse;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+		<tr>
+			<th>번호</th>
+			<th>책이름</th>
+		</tr>
+		</thead>
+		<tbody></tbody>
+	</table>
+	<script>
+		for (let i = 0; i < 10; i++) {
+			console.log(i);
+		}
+
+		const books = ['페스트', '변신', '카프카', '나니아 연대기', '차라투스트라는 이렇게 말했다', '구의 증명'];
+		let htmlTbody = '';
+		for (let i = 0; i < books.length; i++) {
+			htmlTbody += `<tr>
+				<td>${i + 1}</td>
+				<td>${books[i]}</td>
+			</tr>`;
+		}
+
+		console.log(htmlTbody);
+		document.querySelector('tbody').innerHTML = htmlTbody;
+	</script>
+</body>
+</html>
