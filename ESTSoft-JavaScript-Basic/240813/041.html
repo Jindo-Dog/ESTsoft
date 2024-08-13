@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>this</title>
+</head>
+<body>
+	<script>
+		// this는 글로벌 기업에서도 이 코드의 사용을 주의해서 사용하거나 지양하는 경향이 있다
+		// this는 상황에 따라 다르게 동작할 수 있기 때문에 외워야 하는 예외 케이스가 너무 많다
+		// this는 '나 자신 + ɑ'라고 생각을 하면, 초급자에게는 충분하다
+
+		console.log(this);	// window
+		window.alert('hello');
+		this.alert('hello');
+
+		function f() {
+			console.log(this);	// window
+		}
+
+		f(); // Window 객체 (브라우저에서)
+
+		const obj = {
+			f: function () {
+				console.log(this);
+			},
+		};
+		obj.f(); // obj
+
+		function Person(name) {
+			this.name = name;
+			console.log(this);
+			// return this;	// new 키워드를 사용하면 this를 반환한다
+		}
+
+		const person1 = new Person('licat');	// Person { name: "licat" }
+		const person2 = new Person('mura');		// Person { name: "mura" }
+	</script>
+</body>
+</html>

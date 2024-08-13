@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>디스트럭처링</title>
+</head>
+<body>
+	<script>
+		const arr = [1, 2, 3];
+		const [a, b, c] = arr;
+		console.log(a); // 1
+		console.log(b); // 2
+		console.log(c); // 3
+
+
+		/*let food1, food2, food3;
+
+		const categories = {food1: '과일', food2: '채소', food3: '육류'};
+		food1 = categories.food1;
+		food2 = categories.food2;
+		food3 = categories.food3;
+		console.log(food1);
+		console.log(food2);
+		console.log(food3);*/
+
+
+		const {food1, food2, food3} = {food1: '과일', food2: '채소', food3: '육류'};
+		console.log(food1);
+		console.log(food2);
+		console.log(food3);
+	</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<script>
+		let x = 0;
+		while (x < 10) {
+			console.log(x);
+			x++;
+		}
+
+		// 무한 루프
+		// 메모리를 어마어마하게 많이 잡아먹는다.
+		// 그래서 무한루프의 경우 서버가 다운되거나, 브라우저가 다운되는 경우가 있다
+
+		let num = 0;
+		while (num <= 10) {
+			console.log(num);
+			if (num === 5) {
+				break; // num이 5일 때 반복문을 종료합니다.
+			}
+			num++;
+		}
+
+		let num2 = 0;
+		let num3 = 0;
+		while (num2 <= 10) {
+			while (num3 <= 10) {
+				console.log(num2, num3);
+				if (num3 === 5) {
+					break; // num이 5일 때 반복문을 종료합니다.
+				}
+				num3++;
+			}
+			/*if (num3 === 5) {
+				break; // num이 5일 때 반복문을 종료합니다.
+			}*/
+			num2++;
+		}
+
+		for (let i = 0; i < 20; i++) {
+			if (i < 13) {
+				continue; // i가 13 미만이면 아래 코드를 건너뜁니다.
+			}
+			console.log(i + '살은 청소년입니다.');
+		}
+	</script>
+</body>
+</html>

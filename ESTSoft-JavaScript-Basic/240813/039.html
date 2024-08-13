@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>전개구문</title>
+</head>
+<body>
+	<script>
+		// 전개구문
+		Math.max(1, 2, 3, 4, 5);	// 5
+		Math.max([1, 2, 3, 4, 5]);	// NaN
+
+		const numbers = [1, 2, 3, 4, 5];
+		Math.max(numbers);		// NaN
+		Math.max(...numbers);	// 5
+
+		const a = [1, 2, 3];
+		const b = [4, 5, 6];
+		const c = [...a, ...b];		// [1, 2, 3, 4, 5, 6]
+		const d = [a, b];			// [[1, 2, 3], [4, 5, 6]]
+		const e = [a, ...b];		// [[1, 2, 3], 4, 5, 6]
+
+		const 과일들 = ['사과', '파인애플', '수박'];
+		const 과일들2 = 과일들;
+		// const 과일들2 = [...과일들];
+
+		과일들2[0] = '포도';
+		console.log(과일들);		// ['포도', '파인애플', '수박']
+		console.log(과일들2);	// ['포도', '파인애플', '수박']
+
+		const 과일들3 = [...과일들];
+		과일들3[0] = '바나나';
+		console.log(과일들);		// ['포도', '파인애플', '수박']
+		console.log(과일들3);	// ['바나나', '파인애플', '수박']
+
+		const one = ['사과', '파일애플', '수박'];
+		const two = ['사과', '파일애플', '수박'];
+		console.log(one === two);	// false
+		// 대부분의 언어에서는 true. 사람이 바라봤을 때 기준으로 같다.
+		// 컴퓨터 입장에서는 서로 다른 주소값을 가리키고 있기 때문에 false다
+	</script>
+</body>
+</html>
