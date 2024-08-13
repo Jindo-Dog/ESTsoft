@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>콜백함수</title>
+</head>
+<body>
+	<script>
+		// 각각 돌아가는 로직이 다름
+		// 함수 선언문
+		function sum1(x, y) {
+			return x + y;
+		}
+
+		// 함수 표현식
+		let sum2 = function (x, y) {
+			return x + y;
+		};
+
+		// 화살표 함수
+		let sum3 = (x, y) => x + y;
+
+		// 화살표 함수 다른 형태
+		let sum4 = (x, y) => {
+			let z = x + y;
+			return z;
+		};
+
+		let sum5 = x => {
+			let z = x * 2;
+			return z;
+		}
+
+		console.log(sum1(10, 20));
+		console.log(sum2(10, 20));
+		console.log(sum3(10, 20));
+	</script>
+</body>
+</html>

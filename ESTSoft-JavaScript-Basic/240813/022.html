@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>추상화</title>
+</head>
+<body>
+	<script>
+		// 추상화
+		// 자동차 운전을 한다
+
+		//핸들
+		// 엑셀
+		// 브레이크
+		// 기어
+
+		// 핸들이 실제로 어떻게 동작하는지 알 필요가 있나?
+		// 엑셀과 엔진이 실제로 어떻게 동작하는지 알 푤요가 잇나?
+		// 브레이크가 실제로 어떻게 동작하는지 알 필요가 있나?
+		// 기어가 실제로 어떻게 동작하는지 알 필요가 있나?
+
+		// 추상화를 이해하는 것이 왜 중요한가?
+		// 코딩을 처음 배우게 되면 추상화를 안한다
+		// 함수로 만들거나 클래스로 만드는 작업을 하지 않는다
+		// 그냥 쭉 쓴다
+		// 추상화를 하게 되면 코드의 재사용성을 높일 수 있고, 유지보수성을 높일 수 있다
+
+		/*function greet(name){
+			console.log(`안녕하세요, ${name}님`);
+			return undefined;
+		}*/
+
+		// 위 코드와 동일하다
+		function greet(name) {
+			console.log(`안녕하세요, ${name}님`);
+		}
+
+		console.log(greet('licat'));
+		console.log(greet('mura'));
+		console.log(greet('binky'));
+	</script>
+</body>
+</html>
