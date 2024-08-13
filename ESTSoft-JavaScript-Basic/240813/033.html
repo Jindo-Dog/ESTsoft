@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>객체</title>
+</head>
+<body>
+	<script>
+		// 객체
+		const d = {
+			name: 'hojun',
+			age: 27,
+			height: 180
+		};
+
+		console.log(d);
+		console.log(d['name']);	// 이 방식 권고
+		console.log(d.name);
+
+		delete d.age;	// 사용을 많이 하지 않음
+		console.log(d);
+
+		// in 연산자
+		// in은 key값만 기준으로 한다
+		'name' in d;	// true
+		// 그런데 왜 아래 예제는 false가 나올까?
+		10 in [10, 20, 30, 40];		// false
+		// 배열 안에 있는 [10]이 key값이 아니라 value값이기 때문이다
+		0 in [10, 20, 30, 40];		// true
+
+		// 유사배열객체
+		const arr = {
+			0: 10,
+			1: 20,
+			2: 30,
+			3: 40,
+			length: 4
+		}
+
+		console.log(arr);		// {0: 10, 1: 20, 2: 30, 3: 40, length: 4}
+		console.log(arr[0]);	// 10
+		// Object에서 파생된 것이 Array
+
+		// 객체의 중첩
+		const company = {
+			name: 'Continental',
+			location: {
+				city: 'New York',
+				country: 'USA'
+			},
+			employees: {
+				manager: 'Winston',
+				concierge: 'Charon'
+			}
+		};
+
+		console.log(company.location.city);		// New York
+		console.log(company.employees.manager);	// Winston
+		console.log(company['employees']['manager']);	// Winston
+
+		// 객체의 메소드
+		const obj = {
+			name: 'hojun',
+			age: 27,
+			height: 180
+		};
+
+		console.log(Object.keys(obj));	// ['name', 'age', 'height']
+		// obj.keys() 이렇게 되야할 것 같은데 왜 Object.keys(obj)인가?
+		// 이 문제는 클래스 파트에서 다룬다
+		// 만약 obj.keys()가 된다면 arr.keys()도 되어야 한다
+
+		console.log(Object.values(obj));	// ['hojun', 27, 180]
+
+		console.log(Object.entries(obj));	// [['name', 'hojun'], ['age', 27], ['height', 180]]
+	</script>
+</body>
+</html>

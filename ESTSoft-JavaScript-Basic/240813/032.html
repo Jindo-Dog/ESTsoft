@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>배열의 메소드 4</title>
+</head>
+<body>
+	<script>
+		// includes
+		const arr1 = ['hello', 'world', 'hojun'];
+		console.log(arr1.includes('world')); // true - 'world'가 배열에 포함됨
+
+		const arr2 = ['hello', 'world', 'hojun'];
+		console.log(arr2.includes('leehojun')); // false - 'leehojun'이 배열에 포함되지 않음
+
+		const arr3 = ['hello', 'world', 'hojun'];
+		console.log(arr3.includes('jun')); // false - 'jun'이 배열에 포함되지 않음
+
+		const arr4 = [10, 20, 30, 40];
+		console.log(arr4.includes(10)); // true - 10이 배열에 포함됨
+
+
+		// join
+		const arr5 = ['hello', 'world', 'hojun'];
+		console.log(arr5.join());		// hello,world,hojun
+		console.log(arr5.join(' '));	// hello world hojun
+
+		console.log('010-5044-2903'.split('-').join(''));	// 01050442903
+	</script>
+</body>
+</html>
