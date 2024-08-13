@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>배열 메소드 2</title>
+</head>
+<body>
+	<script>
+		// slice
+		// string에서 했던 것과 같은 방식으로 사용할 수 있다
+		const arr = [10, 20, 30, 40, 50];
+		console.log(arr.slice(2));		// [30, 40, 50]
+		console.log(arr.slice(2, 4));	// [30, 40]
+
+		// sort
+		// 배열을 정렬한다. 기본저긍로는 오름차순으로 정렬한다
+		const arr2 = [20, 10, 50, 40, 30];
+		arr2.sort();
+
+		// 문제 1
+		const arr3 = [20, 2, 10, 3, 50, 40, 30];
+		arr3.sort();
+
+		// 문제 2
+		// 브라우저마다 사용하는 정렬 알고리즘이 다르다
+		// 표준에서 정렬 알고리즘을 정해주지 않았다
+		// 그나마 이 문제는 많이 해소됐다
+
+		// 1. 그래서 어떻게 하면 정렬을 순서대로 할 수 있는가?
+		// sort 메소드에 함수를 넣어주면 된다
+		// https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+
+		const arr4 = [20, 2, 10, 3, 50, 40, 30];
+		arr4.sort((a, b) => a - b);		// 오름차순
+		arr4.sort((a, b) => b - a);		// 내림차순
+
+		// 2. 그래서 에러가 나지 않는 코드는 무엇인가?
+		// 보통 이런 코드를 회사 유틸리티 코드로 가지고 있다
+		// 요즘은 유틸리티코드 없어도 claude가 잘 짜준다
+		jsonData.sort((a, b) => (a[key] < b[key] ? -1 : (a[key] > b[key] ? 1 : 0)));
+	</script>
+</body>
+</html>

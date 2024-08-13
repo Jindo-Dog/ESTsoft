@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>배열 메소드 3</title>
+</head>
+<body>
+	<script>
+		// forEach
+		const a = [10, 20, 30, 40, 50];
+		a.forEach((value, index, object) => {
+			console.log(value, index, object);
+		});
+
+		// forEach를 통해 해당 값의 제곱값을 출력하는 코드를 작성해라
+		const b = [1, 2, 3, 4, 5];
+		b.forEach(v => {
+			console.log(v * v);
+		});
+
+		// 다음 배열에서 하트를 추가하는 코드를 작성해라
+		const c = ['제주', '서울', '강릉', '부산'];
+		const result = c.forEach(v => {
+			result.push(v + '♥');
+		})
+		console.log(result);
+
+		// map(면접장에서 문제로 자주 나온다)
+		// forEach는 반복만 한다
+		// map은 새로운 배열을 생성한다
+		const d = [1, 2, 3, 4, 5];
+		const e = d.map(v => v * v);
+		console.log(e);
+
+		const data = [
+			{
+				"_id": "96286ced-1e1d-4976-B061-9cc7f3f6792d",
+				"index": "1",
+				"name": "애소희",
+				"email": "user-2v0rrn2@simply.biz",
+				"phone": "010-8748-1766",
+				"country": "레소토",
+				"address": "마포대로 14-5",
+				"job": "은행출납사무원",
+				"age": "38"
+			},
+			{
+				"_id": "e316a6d0-ab67-48da-Ca6f-99a082af41d9",
+				"index": "2",
+				"name": "부선",
+				"email": "user-nnuo0fr@magnis.io",
+				"phone": "010-5325-3002",
+				"country": "파나마",
+				"address": "학동로 28-9",
+				"job": "웹디자이너",
+				"age": "24"
+			},
+			{
+				"_id": "9f1e9324-7660-4d91-C20c-cb5747578136",
+				"index": "3",
+				"name": "사도희",
+				"email": "user-4y97h5f@neque.org",
+				"phone": "010-5355-3285",
+				"country": "부탄",
+				"address": "성산로 18-4",
+				"job": "전자공학기술자",
+				"age": "23"
+			},
+			{
+				"_id": "1527e4da-67b4-4d6b-C87e-6967152c42fa",
+				"index": "4",
+				"name": "왕재윤",
+				"email": "user-7pw92n2@Proin.biz",
+				"phone": "010-6146-7257",
+				"country": "룩셈부르크",
+				"address": "남부순환로 2-4",
+				"job": "철도 및 지하철기관사",
+				"age": "35"
+			},
+			{
+				"_id": "900f16e4-a15d-4a85-A774-816a080edf0b",
+				"index": "5",
+				"name": "편나희",
+				"email": "user-3hokio5@who.biz",
+				"phone": "010-2983-6184",
+				"country": "리투아니아",
+				"address": "논현로 56-8",
+				"job": "시각디자이너",
+				"age": "28"
+			}
+		];
+
+		const result2 = data.map(v => v['age']);
+		console.log(result2);
+	</script>
+</body>
+</html>
