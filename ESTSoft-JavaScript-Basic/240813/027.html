@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>객체타입</title>
+</head>
+<body>
+	<script>
+		// 배열
+		const arr = [10, 20, 30, 40, 50];
+		// 다른 언어와 다르게 index가 넘어가도 error가 발생하지 않습니다.
+		console.log(arr[0]); // 10
+		console.log(arr.length); // 5
+
+		// 다차원 배열
+		const arr2 = [
+			[1, '홍길동', 70, 80, 90],	// 다만, 이렇게 배열을 구성하는 것은 권한되지 않는다. 마이너스 요소다
+			[2, '홍길순', 60, 70, 80],
+			[3, '홍길만', 50, 60, 70],
+		]
+		console.table(arr2);
+		// 홍길동에 평균점수를 구하세요.
+		console.log((arr2[0][2] + arr2[0][3] + arr2[0][4]) / 3);
+
+		// javascript와는 관계가 없습니다.
+		// 괄호가 없으면 = 스칼라
+		// 괄호가 1개 있으면 = 벡터
+		// 괄호가 2개 있으면 = 메트릭스(행렬)
+		// 괄호가 3개 이상 있으면 = 텐서
+
+		// google에서 밀고 있는 인공지능 라이브러리인 tensorflow는 괄호가 3개이상 있는 텐서를 얘기합니다.
+		// 인공지능을 아주 단순화 하면 결국 행렬의 연산입니다.
+	</script>
+</body>
+</html>
