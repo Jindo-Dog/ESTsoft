@@ -17,6 +17,7 @@
 		m.set(1, '하나');
 		m.set(true, 1);
 		m.set(false, 0);
+
 		console.log(m);
 		console.log(m.get('하나'));	// '1'
 		console.log(m.get(true));	// 	1
@@ -47,7 +48,7 @@
 		console.log([...data.keys()]);		// ["name", "age", "height"]
 		console.log([...data.values()]);	// ["licat", 10, 180]
 
-		
+
 		// 배열을 Map으로 변환
 		let temp = new Map([
 			[1, 10],
@@ -55,12 +56,10 @@
 			[3, 30],
 			[4, 40],
 		]);
-		temp = [...temp]; // 위니북스에서만 이렇게 사용
 		console.log(temp); // Map(4) {1 => 10, 2 => 20, 3 => 30, 4 => 40}
 
 		// 객체를 Map으로 변환
 		let temp2 = new Map(Object.entries({one: 1, two: 2}));
-		temp2 = [...temp2]; // 위니북스에서만 이렇게 사용
 		console.log(temp2); // Map(2) {"one" => 1, "two" => 2}
 
 		// Map을 객체로 변환

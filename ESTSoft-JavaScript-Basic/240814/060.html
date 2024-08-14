@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<script>
+		console.log('hello');
+
+		async function getData() {
+			const response = await fetch(`https://test.api.weniv.co.kr/mall`);
+			const productData = await response.json();
+			console.log(productData);
+		}
+
+		getData();
+		console.log('world');
+	</script>
+</body>
+</html>
