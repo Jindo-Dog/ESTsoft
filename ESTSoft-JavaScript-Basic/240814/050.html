@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>DOM 제어하기</title>
+	<style>
+		.blue {
+			background-color : blue;
+			color            : white;
+		}
+	</style>
+</head>
+<body>
+	<button class = "hello">HELLO!</button>
+	<script>
+		// 앞에서는 Text만 수정했지만
+		// 이벤트 추가, 클래스 제어, 요소 생성 및 삭제, 속성 제어 등 다양한 DOM 제어를 해보겠습니다
+
+		const myBtn = document.querySelector('button');
+
+		// 1. 이벤트 추가
+		/*myBtn.addEventListener('click', () => {
+			console.log('hello world');
+		});*/
+
+		// 2. 클래스 제어
+		// myBtn.classList.add('blue');
+		myBtn.addEventListener('click', function () {
+			// myBtn.classList.add("blue"); // 클래스를 추가합니다.
+			// myBtn.classList.remove("blue"); // 클래스를 제거합니다.
+			myBtn.classList.toggle('blue'); // 클래스를 토글(ON/OFF)합니다.
+			console.log(myBtn.classList.contains('blue')); // 클래스가 있는지 확인합니다.
+		});
+
+		// 3. 요소 제어
+		// 이 데이터는 통신을 통해 받아온 데이터입니다.
+		const data = {
+			name: 'hello',
+			content: 'world',
+			src: 'https://via.placeholder.com/150',
+			price: 3000
+		};
+
+		const section = document.createElement('section');
+		const name = document.createElement('h2');	// secsion 안에는 헤딩이 반드시 있어야 한다
+		const content = document.createElement('p');
+		const price = document.createElement('p');
+		const img = document.createElement('img');
+
+		name.textContent = data.name;
+		content.textContent = data.content;
+		price.textContent = data.price;
+		price.style.color = 'red';
+		price.style.fontSize = '20px';	// JS에서는 카멜케이스를 사용한다. CSS는 케밥케이스.
+		// img.setAttribute('src', 'https://via.placeholder.com/150');
+		// img.src = 'https://via.placeholder.com/150';	// 둘 다 사용 가능
+		img.src = data.src;
+
+		section.appendChild(name);
+		section.appendChild(content);
+		section.appendChild(price);
+		section.appendChild(img);
+
+		// document.body.appendChild(section);
+		document.body.append(section);		// 둘 다 사용 가능
+		// appendChild와 다른 점은 노드뿐만 아니라 여러 개의 노드를 한번에, 그리고 텍스트도 노드의 자식 노드로 포함시킬 수 있다는 것이다
+	</script>
+</body>
+</html>

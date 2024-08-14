@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+	<meta charset = "UTF-8">
+	<title>JSON 데이터 활용 예제</title>
+</head>
+<body>
+	<script>
+		fetch('https://test.api.weniv.co.kr/mall')
+				.then(res => res.json())
+				.then(data => {
+					const body = document.body;
+					data.forEach(item => {
+						const section = document.createElement('section');
+						const img = document.createElement('img');
+						const h2 = document.createElement('h2');
+						const p = document.createElement('p');
+
+						img.src = 'https://test.api.weniv.co.kr/' + item.thumbnailImg;
+						img.alt = item.productName;
+						h2.textContent = item.productName;
+						p.textContent = item.price;
+
+						section.appendChild(img);
+						section.appendChild(h2);
+						section.appendChild(p);
+
+						body.appendChild(section);
+					})
+				})
+	</script>
+</body>
+</html>

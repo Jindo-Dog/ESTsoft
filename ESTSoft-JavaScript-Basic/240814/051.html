@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>DOM 제어하기 2</title>
+</head>
+<body>
+	<script>
+		const data = {
+			name: 'hello',
+			content: 'world',
+			src: 'https://via.placeholder.com/150',
+			price: 3000
+		};
+
+		document.body.innerHTML = `
+			<section>
+				<h2>${data.name}</h2>
+				<p>${data.content}</p>
+				<p>${data.price}</p>
+				<img src = "${data.src}" alt = "이미지"/>
+			</section>
+		`;
+
+		/**1번과 비교했을 때
+		 * 1. 가독성은 높아졌다
+		 * 2. 코드작성의 난이도가 낮아졌다
+		 * 3. 요소를 컨트롤하는 것은 1번이 더 좋다
+		 * 4. 재활용성도 1번이 더 좋다
+		 * 5. 2번으로 생산된 노드는 이벤트 같은 것을 가지고 있지 않다. 나중에 별도로 추가해야 한다
+		 */
+
+	</script>
+</body>
+</html>
