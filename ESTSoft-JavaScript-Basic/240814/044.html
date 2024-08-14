@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>for_in for_of</title>
+</head>
+<body>
+	<script>
+		const arr = [10, 20, 30, 40, 50];
+		const obj = {a: 1, b: 2, c: 3, d: 4, e: 5};
+
+		for (let key in obj) {
+			console.log(key, obj[key]);
+		}
+
+		for (let key in arr) {
+			console.log(key, arr[key]);
+		}
+
+		// for (let valule of obj) {
+		//     console.log(key, obj[key]);
+		// }
+
+		for (let value of arr) {
+			console.log(value);
+		}
+
+		for (let value of Object.values(obj)) {
+			console.log(value);
+		}
+
+
+		let data = [
+			{
+				"지역이름": "전국",
+				"확진자수": 24889,
+				"격리해제수": 23030,
+				"사망자수": 438,
+				"십만명당발생율": 48.0,
+				"지역별확진자비율": ""
+			},
+			{
+				"지역이름": "서울",
+				"확진자수": 5607,
+				"격리해제수": 5050,
+				"사망자수": 66,
+				"십만명당발생율": 57.61,
+				"지역별확진자비율": 22.53
+			},
+			{
+				"지역이름": "부산",
+				"확진자수": 491,
+				"격리해제수": 423,
+				"사망자수": 4,
+				"십만명당발생율": 14.39,
+				"지역별확진자비율": 1.97
+			},
+			{
+				"지역이름": "대구",
+				"확진자수": 7141,
+				"격리해제수": 6933,
+				"사망자수": 196,
+				"십만명당발생율": 293.09,
+				"지역별확진자비율": 28.69
+			}
+		];
+
+		for (let d of data) {
+			console.log(d['지역이름'], d['확진자수'], d['격리해제수'], d['사망자수'], d['십만명당발생율'], d['지역별확진자비율']);
+		}
+
+		for (let i = 0; i < data.length; i++) {
+			console.log(data[i]['지역이름'], data[i]['확진자수'], data[i]['격리해제수'], data[i]['사망자수'], data[i]['십만명당발생율'], data[i]['지역별확진자비율']);
+		}
+
+		// for in은 키 순회
+		// for of는 객체의 값 순회
+		// object는 iterable이 아니기 때문에 for of가 불가
+	</script>
+</body>
+</html>

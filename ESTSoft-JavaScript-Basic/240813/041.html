@@ -28,13 +28,15 @@
 		obj.f(); // obj
 
 		function Person(name) {
-			this.name = name;
+			this.name = name;		// window에 name을 등록한다
 			console.log(this);
 			// return this;	// new 키워드를 사용하면 this를 반환한다
 		}
 
 		const person1 = new Person('licat');	// Person { name: "licat" }
 		const person2 = new Person('mura');		// Person { name: "mura" }
+		const person3 = Person('mura');		// undefined	// new 키워드를 사용하지 않으면 this가 window 객체를 가리킨다	// window.name = 'mura'
+		// new 키워드를 사용하는 이유. Person이라는 설계도로 persom1이라는 생산품을 찍어내기 위함
 	</script>
 </body>
 </html>

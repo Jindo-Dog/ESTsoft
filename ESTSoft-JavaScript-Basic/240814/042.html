@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>이벤트랜들러 내 this</title>
+</head>
+<body>
+	<button id = "btn">hello world!</button>
+
+	<script>
+		/*function $(el){
+			return document.querySelector(el);
+		}
+		const button = $('btn');*/
+
+		const button = document.getElementById('btn');
+		button.addEventListener('click', function () {
+			console.log(this); // <button id="btn">Click me!</button>
+		});
+	</script>
+</body>
+</html>
