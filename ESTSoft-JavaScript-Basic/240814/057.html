@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<script>
+		class Robot {
+			#password;
+
+			constructor(name, pw) {
+				this.name = name;
+				this.#password = pw;
+			}
+
+			get password() {
+				console.log('get password 호출')
+				return this.#password;
+			}
+
+			set password(pw) {
+				console.log('set password 호출')
+				this.#password = pw;
+			}
+
+			sayYourName() {
+				console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+			}
+		}
+
+		// get과 set사용
+		const bot = new Robot('재현', 1234);
+
+		console.log(bot.name);		// 재현
+		console.log(bot.password);	// 1234
+		bot.password = 5678;		// setPassword 호출
+		console.log(bot.password);	// 5678
+	</script>
+</body>
+</html>

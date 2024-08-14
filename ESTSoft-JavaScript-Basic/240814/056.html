@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>클래스와 인스턴스</title>
+</head>
+<body>
+	<script>
+		// 클래스: 일종의 설계 도면 또는 템플릿
+		// 인스턴스: 설계 도면을 통해 생산된 생산품
+
+		// ES6부터 도입된 class를 사용한 방식
+		class Robot {
+			constructor(name, year) {
+				// 생성자 함수라고 합니다. 하나의 클래스는 하나의 생성자만 정의할 수 있습니다.
+				// 생성자 함수는 new 키워드가 호출될 때 자동으로 실행됩니다.
+				this.name = name;
+				this.hp = 100;
+				this.year = year;
+			}
+
+			sayYourName() {
+				// 메소드를 정의합니다. 메소드는 클래스가 생성한 인스턴스를 통해 사용할 수 있습니다.
+				console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+			}
+		}
+
+		// 클래스를 통해 인스턴스를 생성합니다.
+		const bot = new Robot('mura', 2024);
+		bot.sayYourName(); // 삐리비리. 제 이름은 mura입니다. 주인님.
+
+		console.log(bot.name);
+		console.log(bot.hp);
+		console.log(bot.year);
+	</script>
+</body>
+</html>

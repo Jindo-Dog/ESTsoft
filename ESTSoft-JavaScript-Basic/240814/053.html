@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang = "ko">
+<html lang = "en">
 <head>
 	<meta charset = "UTF-8">
 	<title>JSON 데이터 활용 예제</title>
@@ -42,26 +42,18 @@
 	<main></main>
 	<footer>(주)위니브 대표: 이호준</footer>
 	<script>
-		fetch('https://test.api.weniv.co.kr/mall')
+		fetch('https://test.api.weniv.co.kr/mall/')
 				.then(res => res.json())
 				.then(data => {
 					const main = document.querySelector('main');
 					data.forEach(item => {
-						const section = document.createElement('section');
-						const img = document.createElement('img');
-						const h2 = document.createElement('h2');
-						const p = document.createElement('p');
-
-						img.src = 'https://test.api.weniv.co.kr/' + item.thumbnailImg;
-						img.alt = item.productName;
-						h2.textContent = item.productName;
-						p.textContent = item.price;
-
-						section.appendChild(img);
-						section.appendChild(h2);
-						section.appendChild(p);
-
-						main.appendChild(section);
+						const section = `<section>
+								<img src="https://test.api.weniv.co.kr/${item.thumbnailImg}" alt="${item.productName}">
+								<h2>${item.productName}</h2>
+								<p>${item.price}</p>
+							</section>
+						`;
+						main.innerHTML += section;
 					})
 				});
 	</script>
