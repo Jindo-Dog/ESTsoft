@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM</title>
+</head>
+<body>
+	<script>
+		// DOM
+		// Document Object Model
+		document
+		// #document (file:///C:/Users/paullab/Desktop/%EC%98%A4%EB%A5%B4%EB%AF%B8%20BE%206/048.html)
+		document.all
+		// HTMLAllCollection(6) [html, head, title, body, h1, p]
+		document['head']
+		// <head>…</head>
+		document.head
+		// <head>…</head><title>My Document</title></head>
+		document.head.childNodes
+		// NodeList(3) [text, title, text]0: text1: title2: textlength: 3[[Prototype]]: NodeList
+		document.head.childNodes[1]
+		// <title>My Document</title>
+		document.head.childNodes[1].innerText
+		// 'My Document'
+		document.head.childNodes[1].innerText = 'hello world'
+		// 'hello world'
+		document.body.childNodes[1]
+		// <h1>Hello, World!</h1>
+		document.body.childNodes[1].innerText
+		// 'Hello, World!'
+		document.body.childNodes[1].innerText = 'licat'
+		// 'licat'
+	</script>
+
+	<h1>Hello, World!</h1>
+	<p>This is a paragraph.</p>
+</body>
+</html>
