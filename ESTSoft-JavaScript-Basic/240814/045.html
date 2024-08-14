@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>MaP과 Set</title>
+</head>
+<body>
+	<script>
+		// Map
+		// key, value로 이루어진 데이터를 저장할 때 사용
+		// 어떠한 언어도 이렇게 비슷한 자료형을 가지고 있는 경우는 없다
+		// let m = new Map();
+		// console.log(m); // Map(0) {}
+
+		let m = new Map();
+		m.set('하나', '1');
+		m.set(1, '하나');
+		m.set(true, 1);
+		m.set(false, 0);
+		console.log(m);
+		console.log(m.get('하나'));	// '1'
+		console.log(m.get(true));	// 	1
+
+		// in 연산자
+		console.log('하나' in {'하나': '1', '둘': '2'});	// true
+		// map에서는 has 메소드를 사용한다
+		// console.log('하나' in m);						// false
+		console.log(m.has('하나'));						// true
+
+		console.log(m.delete('하나'));	// true
+		console.log(m.has('하나'));		// false
+		console.log(m.size);			// 3
+
+		const data = new Map().set('name', 'licat').set('age', 10).set('height', 180);
+		// . : 메소드 체이닝
+
+		for (const value of data) {
+			console.log(value[0]);	// key
+			console.log(value[1]);	// value
+		}
+
+		for (const [key, value] of data) {
+			console.log(key);
+			console.log(value);
+		}
+
+		console.log([...data.keys()]);		// ["name", "age", "height"]
+		console.log([...data.values()]);	// ["licat", 10, 180]
+
+		
+		// 배열을 Map으로 변환
+		let temp = new Map([
+			[1, 10],
+			[2, 20],
+			[3, 30],
+			[4, 40],
+		]);
+		temp = [...temp]; // 위니북스에서만 이렇게 사용
+		console.log(temp); // Map(4) {1 => 10, 2 => 20, 3 => 30, 4 => 40}
+
+		// 객체를 Map으로 변환
+		let temp2 = new Map(Object.entries({one: 1, two: 2}));
+		temp2 = [...temp2]; // 위니북스에서만 이렇게 사용
+		console.log(temp2); // Map(2) {"one" => 1, "two" => 2}
+
+		// Map을 객체로 변환
+		const temp3 = Object.fromEntries(temp2);
+		console.log(temp3); // { one: 1, two: 2 }
+	</script>
+</body>
+</html>
