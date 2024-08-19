@@ -3,92 +3,107 @@
 <head>
 	<meta charset = "UTF-8">
 	<meta content = "width=device-width, initial-scale=1.0" name = "viewport">
+	<meta content = "IE=edge" http-equiv = "X-UA-Compatible">
 	<title>HODU</title>
 	<link href = "reset.css" rel = "stylesheet" type = "text/css">
 	<link href = "index.css" rel = "stylesheet" type = "text/css">
+	<link href = "index-mobile.css" rel = "stylesheet" type = "text/css">
 </head>
 <body>
 	<header>
 		<h1>HODU</h1>
 		<nav>
-			<a href = "#">Home</a>
-			<a href = "#">About</a>
-			<a href = "#">Support</a>
-			<button>Download</button>
+			<ul>
+				<li><a aria-label = "goto home" href = "#">Home</a></li>
+				<li><a aria-label = "goto about" href = "#">About</a></li>
+				<li><a aria-label = "goto support" href = "#">Support</a></li>
+			</ul>
+			<button aria-label = "download">Download</button>
 		</nav>
 	</header>
 
-	<article>
-		<h2></h2>
-		<section>
-			<h3>Lorem Ipsum is simply dummy text of the printing and</h3>
+	<main>
+		<section class = "section-top">
+			<h2>Lorem Ipsum is simply<br>dummy text of the printing and</h2>
 			<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 				<br>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown.</span>
-			<button class = "button">Download</button>
-		</section>
-		<section>
-			<h3></h3>
-			<img alt = "Hodu" src = "hodu.png">
-		</section>
-	</article>
-
-	<article>
-		<h2></h2>
-
-		<section>
-			<h3>image</h3>
+			<button aria-label = "download" class = "button">Download</button>
 		</section>
 
-		<section>
-			<h3>Lorem Ipsum is simply dummy text of the printing and dummy text</h3>
-			<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
-		</section>
-	</article>
+		<section class = "section-sub">
+			<h2 class = "blind"></h2>
+			<img alt = "침대에 누워있는 호두" src = "assets/cat/cat2.png">
 
-	<article>
-		<h2>dummy text of the printing and dummy</h2>
-		<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+			<section>
+				<h3>Lorem Ipsum is simply dummy text of the printing and dummy text</h3>
+				<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+			</section>
+		</section>
+
+		<section class = "section-gallery">
+			<h2>dummy text of the printing and dummy</h2>
+			<span>Lorem Ipsum is simply <span>dummy text</span> of the printing and typesetting industry.
 			<br>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown</span>
 
-		<section>
-			<h3></h3>
-			<img alt = "Cat 1" src = "image1.jpg">
-			<img alt = "Cat 2" src = "image2.jpg">
-			<img alt = "Cat 3" src = "image3.jpg">
-			<img alt = "Cat 4" src = "image4.jpg">
-			<img alt = "Cat 5" src = "image5.jpg">
-			<img alt = "Cat 6" src = "image6.jpg">
+			<section id = "gallery-images">
+				<h3 class = "blind"> gallery images</h3>
+				<img alt = "캣타워 위의 호두" src = "assets/cat/cat3-1.png">
+				<img alt = "벽보고 앉아있는 호두" src = "assets/cat/cat3-2.png">
+				<img alt = "나를 쳐다보는 호두" src = "assets/cat/cat3-3.png">
+				<img alt = "예쁜 호두" src = "assets/cat/cat3-4.png">
+				<img alt = "밥 달라는 호두" src = "assets/cat/cat3-5.png">
+				<img alt = "하품하는 호두" src = "assets/cat/cat3-6.png">
+			</section>
+
+			<section id = "gallery-continue">
+				<h3>Continue exploring HODU</h3>
+				<button aria-label = "show more HODU">Show more</button>
+			</section>
 		</section>
 
-		<section>
-			<h3>Continue exploring HODU</h3>
-			<button>Show more</button>
+		<hr>
+
+		<section class = "section-map">
+			<h2>Where you’ll be</h2>
+			<span>330, Cheomdan-ro, Jeju-si, Jeju-do, Republic of Korea</span>
+			<section id = "map">
+				<h3 class = "blind">map</h3>
+
+			</section>
 		</section>
-	</article>
 
-	<hr>
-
-	<article>
-		<h2>Where you’ll be</h2>
-		<span>330, Cheomdan-ro, Jeju-si, Jeju-do, Republic of Korea</span>
-		<section>
-			<h3>map</h3>
-
+		<section class = "section-background">
+			<h2 class = "blind">hodu background image</h2>
+			<img alt = "얼짱각도 호두" src = "assets/cat/cat4.png">
 		</section>
-	</article>
 
-	<section>
-		<h2>hodu background image</h2>
-	</section>
+		<section class = "section-subscribe">
+			<h2 class = "blind">subscribe box</h2>
+
+			<section>
+				<h3>Subscribe to our Blog Post</h3>
+				<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br>Lorem Ipsum has been the industry's standard dummy text</span>
+			</section>
+
+			<form id = "form-subscribe">
+				<label for = "input-email"><img alt = "email icon" src = "assets/icon/mail.svg">
+					<input id = "input-email" placeholder = "Enter your email address" type = "email">
+					<button aria-label = "subscribe" type = "submit">Subscribe</button>
+				</label>
+			</form>
+		</section>
+	</main>
 
 	<footer>
 		<h2>HODU</h2>
 		<nav>
-			<h3></h3>
-			<a href = "#">b</a>
-			<a href = "#">instagram</a>
-			<a href = "#">facebook</a>
-			<a href = "#">youtube</a>
+			<h3 class = "blind">Related links</h3>
+			<ul>
+				<li><a aria-label = "goto blog" href = "#"><img alt = "blog" src = "assets/icon/blog.png"></a></li>
+				<li><a aria-label = "goto instagram" href = "#"><img alt = "instagram" src = "assets/icon/instagram.png"></a></li>
+				<li><a aria-label = "goto facebook" href = "#"><img alt = "facebook" src = "assets/icon/facebook.png"></a></li>
+				<li><a aria-label = "goto youtube" href = "#"><img alt = "youtube" src = "assets/icon/youtube.png"></a></li>
+			</ul>
 		</nav>
 	</footer>
 
