@@ -8,25 +8,37 @@
 	<link href = "reset.css" rel = "stylesheet" type = "text/css">
 	<link href = "index.css" rel = "stylesheet" type = "text/css">
 	<link href = "index-mobile.css" rel = "stylesheet" type = "text/css">
+
+	<!-- lodash -->
+	<script crossorigin = "anonymous" integrity = "sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+			referrerpolicy = "no-referrer" src = "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+	<!-- gsap -->
+	<script crossorigin = "anonymous" integrity = "sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+			referrerpolicy = "no-referrer" src = "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+	<script crossorigin = "anonymous" integrity = "sha512-1PKqXBz2ju2JcAerHKL0ldg0PT/1vr3LghYAtc59+9xy8e19QEtaNUyt1gprouyWnpOPqNJjL4gXMRMEpHYyLQ=="
+			referrerpolicy = "no-referrer" src = "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 </head>
 <body>
 	<header>
 		<h1>HODU</h1>
-		<nav>
-			<ul>
+
+		<button aria-label = "toggle-menu" class = "menu-open"><img alt = "menu open" src = "assets/icon/menu.svg"></button>
+
+		<nav id = "header-nav">
+			<button aria-label = "close" class = "menu-close"><img alt = "menu close" src = "assets/icon/arrow-right.svg"></button>
+			<ul class = "nav-list">
 				<li><a aria-label = "goto home" href = "#">Home</a></li>
 				<li><a aria-label = "goto about" href = "#">About</a></li>
 				<li><a aria-label = "goto support" href = "#">Support</a></li>
 			</ul>
-			<button aria-label = "download">Download</button>
+			<button aria-label = "download" class = "btn-nav-download">Download</button>
 		</nav>
 	</header>
 
 	<main>
 		<section class = "section-top">
-			<h2>Lorem Ipsum is simply<br>dummy text of the printing and</h2>
-			<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-				<br>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown.</span>
+			<h2>Lorem Ipsum is simply dummy text of the printing and</h2>
+			<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown.</span>
 			<button aria-label = "download" class = "button">Download</button>
 		</section>
 
@@ -83,9 +95,9 @@
 						};
 						const map = new kakao.maps.Map(node, options);
 
-						// 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
+						/*// 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
 						const zoomControl = new kakao.maps.ZoomControl();
-						map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+						map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);*/
 
 						// 지도를 클릭한 위치에 표출할 마커입니다
 						const marker = new kakao.maps.Marker({
@@ -115,16 +127,24 @@
 			<form id = "form-subscribe">
 				<label for = "input-email"><img alt = "email icon" src = "assets/icon/mail.svg">
 					<input id = "input-email" placeholder = "Enter your email address" type = "email">
-					<button aria-label = "subscribe" type = "submit">Subscribe</button>
 				</label>
+				<button aria-label = "subscribe" id = "btn-submit-subscribe" type = "submit">Subscribe</button>
 			</form>
+
+			<dialog id = "dialog-subscribe">
+				<h3>Thank you!</h3>
+				<img alt = "grateful HODU" src = "assets/cat/cat5.png">
+				<span>Lorem Ipsum is simply dummy text of the printing industry.</span>
+				<button aria-label = "close-dialog" id = "btn-close-dialog">OK! I Love HODU</button>
+			</dialog>
 		</section>
+
+		<button aria-label = "scroll to top" id = "scroll-top"></button>
 	</main>
 
 	<footer>
 		<h2>HODU</h2>
-		<nav>
-			<h3 class = "blind">Related links</h3>
+		<nav aria-label = "external links" id = "footer-nav-external">
 			<ul>
 				<li><a aria-label = "goto blog" href = "#"><img alt = "blog" src = "assets/icon/blog.png"></a></li>
 				<li><a aria-label = "goto instagram" href = "#"><img alt = "instagram" src = "assets/icon/instagram.png"></a></li>
@@ -132,7 +152,17 @@
 				<li><a aria-label = "goto youtube" href = "#"><img alt = "youtube" src = "assets/icon/youtube.png"></a></li>
 			</ul>
 		</nav>
+		<nav aria-label = "internal links" id = "footer-nav-internal">
+			<ul>
+				<li><a aria-label = "goto about" href = "#">About</a></li>
+				<li><a aria-label = "goto blog" href = "#">Blog</a></li>
+				<li><a aria-label = "goto support" href = "#">Support</a></li>
+				<li><a aria-label = "goto term of use" href = "#">Term of Use</a></li>
+			</ul>
+		</nav>
+
 	</footer>
 
+	<script src = "index.js"></script>
 </body>
 </html>
