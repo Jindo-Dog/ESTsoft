@@ -1,9 +1,36 @@
+// 카카오 맵 API
+const script = document.createElement("script");
+script.src = `http://dapi.kakao.com/v2/maps/sdk.js?appkey=985350c5816d259d8a69732b90d987ce&autoload=false&libraries=clusterer,services&`;
+document.head.appendChild(script);
+script.onload = () => {
+	kakao.maps.load(() => {
+		const node = document.querySelector('#map'); // 지도를 표시할 div
+		const options = {
+			center: new kakao.maps.LatLng(33.44227, 126.5715), // 지도의 중심좌표
+			level: 3 // 지도의 확대 레벨
+		};
+		const map = new kakao.maps.Map(node, options);
+
+		/*// 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
+		const zoomControl = new kakao.maps.ZoomControl();
+		map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);*/
+
+		// 지도를 클릭한 위치에 표출할 마커입니다
+		const marker = new kakao.maps.Marker({
+			// 지도 중심좌표에 마커를 생성합니다
+			position: map.getCenter()
+		});
+		// 지도에 마커를 표시합니다
+		marker.setMap(map);
+	});
+};
+
 // 모바일 메뉴 토글
-document.querySelector('.menu-open').addEventListener('click', () => {
+document.querySelector('#menu-open').addEventListener('click', () => {
 	document.querySelector('#header-nav').classList.toggle('active');
 });
 
-document.querySelector('.menu-close').addEventListener('click', () => {
+document.querySelector('#menu-close').addEventListener('click', () => {
 	document.querySelector('#header-nav').classList.toggle('active');
 });
 
@@ -11,7 +38,7 @@ document.querySelector('.menu-close').addEventListener('click', () => {
 function adjustTextSpacing() {
 	const topH2 = document.querySelector('.section-top h2');
 	const topSpan = document.querySelector('.section-top span');
-	const dialogSpan = document.querySelector('#dialog-subscribe span');
+	const dialogSpan = document.querySelector('.dialog-subscribe span');
 
 	const viewWidth = window.innerWidth;
 
@@ -29,7 +56,7 @@ function adjustTextSpacing() {
 window.addEventListener('resize', adjustTextSpacing);
 window.addEventListener('DOMContentLoaded', adjustTextSpacing);
 
-// 상단에서 버튼 숨기기
+// 상단에서 이동 버튼 숨기기
 window.addEventListener('scroll', _.throttle(() => {
 	if (window.scrollY > 1) {
 		gsap.to('#scroll-top', .2, {
@@ -52,18 +79,32 @@ scrollTop.addEventListener('click', () => {
 
 // 구독 버튼을 눌렀을 때
 const dialog = document.querySelector('#dialog-subscribe');
-const openDialogButton = document.querySelector('#btn-submit-subscribe');
-const closeDialogButton = document.querySelector('#btn-close-dialog');
+const openDialogButton = document.querySelector('#btn-subscribe');
+const closeDialogButton = document.querySelector('#btn-submit-dialog');
+const emailInput = document.querySelector('#input-email');
+const dialogForm = document.querySelector('#form-subscribe');
+// email 유효성 검사
+const regex = /^(?:(?!\.\.|.*\.\.$)(?!^\.)[!#$%&'*+/=?^_`{|}~\w.-]+(?:\.[!#$%&'*+/=?^_`{|}~\w.-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x7f]|\\[\x01-\x08\x0b\x0c\x0e-\x7f]|[\s\.,:;<>@[\]"])*")@((?:[a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+|\[(?:[0-9]{1,3}\.){3}[0-9]{1,3}\]|\[IPv6:[0-9a-fA-F:]+\])$/;
 // 모달 열기
 openDialogButton.addEventListener('click', () => {
-	event.preventDefault();
-	dialog.showModal();
+	if (!regex.test(emailInput.value)) {
+		event.preventDefault();
+		alert('이메일 주소를 확인해주세요.');
+	} else {
+		event.preventDefault();
+		dialog.showModal();
+	}
 });
 // 모달 닫기
 closeDialogButton.addEventListener('click', () => {
 	dialog.close();
 });
-// backdrop 클릭 시 모달 닫기
-dialog.addEventListener('click', () => {
-	dialog.close();
+// 버튼 submit 방지
+openDialogButton.addEventListener('submit', () => {
+	event.preventDefault();
+});
+// form submit log
+dialogForm.addEventListener('submit', () => {
+	event.preventDefault();
+	console.log('submitted');
 });

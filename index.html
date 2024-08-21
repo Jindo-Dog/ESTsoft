@@ -4,11 +4,16 @@
 	<meta charset = "UTF-8">
 	<meta content = "width=device-width, initial-scale=1.0" name = "viewport">
 	<meta content = "IE=edge" http-equiv = "X-UA-Compatible">
+	<meta content = "호두를 소개합니다. 이곳에서 귀여운 호두를 볼 수 있으며, 더 보고싶으면 버튼을 눌러 더 볼 수 있습니다." name = "description">
 	<title>HODU</title>
+
+	<!-- 스타일시트 링크 -->
 	<link href = "reset.css" rel = "stylesheet" type = "text/css">
 	<link href = "index.css" rel = "stylesheet" type = "text/css">
 	<link href = "index-mobile.css" rel = "stylesheet" type = "text/css">
+	<!-- //스타일시트 링크 -->
 
+	<!-- 스크립트 라이브러리 -->
 	<!-- lodash -->
 	<script crossorigin = "anonymous" integrity = "sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
 			referrerpolicy = "no-referrer" src = "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
@@ -17,105 +22,96 @@
 			referrerpolicy = "no-referrer" src = "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 	<script crossorigin = "anonymous" integrity = "sha512-1PKqXBz2ju2JcAerHKL0ldg0PT/1vr3LghYAtc59+9xy8e19QEtaNUyt1gprouyWnpOPqNJjL4gXMRMEpHYyLQ=="
 			referrerpolicy = "no-referrer" src = "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+	<!-- //스크립트 라이브러리 -->
 </head>
 <body>
+	<!-- header -->
 	<header>
 		<h1>HODU</h1>
 
-		<button aria-label = "toggle-menu" class = "menu-open"><img alt = "menu open" src = "assets/icon/menu.svg"></button>
+		<!-- 모바일 메뉴 버튼 -->
+		<button id = "menu-open"><img alt = "open mobile menu" src = "assets/icon/menu.svg"></button>
 
+		<!-- 내부 링크로 이동하기 위한 네비게이션  -->
 		<nav id = "header-nav">
-			<button aria-label = "close" class = "menu-close"><img alt = "menu close" src = "assets/icon/arrow-right.svg"></button>
+			<!-- 모바일 메뉴 닫기 버튼 -->
+			<button id = "menu-close"><img alt = "close mobile menu" src = "assets/icon/arrow-right.svg"></button>
 			<ul class = "nav-list">
 				<li><a aria-label = "goto home" href = "#">Home</a></li>
 				<li><a aria-label = "goto about" href = "#">About</a></li>
 				<li><a aria-label = "goto support" href = "#">Support</a></li>
 			</ul>
-			<button aria-label = "download" class = "btn-nav-download">Download</button>
+			<button aria-label = "download" id = "btn-nav-download">Download</button>
 		</nav>
+		<!-- //내부 링크로 이동하기 위한 네비게이션 -->
 	</header>
+	<!-- //header -->
 
+	<!-- main -->
 	<main>
+		<!-- 주 소개글 작성을 위한 센션 -->
 		<section class = "section-top">
 			<h2>Lorem Ipsum is simply dummy text of the printing and</h2>
 			<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown.</span>
-			<button aria-label = "download" class = "button">Download</button>
+			<button aria-label = "download" id = "btn-top-download">Download</button>
 		</section>
+		<!-- //주 소개글 작성을 위한 센션 -->
 
+		<!-- 보조 소개를 위한 섹션 -->
 		<section class = "section-sub">
-			<h2 class = "blind"></h2>
-			<img alt = "침대에 누워있는 호두" src = "assets/cat/cat2.png">
+			<h2 class = "blind">introduce HODU</h2>
+			<img alt = "침대에 누워있는 호두" src = "assets/cat/cat2.webp">
 
 			<section>
 				<h3>Lorem Ipsum is simply dummy text of the printing and dummy text</h3>
 				<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
 			</section>
 		</section>
+		<!-- //보조 소개를 위한 섹션 -->
 
+		<!-- 호두 사진 갤러리를 위한 섹션 -->
 		<section class = "section-gallery">
 			<h2>dummy text of the printing and dummy</h2>
 			<span>Lorem Ipsum is simply <span>dummy text</span> of the printing and typesetting industry.
 			<br>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown</span>
 
-			<section id = "gallery-images">
+			<section class = "gallery-images">
 				<h3 class = "blind"> gallery images</h3>
-				<img alt = "캣타워 위의 호두" src = "assets/cat/cat3-1.png">
-				<img alt = "벽보고 앉아있는 호두" src = "assets/cat/cat3-2.png">
-				<img alt = "나를 쳐다보는 호두" src = "assets/cat/cat3-3.png">
-				<img alt = "예쁜 호두" src = "assets/cat/cat3-4.png">
-				<img alt = "밥 달라는 호두" src = "assets/cat/cat3-5.png">
-				<img alt = "하품하는 호두" src = "assets/cat/cat3-6.png">
+				<img alt = "캣타워 위에서 쳐다보는 호두" src = "assets/cat/cat3-1.webp">
+				<img alt = "벽보고 앉아있는 호두" src = "assets/cat/cat3-2.webp">
+				<img alt = "나를 쳐다보는 호두" src = "assets/cat/cat3-3.webp">
+				<img alt = "예쁜 호두" src = "assets/cat/cat3-4.webp">
+				<img alt = "밥 달라는 호두" src = "assets/cat/cat3-5.webp">
+				<img alt = "하품하는 호두" src = "assets/cat/cat3-6.webp">
 			</section>
 
-			<section id = "gallery-continue">
+			<section class = "gallery-continue">
 				<h3>Continue exploring HODU</h3>
-				<button aria-label = "show more HODU">Show more</button>
+				<button aria-label = "show more HODU" id = "btn-gallery-continue">Show more</button>
 			</section>
 		</section>
+		<!-- //호두 사진 갤러리를 위한 섹션 -->
 
+		<!-- 호두 섹션과 지도 섹션 분리를 위한 가로줄 -->
 		<hr>
 
+		<!-- 카카오 지도를 위한 섹션 -->
 		<section class = "section-map">
 			<h2>Where you’ll be</h2>
 			<span>330, Cheomdan-ro, Jeju-si, Jeju-do, Republic of Korea</span>
-			<section id = "map">
-				<!-- <h3 class = "blind">map</h3> -->
-
-			</section>
-			<script>
-				const script = document.createElement("script");
-				script.src = `http://dapi.kakao.com/v2/maps/sdk.js?appkey=985350c5816d259d8a69732b90d987ce&autoload=false&libraries=clusterer,services&`;
-				document.head.appendChild(script);
-				script.onload = () => {
-					kakao.maps.load(() => {
-						const node = document.querySelector('#map'); // 지도를 표시할 div
-						const options = {
-							center: new kakao.maps.LatLng(33.44227, 126.5715), // 지도의 중심좌표
-							level: 3 // 지도의 확대 레벨
-						};
-						const map = new kakao.maps.Map(node, options);
-
-						/*// 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
-						const zoomControl = new kakao.maps.ZoomControl();
-						map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);*/
-
-						// 지도를 클릭한 위치에 표출할 마커입니다
-						const marker = new kakao.maps.Marker({
-							// 지도 중심좌표에 마커를 생성합니다
-							position: map.getCenter()
-						});
-						// 지도에 마커를 표시합니다
-						marker.setMap(map);
-					});
-				};
-			</script>
+			<!-- 카카오맵 API -->
+			<section id = "map"><h3 class = "blind">kakao map</h3></section>
 		</section>
+		<!-- //카카오 지도를 위한 섹션 -->
 
+		<!-- 하단의 호두 사진을 위한 섹션 -->
 		<section class = "section-background">
 			<h2 class = "blind">hodu background image</h2>
-			<img alt = "얼짱각도 호두" src = "assets/cat/cat4.png">
+			<img alt = "얼짱각도 호두" src = "assets/cat/cat4.webp">
 		</section>
+		<!-- //하단의 호두 사진을 위한 섹션 -->
 
+		<!-- 구독을 위한 섹션 -->
 		<section class = "section-subscribe">
 			<h2 class = "blind">subscribe box</h2>
 
@@ -124,35 +120,49 @@
 				<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br>Lorem Ipsum has been the industry's standard dummy text</span>
 			</section>
 
-			<form id = "form-subscribe">
+			<!-- 이메일 제출을 위한 form -->
+			<form autocomplete = "off" id = "form-subscribe">
 				<label for = "input-email"><img alt = "email icon" src = "assets/icon/mail.svg">
-					<input id = "input-email" placeholder = "Enter your email address" type = "email">
+					<input id = "input-email" placeholder = "Enter your email address">
 				</label>
-				<button aria-label = "subscribe" id = "btn-submit-subscribe" type = "submit">Subscribe</button>
+				<!-- 모달창을 위한 버튼 -->
+				<button aria-label = "check email validation for subscribe" id = "btn-subscribe" type = "button">Subscribe</button>
 			</form>
+			<!-- //이메일 제출을 위한 form -->
 
-			<dialog id = "dialog-subscribe">
+			<!-- 모달창 -->
+			<dialog class = "dialog-subscribe">
 				<h3>Thank you!</h3>
-				<img alt = "grateful HODU" src = "assets/cat/cat5.png">
+				<img alt = "grateful HODU" src = "assets/cat/cat5.webp">
 				<span>Lorem Ipsum is simply dummy text of the printing industry.</span>
-				<button aria-label = "close-dialog" id = "btn-close-dialog">OK! I Love HODU</button>
+				<!-- form 외부에서 form 제출을 위한 버튼 -->
+				<button aria-label = "submit email for subscribe" form = "form-subscribe" id = "btn-submit-dialog" type = "submit">OK! I Love HODU</button>
 			</dialog>
+			<!-- //모달창 -->
 		</section>
+		<!-- //구독을 위한 섹션 -->
 
+		<!-- 상단으로 이동하기 위한 버튼 -->
 		<button aria-label = "scroll to top" id = "scroll-top"></button>
 	</main>
+	<!-- //main -->
 
+	<!-- footer -->
 	<footer>
 		<h2>HODU</h2>
-		<nav aria-label = "external links" id = "footer-nav-external">
+
+		<!-- 외부 링크로 이동하기 위한 네비게이션 -->
+		<nav aria-label = "external links navigation" id = "footer-nav-external">
 			<ul>
-				<li><a aria-label = "goto blog" href = "#"><img alt = "blog" src = "assets/icon/blog.png"></a></li>
-				<li><a aria-label = "goto instagram" href = "#"><img alt = "instagram" src = "assets/icon/instagram.png"></a></li>
-				<li><a aria-label = "goto facebook" href = "#"><img alt = "facebook" src = "assets/icon/facebook.png"></a></li>
-				<li><a aria-label = "goto youtube" href = "#"><img alt = "youtube" src = "assets/icon/youtube.png"></a></li>
+				<li><a aria-label = "goto blog" href = "#"><img alt = "blog icon" src = "assets/icon/blog.webp"></a></li>
+				<li><a aria-label = "goto instagram" href = "#"><img alt = "instagram icon" src = "assets/icon/instagram.webp"></a></li>
+				<li><a aria-label = "goto facebook" href = "#"><img alt = "facebook icon" src = "assets/icon/facebook.webp"></a></li>
+				<li><a aria-label = "goto youtube" href = "#"><img alt = "youtube icon" src = "assets/icon/youtube.webp"></a></li>
 			</ul>
 		</nav>
-		<nav aria-label = "internal links" id = "footer-nav-internal">
+		<!-- //외부 링크로 이동하기 위한 네비게이션 -->
+		<!-- 내부 링크로 이동하기 위한 네비게이션 -->
+		<nav aria-label = "internal links navigation" id = "footer-nav-internal">
 			<ul>
 				<li><a aria-label = "goto about" href = "#">About</a></li>
 				<li><a aria-label = "goto blog" href = "#">Blog</a></li>
@@ -160,9 +170,11 @@
 				<li><a aria-label = "goto term of use" href = "#">Term of Use</a></li>
 			</ul>
 		</nav>
-
+		<!-- //내부 링크로 이동하기 위한 네비게이션 -->
 	</footer>
+	<!-- //footer -->
 
+	<!-- 커스텀 스크립트 -->
 	<script src = "index.js"></script>
 </body>
 </html>
