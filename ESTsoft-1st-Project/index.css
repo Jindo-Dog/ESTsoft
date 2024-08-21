@@ -1,5 +1,6 @@
 :root {
 	/* 1920px width 기준 */
+	/* ex) --4pc == 뷰포트 너비가 1920px일때 4px이 차지하는 vw */
 	--4pc   : 0.2083333vw;
 	--6pc   : 0.3125vw;
 	--10pc  : 0.5208333vw;
@@ -57,11 +58,12 @@
 }
 
 body * {
-	/*border      : 1px solid red;*/
 	box-sizing  : border-box;
 	font-family : Pretendard, serif;
+	line-height : 125%;
 }
 
+/* 스크린 리더를 위한 클래스 */
 .blind {
 	/* 레이아웃에 영향을 끼치지 않도록 */
 	position : absolute;
@@ -79,6 +81,10 @@ body * {
 button {
 	color            : #FFFFFF;
 	background-color : #D97652;
+}
+
+ul, nav {
+	display : flex;
 }
 
 body {
@@ -103,17 +109,16 @@ header {
 		font-weight : 900;
 	}
 
-	.menu-open {
+	#menu-open {
 		display          : none;
 		background-color : transparent;
 		width            : 32px;
 		height           : 32px;
 	}
 
-	nav {
-		display : flex;
 
-		.menu-close {
+	#header-nav {
+		#menu-close {
 			display          : none;
 			background-color : transparent;
 			width            : 32px;
@@ -121,8 +126,6 @@ header {
 		}
 
 		.nav-list {
-			display : flex;
-
 			li {
 				margin        : 0 var(--15pc);
 				align-content : center;
@@ -130,23 +133,22 @@ header {
 				a {
 					font-size   : 4em;
 					font-weight : 400;
-					line-height : 125%;
 				}
 			}
 		}
 
-		.btn-nav-download {
+		#btn-nav-download {
 			width         : var(--140pc);
 			height        : var(--50pc);
 			border-radius : var(--40pc);
 			text-align    : center;
 			font-size     : 4em;
 			font-weight   : 700;
-			line-height   : 125%;
 			margin-left   : var(--49pc);
 		}
 	}
 }
+
 
 main {
 	position : relative;
@@ -158,30 +160,24 @@ main {
 		display         : flex;
 		flex-direction  : column;
 		justify-content : space-between;
-		background      : #F2E9D8 url("/assets/cat/cat1.png") no-repeat calc(100% - var(--320pc)) var(--32pc);
+		background      : #F2E9D8 url("/assets/cat/cat1.webp") no-repeat calc(100% - var(--320pc)) var(--32pc);
 		background-size : var(--415pc) auto;
 
 		h2 {
 			width       : var(--695pc);
 			font-size   : 12em;
 			font-weight : 700;
-			line-height : 125%;
-			white-space : pre-wrap;
-
-			.break-top {
-				display : none;
-			}
+			white-space : pre-wrap; /* 뷰포트가 변화할 때 js로 삽입하는 문자열의 특수문자(\n) 처리를 위한 속성 */
 		}
 
 		span {
 			width       : var(--420pc);
 			font-size   : 4em;
 			font-weight : 400;
-			line-height : 125%;
 			white-space : pre-wrap;
 		}
 
-		button {
+		#btn-top-download {
 			width         : var(--140pc);
 			height        : var(--50pc);
 			border-radius : var(--40pc);
@@ -213,13 +209,11 @@ main {
 				margin-bottom : var(--30pc);
 				font-size     : 9em;
 				font-weight   : 700;
-				line-height   : 125%;
 			}
 
 			span {
 				font-size   : 4em;
 				font-weight : 400;
-				line-height : 125%;
 			}
 		}
 	}
@@ -235,14 +229,12 @@ main {
 			color       : #D97652;
 			font-size   : 12em;
 			font-weight : 700;
-			line-height : 125%;
 		}
 
 		span {
 			margin-top  : var(--40pc);
 			font-size   : 4em;
 			font-weight : 400;
-			line-height : 125%;
 
 			span {
 				font-size : inherit;
@@ -250,7 +242,7 @@ main {
 			}
 		}
 
-		#gallery-images {
+		.gallery-images {
 			display         : flex;
 			flex-direction  : row;
 			justify-content : space-between;
@@ -267,24 +259,22 @@ main {
 			}
 		}
 
-		#gallery-continue {
+		.gallery-continue {
 			margin-top : var(--100pc);
 			text-align : center;
 
 			h3 {
 				font-size   : 6em;
 				font-weight : 700;
-				line-height : 125%;
 			}
 
-			button {
+			#btn-gallery-continue {
 				width         : var(--143pc);
 				height        : var(--50pc);
 				margin-top    : var(--28pc);
 				border-radius : var(--40pc);
 				font-size     : 4em;
 				font-weight   : 700;
-				line-height   : 125%;
 			}
 		}
 	}
@@ -303,14 +293,12 @@ main {
 		h2 {
 			font-size   : 9em;
 			font-weight : 700;
-			line-height : 125%;
 		}
 
 		span {
 			margin-top  : var(--20pc);
 			font-size   : 4em;
 			font-weight : 500;
-			line-height : 125%;
 			color       : #606367;
 		}
 
@@ -318,7 +306,6 @@ main {
 			width         : 100%;
 			height        : var(--520pc);
 			margin-top    : var(--45pc);
-			border        : 1px solid black;
 			border-radius : var(--12pc);
 		}
 	}
@@ -357,14 +344,12 @@ main {
 			h3 {
 				font-size   : 9em;
 				font-weight : 700;
-				line-height : 125%;
 			}
 
 			span {
 				color       : #F2E9D8;
 				font-size   : 3.5em;
 				font-weight : 400;
-				line-height : 125%;
 			}
 		}
 
@@ -399,7 +384,6 @@ main {
 					border           : none;
 					flex             : 1;
 					font-size        : 4em;
-					line-height      : 125%;
 					font-weight      : 400;
 
 					&:focus {
@@ -408,17 +392,16 @@ main {
 				}
 			}
 
-			button {
+			#btn-subscribe {
 				width         : var(--135pc);
 				height        : var(--50pc);
 				border-radius : var(--40pc);
 				font-size     : 4em;
-				line-height   : 125%;
 				font-weight   : 700;
 			}
 		}
 
-		#dialog-subscribe {
+		.dialog-subscribe {
 			width               : var(--600pc);
 			height              : var(--400pc);
 			position            : fixed;
@@ -432,7 +415,7 @@ main {
 			z-index             : 10;
 			border              : none;
 			background-color    : #F2E9D8;
-			background-image    : url("assets/cat/dialog_background.png");
+			background-image    : url("assets/cat/dialog_background.webp");
 			background-size     : contain;
 			background-position : top;
 			background-repeat   : no-repeat;
@@ -448,7 +431,6 @@ main {
 				color       : #D97652;
 				font-size   : 9em;
 				font-weight : 700;
-				line-height : 125%;
 			}
 
 			img {
@@ -463,12 +445,11 @@ main {
 			span {
 				font-size   : 3.5em;
 				font-weight : 400;
-				line-height : 125%;
 				white-space : pre-wrap;
 				margin      : var(--12pc) 0 var(--38pc);
 			}
 
-			button {
+			#btn-submit-dialog {
 				width            : var(--183pc);
 				height           : var(--50pc);
 				background-color : #D97652;
@@ -478,7 +459,6 @@ main {
 				align-items      : center;
 				font-size        : 4em;
 				font-weight      : 700;
-				line-height      : 125%;
 				color            : #FFFFFF;
 			}
 		}
@@ -491,7 +471,7 @@ main {
 		right           : var(--24pc);
 		border          : 1px solid #C4C4C4;
 		border-radius   : 50%;
-		color           : rgba(196, 196, 196, 1);
+		color           : #C4C4C4;
 		position        : fixed;
 		background      : rgba(255, 255, 255, 0.8) url("/assets/icon/keyboard_arrow_up.svg") no-repeat center center;
 		background-size : 80%;
@@ -516,11 +496,9 @@ footer {
 
 	#footer-nav-external {
 		ul {
-			display : flex;
-			gap     : var(--20pc);
+			gap : var(--20pc);
 
 			li {
-
 				a {
 					display          : inline-block;
 					width            : var(--42pc);

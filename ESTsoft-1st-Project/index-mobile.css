@@ -1,8 +1,10 @@
 :root {
 	/* 390px width 기준*/
+	/* ex) --4pc == 뷰포트 너비가 390px일때 4px이 차지하는 vw */
 	--2mo      : 0.5128205vw;
 	--4mo      : 1.025641vw;
 	--10mo     : 2.5641026vw;
+	--12mo     : 3.0769231vw;
 	--14mo     : 3.5897436vw;
 	--16mo     : 4.1025641vw;
 	--18mo     : 4.6153846vw;
@@ -52,14 +54,13 @@
 			font-size : 7em;
 		}
 
-		.menu-open {
+		#menu-open {
 			display : block;
 		}
 
-		nav {
+		#header-nav {
 			width            : var(--289mo);
 			height           : 100%;
-			display          : flex;
 			position         : fixed;
 			top              : 0;
 			transform        : translateX(100vw);
@@ -73,7 +74,7 @@
 				transition : transform .6s cubic-bezier(0.25, 1, 0.5, 1);
 			}
 
-			.menu-close {
+			#menu-close {
 				display : block;
 				margin  : var(--22mo) 0 0 var(--20mo);
 			}
@@ -93,7 +94,7 @@
 				}
 			}
 
-			.btn-nav-download {
+			#btn-nav-download {
 				width         : var(--114mo);
 				height        : var(--40mo);
 				border-radius : var(--40mo);
@@ -104,7 +105,6 @@
 	}
 
 	main {
-
 		.section-top {
 			height              : var(--718mo);
 			padding             : var(--40mo) 0;
@@ -125,7 +125,7 @@
 				font-size : 3.5em;
 			}
 
-			button {
+			#btn-top-download {
 				width         : var(--114mo);
 				height        : var(--40mo);
 				font-size     : 3.5em;
@@ -170,7 +170,7 @@
 				font-size  : 4em;
 			}
 
-			#gallery-images {
+			.gallery-images {
 				flex-direction : column;
 				align-items    : center;
 				gap            : var(--32mo);
@@ -183,14 +183,14 @@
 				}
 			}
 
-			#gallery-continue {
+			.gallery-continue {
 				margin-top : var(--60mo);
 
 				h3 {
 					font-size : 4.5em;
 				}
 
-				button {
+				#btn-gallery-continue {
 					width         : var(--143mo);
 					height        : var(--50mo);
 					margin-top    : var(--28mo);
@@ -202,7 +202,6 @@
 
 		hr {
 			margin     : var(--60mo) var(--32mo) var(--40mo);
-			height     : 1px;
 			background : #C4C4C4;
 		}
 
@@ -219,8 +218,9 @@
 			}
 
 			#map {
-				height     : var(--132mo);
-				margin-top : var(--28mo);
+				height        : var(--132mo);
+				margin-top    : var(--28mo);
+				border-radius : var(--12mo);
 			}
 		}
 
@@ -275,7 +275,7 @@
 					}
 				}
 
-				button {
+				#btn-subscribe {
 					width         : var(--115mo);
 					height        : var(--40mo);
 					position      : absolute;
@@ -286,7 +286,7 @@
 				}
 			}
 
-			#dialog-subscribe {
+			.dialog-subscribe {
 				width         : 300px;
 				height        : 300px;
 				padding-top   : var(--126mo);
@@ -307,7 +307,7 @@
 					margin : var(--10mo) 0 var(--28mo);
 				}
 
-				button {
+				#btn-submit-dialog {
 					width         : var(--158mo);
 					height        : var(--40mo);
 					border-radius : var(--40mo);
@@ -338,7 +338,6 @@
 				gap : var(--16mo);
 
 				li {
-
 					a {
 						width  : var(--32mo);
 						height : var(--32mo);
@@ -360,7 +359,6 @@
 			text-align : right;
 
 			ul {
-				display        : flex;
 				flex-direction : column;
 				gap            : var(--16mo);
 
@@ -369,7 +367,6 @@
 						color       : #767676;
 						font-size   : 3.5em;
 						font-weight : 400;
-						line-height : 125%;
 					}
 				}
 			}
