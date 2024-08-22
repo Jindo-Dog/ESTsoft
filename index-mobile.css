@@ -15,6 +15,7 @@
 	--28mo     : 7.1794872vw;
 	--30mo     : 7.6923077vw;
 	--32mo     : 8.2051282vw;
+	--34mo     : 8.7179487vw;
 	--36mo     : 9.2307692vw;
 	--40mo     : 10.2564103vw;
 	--50mo     : 12.8205128vw;
@@ -23,6 +24,8 @@
 	--64mo     : 16.4102564vw;
 	--66mo     : 16.9230769vw;
 	--76mo     : 19.4871795vw;
+	--92mo     : 23.5897436vw;
+	--112mo    : 28.7179487vw;
 	--114mo    : 29.2307692vw;
 	--115mo    : 29.4871795vw;
 	--126mo    : 32.3076923vw;
@@ -46,16 +49,25 @@
 		font-size : var(--4mo);
 	}
 
+	button {
+		border-radius : var(--40mo);
+		font-size     : 3.5em;
+	}
+
 	header {
 		height  : var(--76mo);
 		padding : 0 var(--20mo);
 
-		h1 {
-			font-size : 7em;
+		#img-h1-logo {
+			width  : var(--92mo);
+			height : var(--28mo);
 		}
 
-		#menu-open {
-			display : block;
+		#btn-menu-open {
+			display       : block;
+			width         : var(--32mo);
+			height        : var(--32mo);
+			border-radius : 0;
 		}
 
 		#header-nav {
@@ -74,9 +86,12 @@
 				transition : transform .6s cubic-bezier(0.25, 1, 0.5, 1);
 			}
 
-			#menu-close {
-				display : block;
-				margin  : var(--22mo) 0 0 var(--20mo);
+			#btn-menu-close {
+				display       : block;
+				width         : var(--32mo);
+				height        : var(--32mo);
+				margin        : var(--22mo) 0 0 var(--20mo);
+				border-radius : 0;
 			}
 
 			.nav-list {
@@ -95,11 +110,9 @@
 			}
 
 			#btn-nav-download {
-				width         : var(--114mo);
-				height        : var(--40mo);
-				border-radius : var(--40mo);
-				font-size     : 3.5em;
-				margin        : var(--20mo) var(--40mo);
+				width  : var(--114mo);
+				height : var(--40mo);
+				margin : var(--20mo) var(--40mo);
 			}
 		}
 	}
@@ -126,10 +139,8 @@
 			}
 
 			#btn-top-download {
-				width         : var(--114mo);
-				height        : var(--40mo);
-				font-size     : 3.5em;
-				border-radius : var(--40mo);
+				width  : var(--114mo);
+				height : var(--40mo);
 			}
 		}
 
@@ -191,11 +202,10 @@
 				}
 
 				#btn-gallery-continue {
-					width         : var(--143mo);
-					height        : var(--50mo);
-					margin-top    : var(--28mo);
-					border-radius : var(--40mo);
-					font-size     : 4em;
+					width      : var(--143mo);
+					height     : var(--50mo);
+					margin-top : var(--28mo);
+					font-size  : 4em;
 				}
 			}
 		}
@@ -276,13 +286,11 @@
 				}
 
 				#btn-subscribe {
-					width         : var(--115mo);
-					height        : var(--40mo);
-					position      : absolute;
-					right         : var(--2mo);
-					top           : var(--60mo);
-					border-radius : var(--40mo);
-					font-size     : 3.5em;
+					width    : var(--115mo);
+					height   : var(--40mo);
+					position : absolute;
+					right    : var(--2mo);
+					top      : var(--60mo);
 				}
 			}
 
@@ -308,15 +316,13 @@
 				}
 
 				#btn-submit-dialog {
-					width         : var(--158mo);
-					height        : var(--40mo);
-					border-radius : var(--40mo);
-					font-size     : 3.5em;
+					width  : var(--158mo);
+					height : var(--40mo);
 				}
 			}
 		}
 
-		#scroll-top {
+		#btn-scroll-top {
 			display : none;
 		}
 	}
@@ -328,8 +334,10 @@
 		align-items    : start;
 		padding        : var(--30mo) var(--20mo) var(--24mo);
 
-		h2 {
-			font-size : 8.5em;
+
+		#img-h2-logo {
+			width  : var(--112mo);
+			height : var(--34mo);
 		}
 
 

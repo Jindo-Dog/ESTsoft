@@ -23,6 +23,7 @@
 	--58pc  : 3.0208333vw;
 	--60pc  : 3.125vw;
 	--68pc  : 3.5416667vw;
+	--70pc  : 3.6458333vw;
 	--72pc  : 3.75vw;
 	--80pc  : 4.1666667vw;
 	--100pc : 5.2083333vw;
@@ -30,6 +31,7 @@
 	--110pc : 5.7291667vw;
 	--112pc : 5.8333333vw;
 	--120pc : 6.25vw;
+	--130pc : 6.7708333vw;
 	--135pc : 7.03125vw;
 	--140pc : 7.2916667vw;
 	--143pc : 7.4479167vw;
@@ -39,6 +41,7 @@
 	--183pc : 9.53125vw;
 	--196pc : 10.2083333vw;
 	--200pc : 10.4166667vw;
+	--226pc : 11.7708333vw;
 	--240pc : 12.5vw;
 	--262pc : 13.6458333vw;
 	--320pc : 16.6666667vw;
@@ -55,6 +58,12 @@
 	--660pc : 34.375vw;
 	--695pc : 36.1979167vw;
 	--798pc : 41.5625vw;
+}
+
+body {
+	display        : flex;
+	flex-direction : column;
+	font-size      : var(--4pc);
 }
 
 body * {
@@ -78,19 +87,21 @@ body * {
 	overflow : hidden;
 }
 
+h2, h3 {
+	font-weight : 700;
+}
+
 button {
+	height           : var(--50pc);
+	border-radius    : var(--40pc);
+	font-size        : 4em;
+	font-weight      : 700;
 	color            : #FFFFFF;
 	background-color : #D97652;
 }
 
 ul, nav {
 	display : flex;
-}
-
-body {
-	display        : flex;
-	flex-direction : column;
-	font-size      : var(--4pc);
 }
 
 header {
@@ -104,25 +115,21 @@ header {
 	top             : 0;
 	z-index         : 5;
 
-	h1 {
-		font-size   : 10em;
-		font-weight : 900;
+	#img-h1-logo {
+		width  : var(--130pc);
+		height : auto;
 	}
 
-	#menu-open {
+	#btn-menu-open {
 		display          : none;
 		background-color : transparent;
-		width            : 32px;
-		height           : 32px;
 	}
 
 
 	#header-nav {
-		#menu-close {
+		#btn-menu-close {
 			display          : none;
 			background-color : transparent;
-			width            : 32px;
-			height           : 32px;
 		}
 
 		.nav-list {
@@ -138,13 +145,9 @@ header {
 		}
 
 		#btn-nav-download {
-			width         : var(--140pc);
-			height        : var(--50pc);
-			border-radius : var(--40pc);
-			text-align    : center;
-			font-size     : 4em;
-			font-weight   : 700;
-			margin-left   : var(--49pc);
+			width       : var(--140pc);
+			text-align  : center;
+			margin-left : var(--49pc);
 		}
 	}
 }
@@ -166,7 +169,6 @@ main {
 		h2 {
 			width       : var(--695pc);
 			font-size   : 12em;
-			font-weight : 700;
 			white-space : pre-wrap; /* 뷰포트가 변화할 때 js로 삽입하는 문자열의 특수문자(\n) 처리를 위한 속성 */
 		}
 
@@ -178,12 +180,8 @@ main {
 		}
 
 		#btn-top-download {
-			width         : var(--140pc);
-			height        : var(--50pc);
-			border-radius : var(--40pc);
-			text-align    : center;
-			font-size     : 4em;
-			font-weight   : 700;
+			width      : var(--140pc);
+			text-align : center;
 		}
 	}
 
@@ -208,7 +206,6 @@ main {
 			h3 {
 				margin-bottom : var(--30pc);
 				font-size     : 9em;
-				font-weight   : 700;
 			}
 
 			span {
@@ -226,9 +223,8 @@ main {
 		text-align     : center;
 
 		h2 {
-			color       : #D97652;
-			font-size   : 12em;
-			font-weight : 700;
+			color     : #D97652;
+			font-size : 12em;
 		}
 
 		span {
@@ -264,17 +260,12 @@ main {
 			text-align : center;
 
 			h3 {
-				font-size   : 6em;
-				font-weight : 700;
+				font-size : 6em;
 			}
 
 			#btn-gallery-continue {
-				width         : var(--143pc);
-				height        : var(--50pc);
-				margin-top    : var(--28pc);
-				border-radius : var(--40pc);
-				font-size     : 4em;
-				font-weight   : 700;
+				width      : var(--143pc);
+				margin-top : var(--28pc);
 			}
 		}
 	}
@@ -291,8 +282,7 @@ main {
 		padding        : 0 var(--320pc);
 
 		h2 {
-			font-size   : 9em;
-			font-weight : 700;
+			font-size : 9em;
 		}
 
 		span {
@@ -342,8 +332,7 @@ main {
 			gap             : var(--18pc);
 
 			h3 {
-				font-size   : 9em;
-				font-weight : 700;
+				font-size : 9em;
 			}
 
 			span {
@@ -393,11 +382,7 @@ main {
 			}
 
 			#btn-subscribe {
-				width         : var(--135pc);
-				height        : var(--50pc);
-				border-radius : var(--40pc);
-				font-size     : 4em;
-				font-weight   : 700;
+				width : var(--135pc);
 			}
 		}
 
@@ -428,9 +413,8 @@ main {
 			}
 
 			h3 {
-				color       : #D97652;
-				font-size   : 9em;
-				font-weight : 700;
+				color     : #D97652;
+				font-size : 9em;
 			}
 
 			img {
@@ -451,22 +435,17 @@ main {
 
 			#btn-submit-dialog {
 				width            : var(--183pc);
-				height           : var(--50pc);
 				background-color : #D97652;
-				border-radius    : var(--40pc);
 				display          : flex;
 				justify-content  : center;
 				align-items      : center;
-				font-size        : 4em;
-				font-weight      : 700;
 				color            : #FFFFFF;
 			}
 		}
 	}
 
-	#scroll-top {
+	#btn-scroll-top {
 		width           : var(--50pc);
-		height          : var(--50pc);
 		bottom          : var(--179pc);
 		right           : var(--24pc);
 		border          : 1px solid #C4C4C4;
@@ -489,9 +468,9 @@ footer {
 	align-items     : center;
 	padding         : 0 var(--320pc);
 
-	h2 {
-		font-size   : 17.5em;
-		font-weight : 900;
+	#img-h2-logo {
+		width  : var(--226pc);
+		height : var(--70pc);
 	}
 
 	#footer-nav-external {

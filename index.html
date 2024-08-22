@@ -23,25 +23,31 @@
 	<script crossorigin = "anonymous" integrity = "sha512-1PKqXBz2ju2JcAerHKL0ldg0PT/1vr3LghYAtc59+9xy8e19QEtaNUyt1gprouyWnpOPqNJjL4gXMRMEpHYyLQ=="
 			referrerpolicy = "no-referrer" src = "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 	<!-- //스크립트 라이브러리 -->
+
+
+	<!-- 커스텀 스크립트 -->
+	<script src = "index.js"></script>
+	<script defer src = "map.js"></script>
 </head>
 <body>
 	<!-- header -->
 	<header>
-		<h1>HODU</h1>
+		<h1 class = "blind">HODU</h1>
+		<img alt = "HODU LOGO" id = "img-h1-logo" src = "assets/icon/Logo-fin.svg">
 
 		<!-- 모바일 메뉴 버튼 -->
-		<button id = "menu-open"><img alt = "open mobile menu" src = "assets/icon/menu.svg"></button>
+		<button id = "btn-menu-open" type = "button"><img alt = "open mobile menu" src = "assets/icon/menu.svg"></button>
 
 		<!-- 내부 링크로 이동하기 위한 네비게이션  -->
 		<nav id = "header-nav">
 			<!-- 모바일 메뉴 닫기 버튼 -->
-			<button id = "menu-close"><img alt = "close mobile menu" src = "assets/icon/arrow-right.svg"></button>
+			<button id = "btn-menu-close" type = "button"><img alt = "close mobile menu" src = "assets/icon/arrow-right.svg"></button>
 			<ul class = "nav-list">
 				<li><a aria-label = "goto home" href = "#">Home</a></li>
 				<li><a aria-label = "goto about" href = "#">About</a></li>
 				<li><a aria-label = "goto support" href = "#">Support</a></li>
 			</ul>
-			<button aria-label = "download" id = "btn-nav-download">Download</button>
+			<button aria-label = "download" id = "btn-nav-download" type = "button">Download</button>
 		</nav>
 		<!-- //내부 링크로 이동하기 위한 네비게이션 -->
 	</header>
@@ -53,7 +59,7 @@
 		<section class = "section-top">
 			<h2>Lorem Ipsum is simply dummy text of the printing and</h2>
 			<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown.</span>
-			<button aria-label = "download" id = "btn-top-download">Download</button>
+			<button aria-label = "download" id = "btn-top-download" type = "button">Download</button>
 		</section>
 		<!-- //주 소개글 작성을 위한 센션 -->
 
@@ -87,7 +93,7 @@
 
 			<section class = "gallery-continue">
 				<h3>Continue exploring HODU</h3>
-				<button aria-label = "show more HODU" id = "btn-gallery-continue">Show more</button>
+				<button aria-label = "show more HODU" id = "btn-gallery-continue" type = "button">Show more</button>
 			</section>
 		</section>
 		<!-- //호두 사진 갤러리를 위한 섹션 -->
@@ -143,13 +149,14 @@
 		<!-- //구독을 위한 섹션 -->
 
 		<!-- 상단으로 이동하기 위한 버튼 -->
-		<button aria-label = "scroll to top" id = "scroll-top"></button>
+		<button aria-label = "scroll to top" id = "btn-scroll-top" type = "button"></button>
 	</main>
 	<!-- //main -->
 
 	<!-- footer -->
 	<footer>
-		<h2>HODU</h2>
+		<h2 class = "blind">HODU</h2>
+		<img alt = "HODU LOGO" id = "img-h2-logo" src = "assets/icon/Logo-fin.svg">
 
 		<!-- 외부 링크로 이동하기 위한 네비게이션 -->
 		<nav aria-label = "external links navigation" id = "footer-nav-external">
@@ -173,8 +180,5 @@
 		<!-- //내부 링크로 이동하기 위한 네비게이션 -->
 	</footer>
 	<!-- //footer -->
-
-	<!-- 커스텀 스크립트 -->
-	<script src = "index.js"></script>
 </body>
 </html>
