@@ -1,6 +1,6 @@
 // 카카오 맵 API
 const script = document.createElement("script");
-script.src = `http://dapi.kakao.com/v2/maps/sdk.js?appkey=985350c5816d259d8a69732b90d987ce&autoload=false&libraries=clusterer,services&`;
+script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=985350c5816d259d8a69732b90d987ce&autoload=false&libraries=clusterer,services&`;
 document.head.appendChild(script);
 script.onload = () => {
 	kakao.maps.load(() => {
