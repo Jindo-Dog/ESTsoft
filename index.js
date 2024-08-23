@@ -29,25 +29,29 @@ function adjustTextSpacing() {
 window.addEventListener('resize', adjustTextSpacing);
 window.addEventListener('DOMContentLoaded', adjustTextSpacing);
 
-// 상단에서 이동 버튼 숨기기
+// 일정 부분 스크롤 시 헤더 고정
+const header = document.querySelector('header');
 window.addEventListener('scroll', _.throttle(() => {
-	if (window.scrollY > 1) {
-		gsap.to('#scroll-top', .2, {
-			x: 0
-		});
+	if (window.scrollY > 300) {
+		header.style.position = 'sticky';
 	} else {
-		gsap.to('#scroll-top', .2, {
-			x: 100
-		});
+		header.style.position = 'static';
 	}
 }, 300));
 
-// 최상단으로 스크롤
+// 상단에서 이동 버튼 숨기기
 const scrollTop = document.querySelector('#btn-scroll-top');
+window.addEventListener('scroll', _.throttle(() => {
+	if (window.scrollY < 1) {
+		scrollTop.classList.remove('active');
+	} else {
+		scrollTop.classList.add('active');
+	}
+}, 300));	//.3s 안에 이벤트 발생 시 1번만 실행
+
+// 최상단으로 스크롤
 scrollTop.addEventListener('click', () => {
-	gsap.to(window, .7, {
-		scrollTo: 0
-	});
+	window.scrollTo({top: 0, behavior: 'smooth'});
 });
 
 // 구독 버튼을 눌렀을 때

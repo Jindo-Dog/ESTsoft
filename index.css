@@ -447,7 +447,8 @@ main {
 	#btn-scroll-top {
 		width           : var(--50pc);
 		bottom          : var(--179pc);
-		right           : var(--24pc);
+		transform       : translateX(100vw);
+		transition      : transform .2s cubic-bezier(0.25, 1, 0.5, 1);
 		border          : 1px solid #C4C4C4;
 		border-radius   : 50%;
 		color           : #C4C4C4;
@@ -457,6 +458,11 @@ main {
 
 		&:hover {
 			background-image : url("/assets/icon/keyboard_arrow_up_hover.svg");
+		}
+
+		&.active {
+			transform  : translateX(calc(100vw - var(--24pc) - var(--50pc)));
+			transition : transform .2s cubic-bezier(0.25, 1, 0.5, 1);
 		}
 	}
 }
