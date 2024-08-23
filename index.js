@@ -1,10 +1,12 @@
 // 모바일 메뉴 토글
-document.getElementById('btn-menu-open').addEventListener('click', () => {
-	document.getElementById('header-nav').classList.toggle('active');
+const openMenu = document.getElementById('btn-menu-open');
+const closeMenu = document.getElementById('btn-menu-close');
+const headerNav = document.getElementById('header-nav');
+openMenu.addEventListener('click', () => {
+	headerNav.classList.toggle('active');
 });
-
-document.getElementById('btn-menu-close').addEventListener('click', () => {
-	document.getElementById('header-nav').classList.toggle('active');
+closeMenu.addEventListener('click', () => {
+	headerNav.classList.toggle('active');
 });
 
 // 일정 부분 스크롤 시 헤더 고정
@@ -39,7 +41,7 @@ const closeDialogButton = document.getElementById('btn-submit-dialog');
 const emailInput = document.getElementById('input-email');
 const dialogForm = document.getElementById('form-subscribe');
 const input = document.getElementById('input-email');
-// email 유효성 검사
+// email 유효성 검사식
 const regex = /^(?:(?!\.\.|.*\.\.$)(?!^\.)[!#$%&'*+/=?^_`{|}~\w.-]+(?:\.[!#$%&'*+/=?^_`{|}~\w.-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x7f]|\\[\x01-\x08\x0b\x0c\x0e-\x7f]|[\s.,:;<>@[\]"])*")@((?:[a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+|\[(?:[0-9]{1,3}\.){3}[0-9]{1,3}]|\[IPv6:[0-9a-fA-F:]+])$/;
 // 모달 열기
 openDialogButton.addEventListener('click', (event) => {
