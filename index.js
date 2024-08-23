@@ -88,3 +88,7 @@ input.addEventListener('keypress', (e) => {
 		openDialogButton.click();
 	}
 });
+// form submit 시 화면 유지
+dialogForm.addEventListener('submit', () => {
+	event.preventDefault();
+});
