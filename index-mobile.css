@@ -54,6 +54,10 @@
 		font-size     : 3.5em;
 	}
 
+	.break {
+		display : inline;
+	}
+
 	header {
 		height  : var(--76mo);
 		padding : 0 var(--20mo);

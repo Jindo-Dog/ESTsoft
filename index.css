@@ -72,16 +72,10 @@ body * {
 	line-height : 125%;
 }
 
-/* 스크린 리더를 위한 클래스 */
 .blind {
-	/* 레이아웃에 영향을 끼치지 않도록 */
 	position : absolute;
-
-	/* 스크린 리더가 읽을 수 있도록 */
 	width    : 1px;
 	height   : 1px;
-
-	/* 눈에 보이는 부분을 제거 */
 	clip     : rect(0 0 0 0);
 	margin   : -1px;
 	overflow : hidden;
@@ -102,6 +96,10 @@ button {
 
 ul, nav {
 	display : flex;
+}
+
+.break {
+	display : none;
 }
 
 header {
@@ -169,14 +167,14 @@ main {
 		h2 {
 			width       : var(--695pc);
 			font-size   : 12em;
-			white-space : pre-wrap; /* 뷰포트가 변화할 때 js로 삽입하는 문자열의 특수문자(\n) 처리를 위한 속성 */
+			white-space : pre-line;
 		}
 
 		span {
 			width       : var(--420pc);
 			font-size   : 4em;
 			font-weight : 400;
-			white-space : pre-wrap;
+			white-space : pre-line;
 		}
 
 		#btn-top-download {
@@ -429,7 +427,7 @@ main {
 			span {
 				font-size   : 3.5em;
 				font-weight : 400;
-				white-space : pre-wrap;
+				white-space : pre-line;
 				margin      : var(--12pc) 0 var(--38pc);
 			}
 

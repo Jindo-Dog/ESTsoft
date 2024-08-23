@@ -7,28 +7,6 @@ document.querySelector('#btn-menu-close').addEventListener('click', () => {
 	document.querySelector('#header-nav').classList.toggle('active');
 });
 
-// 뷰포트에 따라 텍스트 줄바꿈 및 공백 조절
-function adjustTextSpacing() {
-	const topH2 = document.querySelector('.section-top h2');
-	const topSpan = document.querySelector('.section-top span');
-	const dialogSpan = document.querySelector('#dialog-subscribe span');
-
-	const viewWidth = window.innerWidth;
-
-	if (viewWidth < 768) {
-		topH2.textContent = "Lorem Ipsum is simply\ndummy text\nof the printing and";
-		topSpan.textContent = "Lorem Ipsum is simply dummy text\nof the printing and typesetting industry.\nLorem Ipsum has been the industry's\nstandard dummy text ever since the 1500s,\nwhen an unknown.";
-		dialogSpan.textContent = "Lorem Ipsum is simply dummy\ntext of the printing industry.";
-	} else {
-		topH2.textContent = "Lorem Ipsum is simply\ndummy text of the printing and";
-		topSpan.textContent = "Lorem Ipsum is simply dummy text of the printing and\ntypesetting industry.\nLorem Ipsum has been the industry's standard dummy text\never since the 1500s, when an unknown.";
-		dialogSpan.textContent = "Lorem Ipsum is simply dummy text of the printing industry.";
-	}
-}
-
-window.addEventListener('resize', adjustTextSpacing);
-window.addEventListener('DOMContentLoaded', adjustTextSpacing);
-
 // 일정 부분 스크롤 시 헤더 고정
 const header = document.querySelector('header');
 window.addEventListener('scroll', _.throttle(() => {
