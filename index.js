@@ -11,7 +11,7 @@ document.querySelector('#btn-menu-close').addEventListener('click', () => {
 function adjustTextSpacing() {
 	const topH2 = document.querySelector('.section-top h2');
 	const topSpan = document.querySelector('.section-top span');
-	const dialogSpan = document.querySelector('.dialog-subscribe span');
+	const dialogSpan = document.querySelector('#dialog-subscribe span');
 
 	const viewWidth = window.innerWidth;
 
