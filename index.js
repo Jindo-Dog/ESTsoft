@@ -64,7 +64,7 @@ const input = document.querySelector('#input-email');
 // email 유효성 검사
 const regex = /^(?:(?!\.\.|.*\.\.$)(?!^\.)[!#$%&'*+/=?^_`{|}~\w.-]+(?:\.[!#$%&'*+/=?^_`{|}~\w.-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x7f]|\\[\x01-\x08\x0b\x0c\x0e-\x7f]|[\s.,:;<>@[\]"])*")@((?:[a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+|\[(?:[0-9]{1,3}\.){3}[0-9]{1,3}]|\[IPv6:[0-9a-fA-F:]+])$/;
 // 모달 열기
-openDialogButton.addEventListener('click', () => {
+openDialogButton.addEventListener('click', (event) => {
 	if (!regex.test(emailInput.value)) {
 		event.preventDefault();
 		alert('이메일 주소를 확인해주세요.');
@@ -78,17 +78,17 @@ closeDialogButton.addEventListener('click', () => {
 	dialog.close();
 });
 // 버튼 submit 방지
-openDialogButton.addEventListener('submit', () => {
+openDialogButton.addEventListener('submit', (event) => {
 	event.preventDefault();
 });
 // input enter submit 방지
-input.addEventListener('keypress', (e) => {
-	if (e.key === 'Enter') {
-		e.preventDefault();
+input.addEventListener('keypress', (event) => {
+	if (event.key === 'Enter') {
+		event.preventDefault();
 		openDialogButton.click();
 	}
 });
 // form submit 시 화면 유지
-dialogForm.addEventListener('submit', () => {
+dialogForm.addEventListener('submit', (event) => {
 	event.preventDefault();
 });
