@@ -88,8 +88,3 @@ input.addEventListener('keypress', (e) => {
 		openDialogButton.click();
 	}
 });
-// form submit log
-dialogForm.addEventListener('submit', () => {
-	event.preventDefault();
-	console.log('submitted');
-});
