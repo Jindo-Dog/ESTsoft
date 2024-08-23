@@ -1,24 +1,24 @@
 // 모바일 메뉴 토글
-document.querySelector('#btn-menu-open').addEventListener('click', () => {
-	document.querySelector('#header-nav').classList.toggle('active');
+document.getElementById('btn-menu-open').addEventListener('click', () => {
+	document.getElementById('header-nav').classList.toggle('active');
 });
 
-document.querySelector('#btn-menu-close').addEventListener('click', () => {
-	document.querySelector('#header-nav').classList.toggle('active');
+document.getElementById('btn-menu-close').addEventListener('click', () => {
+	document.getElementById('header-nav').classList.toggle('active');
 });
 
 // 일정 부분 스크롤 시 헤더 고정
-const header = document.querySelector('header');
+const header = document.getElementsByTagName('header');
 window.addEventListener('scroll', _.throttle(() => {
 	if (window.scrollY > 300) {
-		header.style.position = 'sticky';
+		header[0].style.position = 'sticky';
 	} else {
-		header.style.position = 'static';
+		header[0].style.position = 'static';
 	}
 }, 300));
 
 // 상단에서 이동 버튼 숨기기
-const scrollTop = document.querySelector('#btn-scroll-top');
+const scrollTop = document.getElementById('btn-scroll-top');
 window.addEventListener('scroll', _.throttle(() => {
 	if (window.scrollY < 1) {
 		scrollTop.classList.remove('active');
@@ -33,12 +33,12 @@ scrollTop.addEventListener('click', () => {
 });
 
 // 구독 버튼을 눌렀을 때
-const dialog = document.querySelector('#dialog-subscribe');
-const openDialogButton = document.querySelector('#btn-subscribe');
-const closeDialogButton = document.querySelector('#btn-submit-dialog');
-const emailInput = document.querySelector('#input-email');
-const dialogForm = document.querySelector('#form-subscribe');
-const input = document.querySelector('#input-email');
+const dialog = document.getElementById('dialog-subscribe');
+const openDialogButton = document.getElementById('btn-subscribe');
+const closeDialogButton = document.getElementById('btn-submit-dialog');
+const emailInput = document.getElementById('input-email');
+const dialogForm = document.getElementById('form-subscribe');
+const input = document.getElementById('input-email');
 // email 유효성 검사
 const regex = /^(?:(?!\.\.|.*\.\.$)(?!^\.)[!#$%&'*+/=?^_`{|}~\w.-]+(?:\.[!#$%&'*+/=?^_`{|}~\w.-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x7f]|\\[\x01-\x08\x0b\x0c\x0e-\x7f]|[\s.,:;<>@[\]"])*")@((?:[a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+|\[(?:[0-9]{1,3}\.){3}[0-9]{1,3}]|\[IPv6:[0-9a-fA-F:]+])$/;
 // 모달 열기
