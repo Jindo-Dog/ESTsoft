@@ -163,7 +163,7 @@ main {
 		display         : flex;
 		flex-direction  : column;
 		justify-content : space-between;
-		background      : #F2E9D8 url("assets/cat/cat1.webp") no-repeat calc(100% - var(--320pc)) var(--32pc);
+		background      : #F2E9D8 url("./assets/cat/cat1.webp") no-repeat calc(100% - var(--320pc)) var(--32pc);
 		background-size : var(--415pc) auto;
 
 		h2 {
@@ -400,7 +400,7 @@ main {
 			z-index             : 10;
 			border              : none;
 			background-color    : #F2E9D8;
-			background-image    : url("assets/cat/dialog_background.webp");
+			background-image    : url("./assets/cat/dialog_background.webp");
 			background-size     : contain;
 			background-position : top;
 			background-repeat   : no-repeat;
@@ -453,11 +453,11 @@ main {
 		border-radius   : 50%;
 		color           : #C4C4C4;
 		position        : fixed;
-		background      : rgba(255, 255, 255, 0.8) url("assets/icon/keyboard_arrow_up.svg") no-repeat center center;
+		background      : rgba(255, 255, 255, 0.8) url("./assets/icon/keyboard_arrow_up.svg") no-repeat center center;
 		background-size : 80%;
 
 		&:hover {
-			background-image : url("assets/icon/keyboard_arrow_up_hover.svg");
+			background-image : url("./assets/icon/keyboard_arrow_up_hover.svg");
 		}
 
 		&.active {
