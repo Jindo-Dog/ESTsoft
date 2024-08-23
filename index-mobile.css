@@ -294,7 +294,7 @@
 				}
 			}
 
-			.dialog-subscribe {
+			#dialog-subscribe {
 				width         : 300px;
 				height        : 300px;
 				padding-top   : var(--126mo);

@@ -386,7 +386,7 @@ main {
 			}
 		}
 
-		.dialog-subscribe {
+		#dialog-subscribe {
 			width               : var(--600pc);
 			height              : var(--400pc);
 			position            : fixed;
