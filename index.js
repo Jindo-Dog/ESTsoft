@@ -40,7 +40,6 @@ const openDialogButton = document.getElementById('btn-subscribe');
 const closeDialogButton = document.getElementById('btn-submit-dialog');
 const emailInput = document.getElementById('input-email');
 const dialogForm = document.getElementById('form-subscribe');
-const input = document.getElementById('input-email');
 // email 유효성 검사식
 const regex = /^(?:(?!\.\.|.*\.\.$)(?!^\.)[!#$%&'*+/=?^_`{|}~\w.-]+(?:\.[!#$%&'*+/=?^_`{|}~\w.-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x7f]|\\[\x01-\x08\x0b\x0c\x0e-\x7f]|[\s.,:;<>@[\]"])*")@((?:[a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+|\[(?:[0-9]{1,3}\.){3}[0-9]{1,3}]|\[IPv6:[0-9a-fA-F:]+])$/;
 // 모달 열기
@@ -62,7 +61,7 @@ openDialogButton.addEventListener('submit', (event) => {
 	event.preventDefault();
 });
 // input enter submit 방지
-input.addEventListener('keypress', (event) => {
+emailInput.addEventListener('keypress', (event) => {
 	if (event.key === 'Enter') {
 		event.preventDefault();
 		openDialogButton.click();
