@@ -97,15 +97,15 @@ gantt
         <td><img src="https://github.com/user-attachments/assets/df4e7ee8-1a21-4d1f-b831-dca77a67dfdb" alt="image"></td>
     </tr>
     <tr>
-        <td colspan="2">modal</td>
+        <th colspan="2">modal</th>
     </tr>
     <tr>
         <td><img src="https://github.com/user-attachments/assets/a365a8e4-9b3e-489c-9b52-0ae6c4ec08f0" alt="image"></td>
         <td><img src="https://github.com/user-attachments/assets/27f21b2b-8b15-4453-aacf-3d20bf96a349" alt="image"></td>
     </tr>
     <tr>
-        <td>hover</td>
-        <td>menu</td>
+        <th>hover</th>
+        <th>menu</th>
     </tr>
     <tr>
         <td><img src="https://github.com/user-attachments/assets/211f8e6c-f3f7-4051-b584-37a710c11fa1" alt="image"></td>
