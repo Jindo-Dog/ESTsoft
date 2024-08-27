@@ -1,3 +1,4 @@
+const html = document.querySelector('html');
 // 모바일 메뉴 토글
 const openMenu = document.getElementById('btn-menu-open');
 const closeMenu = document.getElementById('btn-menu-close');
@@ -50,11 +51,13 @@ openDialogButton.addEventListener('click', (event) => {
 	} else {
 		event.preventDefault();
 		dialog.showModal();
+		html.style.overflowY = 'hidden';
 	}
 });
 // 모달 닫기
 closeDialogButton.addEventListener('click', () => {
 	dialog.close();
+	html.style.overflowY = 'unset';
 });
 // 버튼 submit 방지
 openDialogButton.addEventListener('submit', (event) => {
@@ -70,4 +73,11 @@ emailInput.addEventListener('keypress', (event) => {
 // form submit 시 화면 유지
 dialogForm.addEventListener('submit', (event) => {
 	event.preventDefault();
+});
+// backdrop 클릭 시 모달 닫기
+dialog.addEventListener('click', (event) => {
+	if (event.target === dialog) {
+		dialog.close();
+		html.style.overflowY = 'unset';
+	}
 });

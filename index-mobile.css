@@ -38,6 +38,7 @@
 	--197mo    : 50.5128205vw;
 	--240mo    : 61.5384615vw;
 	--289mo    : 74.1025641vw;
+	--300mo    : 76.9231vw;
 	--320mo    : 82.0512821vw;
 	--348mo    : 89.2307692vw;
 	--358mo    : 91.7948718vw;
@@ -299,30 +300,34 @@
 			}
 
 			#dialog-subscribe {
-				width         : 300px;
-				height        : 300px;
-				padding-top   : var(--126mo);
+				width         : var(--300mo);
+				height        : var(--300mo);
 				border-radius : var(--30mo);
 
-				h3 {
-					font-size : 6em;
+				#dialog-container {
+					padding-top : var(--126mo);
+
+					h3 {
+						font-size : 6em;
+					}
+
+					img {
+						width    : var(--60mo);
+						height   : var(--62mo);
+						position : absolute;
+						top      : var(--40mo);
+					}
+
+					span {
+						margin : var(--10mo) 0 var(--28mo);
+					}
+
+					#btn-submit-dialog {
+						width  : var(--158mo);
+						height : var(--40mo);
+					}
 				}
 
-				img {
-					width    : var(--60mo);
-					height   : var(--62mo);
-					position : absolute;
-					top      : var(--40mo);
-				}
-
-				span {
-					margin : var(--10mo) 0 var(--28mo);
-				}
-
-				#btn-submit-dialog {
-					width  : var(--158mo);
-					height : var(--40mo);
-				}
 			}
 		}
 

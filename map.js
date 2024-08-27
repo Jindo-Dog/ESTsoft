@@ -11,10 +11,6 @@ script.onload = () => {
 		};
 		const map = new kakao.maps.Map(node, options);
 
-		/*// 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
-		const zoomControl = new kakao.maps.ZoomControl();
-		map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);*/
-
 		// 지도를 클릭한 위치에 표출할 마커입니다
 		const marker = new kakao.maps.Marker({
 			// 지도 중심좌표에 마커를 생성합니다
