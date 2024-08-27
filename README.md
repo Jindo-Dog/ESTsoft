@@ -24,7 +24,7 @@
 ### 2.1 개발 환경
 
 - Web Framework
-    - 네이티브
+    - Native
 - IDE
     - IntelliJ
 - 서비스 배포 환경
