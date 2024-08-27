@@ -490,13 +490,13 @@ footer {
 
 			li {
 				a {
-					display          : inline-block;
 					width            : var(--42pc);
 					height           : var(--42pc);
 					border-radius    : 50%;
 					background-color : #F29D52;
-					align-content    : center;
-					text-align       : center;
+					display          : flex;
+					justify-content  : center;
+					align-items      : center;
 
 					img {
 						width  : var(--24pc);
