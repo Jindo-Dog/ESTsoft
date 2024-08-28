@@ -2,12 +2,12 @@
 
 ## 1. 목표와 기능
 
-### 1.1 목표
+### 1.1 📌 목표
 
 - 피그마 링크와요구사항 명세를 참고하여 랜딩 페이지 작성
 - 모바일 화면도 고려
 
-### 1.2 기능
+### 1.2 📁 기능
 
 - 반응형 웹으로 구현하여 모바일 환경에서도 이용 가능
 - 카카오 맵으로 위치 확인 가능
@@ -21,11 +21,9 @@
 - 일정량 스크롤 시 헤더를 상단에 고정
 - lodash 라이브러리를 통해 특정 시간안에 이벤트 중복 발생 시 1번만 실행
 
-***
-
 ## 2. 개발 환경 및 배포 URL
 
-### 2.1 개발 환경
+### 2.1 🛠 개발 환경
 
 - Web Framework
     - Native
@@ -36,16 +34,14 @@
 - 기타 사항
     - Figma
 
-### 2.2 서비스 URL 정보
+### 2.2 🔗 서비스 URL 정보
 
 - 실행 URL: https://jindo-dog.github.io/ESTsoft-1st-Project/
 - GitHub repo: https://github.com/Jindo-Dog/ESTsoft-1st-Project
 
-***
-
 ## 3. 요구사항 명세
 
-1. <a href="https://www.figma.com/design/s9RCnA6dSi3QHHeMDFHKE6/EST-오르미(BE)_HTML%2FCSS%2FJS?node-id=104924-12&t=DkHqKMa1PBxYw4n3-0" target="_blank">피그마</a>를 참고하여 페이지 구현을 합니다.
+1. <a href="https://www.figma.com/design/s9RCnA6dSi3QHHeMDFHKE6/EST-오르미(BE)_HTML%2FCSS%2FJS?node-id=104924-12&t=DkHqKMa1PBxYw4n3-0" target="_blank" rel="noopener noreferrer">피그마</a>를 참고하여 페이지 구현을 합니다.
 2. 모바일 화면도 고려하여 페이지 구현을 합니다.
 3. 스크롤시 헤더가 고정되게 합니다. (단, 처음에는 고정된 상태가 아닙니다.)
 4. 스크롤 탑 버튼을 구현합니다.
@@ -57,11 +53,9 @@
     - 이메일 유효성 검사를 진행해야 합니다. (값이 들어가지 않거나 이메일 형식이 유효하지 않으면 alert 창으로 경고 문구가 떠야합니다.)
     - 이메일이 잘 입력되었다면 모달창이 뜹니다. 이때 모달창의 `OK! I love HODU` 버튼을 클릭하면 form이 제출되고 모달창이 닫힙니다.
 
-***
-
 ## 4. 프로젝트 구조와 개발 일정
 
-### 4.1 프로젝트 구조
+### 4.1 🧱 프로젝트 구조
 
 - 해당 프로젝트에서 폴더 트리 잘 다듬어 사용하세요. 필요하다면 주석을 달아주세요.
 - 📦root  
@@ -76,7 +70,7 @@
   ┣ 📜README.md  
   ┗ 📜reset.css
 
-### 4.2 개발 일정
+### 4.2 📅 개발 일정
 
 ```mermaid
 gantt
@@ -136,37 +130,18 @@ gantt
     - README.md 작성
     - Kakao map 확대 축소 이벤트 등록
 
-***
-
 ## 5. UI
 
 <table style="text-align: center">
     <tr>
-        <th style="width: 50%;">main</th>
-        <th style="width: 50%;">mobile</th>
+        <th style="width: 70%;">🖥 main</th>
+        <th style="width: 30%;">📱 mobile</th>
     </tr>
     <tr>
-        <td><img src="https://github.com/user-attachments/assets/f7e136e2-a464-47ba-9b7a-c751bd805e2b" alt="image"></td>
-        <td><img src="https://github.com/user-attachments/assets/df4e7ee8-1a21-4d1f-b831-dca77a67dfdb" alt="image"></td>
-    </tr>
-    <tr>
-        <th colspan="2">modal</th>
-    </tr>
-    <tr>
-        <td><img src="https://github.com/user-attachments/assets/a365a8e4-9b3e-489c-9b52-0ae6c4ec08f0" alt="image"></td>
-        <td><img src="https://github.com/user-attachments/assets/27f21b2b-8b15-4453-aacf-3d20bf96a349" alt="image"></td>
-    </tr>
-    <tr>
-        <th>hover</th>
-        <th>menu</th>
-    </tr>
-    <tr>
-        <td><img src="https://github.com/user-attachments/assets/211f8e6c-f3f7-4051-b584-37a710c11fa1" alt="image"></td>
-        <td><img src="https://github.com/user-attachments/assets/5dc4ba55-961b-402f-8d4b-09be8de36da0" alt="image"></td>
+        <td><img src="https://github.com/user-attachments/assets/bcec7280-5b49-4f5d-bf70-b73281f503b3" alt="image"></td>
+        <td><img src="https://github.com/user-attachments/assets/e6c3cb78-11b2-451e-b9a6-00e26cfcba5d" alt="image"></td>
     </tr>
 </table>
-
-***
 
 ## 6. 에러와 에러 해결
 
@@ -184,8 +159,6 @@ gantt
     - 해결: dialog 내부에 별도의 div 컨테이너를 구성하여 이벤트를 막음
 - 모달창이 열렸을 때 스크롤이 되지 않게 하기 위해 `overflow: hidden;`을 사용하여 스크롤을 제한하였는데, 페이지 기반이 뷰포트여서 레이아웃이 변경되는 현상 발생
     - 해결: html에 `width: 100vw;`를 사용하여 스크롤바 너비까지 유지하고, `overflow-x: hidden;`을 사용하여 넘치는 것을 숨겨 해결
-
-***
 
 ## 7. 개발하며 느낀점
 
