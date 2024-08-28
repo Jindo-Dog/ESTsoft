@@ -66,18 +66,17 @@
 
 ### 4.1 🧱 프로젝트 구조
 
-- 해당 프로젝트에서 폴더 트리 잘 다듬어 사용하세요. 필요하다면 주석을 달아주세요.
 - 📦root  
-  ┣ 📂assets  
-  ┃ ┣ 📂cat   
-  ┃ ┣ 📂icon  
-  ┣ 📜index.html  
-  ┣ 📜index.css  
-  ┣ 📜index-mobile.css  
-  ┣ 📜index.js  
-  ┣ 📜map.js  
-  ┣ 📜README.md  
-  ┗ 📜reset.css
+  ┣ 📂 [assets](https://github.com/Jindo-Dog/ESTsoft-1st-Project/tree/main/assets)  
+  ┃ ┣ 📂 [cat](https://github.com/Jindo-Dog/ESTsoft-1st-Project/tree/main/assets/cat)   
+  ┃ ┣ 📂 [icon](https://github.com/Jindo-Dog/ESTsoft-1st-Project/tree/main/assets/icon)  
+  ┣ 📜 [index.html](https://github.com/Jindo-Dog/ESTsoft-1st-Project/blob/main/index.html)  
+  ┣ 📜 [index.css](https://github.com/Jindo-Dog/ESTsoft-1st-Project/blob/main/index.css)  
+  ┣ 📜 [index-mobile.css](https://github.com/Jindo-Dog/ESTsoft-1st-Project/blob/main/index-mobile.css)  
+  ┣ 📜 [index.js](https://github.com/Jindo-Dog/ESTsoft-1st-Project/blob/main/index.js)  
+  ┣ 📜 [map.js](https://github.com/Jindo-Dog/ESTsoft-1st-Project/blob/main/map.js)  
+  ┣ 📜 [README.md](https://github.com/Jindo-Dog/ESTsoft-1st-Project/blob/main/README.md)  
+  ┗ 📜 [reset.css](https://github.com/Jindo-Dog/ESTsoft-1st-Project/blob/main/reset.css)
 
 ### 4.2 📅 개발 일정
 
