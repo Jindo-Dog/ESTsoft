@@ -79,8 +79,7 @@ gantt
     axisFormat  %Y-%m-%d
     
     section FE
-        시작: milestone, 2024-08-19, 1min
-        PC UI 제작:2024-08-19, 2d
+        PC UI 제작:milestone, 2024-08-19, 2d
         모바일 UI 제작:2024-08-20, 1d
         JS 기능 제작:2024-08-20, 2d
         주석 작성:2024-08-21, 1d
