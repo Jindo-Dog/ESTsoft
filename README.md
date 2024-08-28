@@ -77,6 +77,7 @@ gantt
     title ESTsoft-1st-Project
     dateFormat YY-MM-DD
     axisFormat  %Y-%m-%d
+    startDate 2024-08-19
     section FE
         PC UI 제작:2024-08-19, 2d
         모바일 UI 제작:2024-08-20, 1d
