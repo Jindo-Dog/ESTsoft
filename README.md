@@ -75,7 +75,7 @@
 ```mermaid
 gantt
     title ESTsoft-1st-Project
-    dateFormat YY-MM-DD
+    dateFormat YYYY-MM-DD
     axisFormat  %Y-%m-%d
     startDate 2024-08-19
     
