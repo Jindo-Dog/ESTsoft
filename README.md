@@ -45,7 +45,7 @@
 
 ## 3. 요구사항 명세
 
-1. 피그마를 참고하여 페이지 구현을 합니다.
+1. <a href="https://www.figma.com/design/s9RCnA6dSi3QHHeMDFHKE6/EST-오르미(BE)_HTML%2FCSS%2FJS?node-id=104924-12&t=DkHqKMa1PBxYw4n3-0" target="_blank">피그마</a>를 참고하여 페이지 구현을 합니다.
 2. 모바일 화면도 고려하여 페이지 구현을 합니다.
 3. 스크롤시 헤더가 고정되게 합니다. (단, 처음에는 고정된 상태가 아닙니다.)
 4. 스크롤 탑 버튼을 구현합니다.
