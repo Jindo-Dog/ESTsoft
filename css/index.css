@@ -117,9 +117,14 @@ header {
 	top             : 0;
 	z-index         : 5;
 
-	#img-h1-logo {
+	a {
 		width  : var(--130pc);
-		height : auto;
+		height : var(--40pc);
+
+		#img-h1-logo {
+			width  : inherit;
+			height : inherit;
+		}
 	}
 
 	#btn-menu-open {
@@ -479,9 +484,14 @@ footer {
 	align-items     : center;
 	padding         : 0 var(--320pc);
 
-	#img-h2-logo {
+	a {
 		width  : var(--226pc);
 		height : var(--70pc);
+
+		#img-h2-logo {
+			width  : inherit;
+			height : inherit;
+		}
 	}
 
 	#footer-nav-external {

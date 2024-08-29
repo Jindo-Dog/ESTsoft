@@ -63,9 +63,14 @@
 		height  : var(--76mo);
 		padding : 0 var(--20mo);
 
-		#img-h1-logo {
+		a {
 			width  : var(--92mo);
 			height : var(--28mo);
+
+			#img-h1-logo {
+				width  : inherit;
+				height : inherit;
+			}
 		}
 
 		#btn-menu-open {
@@ -344,11 +349,15 @@
 		padding        : var(--30mo) var(--20mo) var(--24mo);
 
 
-		#img-h2-logo {
+		a {
 			width  : var(--112mo);
 			height : var(--34mo);
-		}
 
+			#img-h2-logo {
+				width  : inherit;
+				height : inherit;
+			}
+		}
 
 		#footer-nav-external {
 			ul {
