@@ -57,6 +57,7 @@ openDialogButton.addEventListener('click', (event) => {
 // 모달 닫기
 closeDialogButton.addEventListener('click', () => {
 	dialog.close();
+	emailInput.value = '';
 	html.style.overflowY = 'unset';
 });
 // 버튼 submit 방지
