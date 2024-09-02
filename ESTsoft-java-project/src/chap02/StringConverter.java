@@ -38,14 +38,5 @@ public class StringConverter {
 		System.out.println("s1 = " + s1);
 		System.out.println("s2 = " + s2);
 		System.out.println("s3 = " + s3);
-		
-		
-		// 아래 코드의 출력값은 무엇일까요?
-		int num1 = 5;
-		int num2 = 7;
-		
-		System.out.println((num1 > 5) && (num2 > 5));
-		System.out.println((num1 > 5) || (num2 > 5));
-		System.out.println(!((num1 > 5) && (num2 > 5)));
 	}
 }
