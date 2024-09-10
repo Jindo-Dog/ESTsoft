@@ -12,12 +12,11 @@ public class Cart {
 	int calculateDeliveryCharge() {
 		BigDecimal deliveryCharge = new BigDecimal("0");
 		double weight = 0;
-		int shippingCost = 0;
+		int shippingCost;
 
 		for (Product product : products) {
 			weight += product.getWeight();
 			deliveryCharge = deliveryCharge.add(new BigDecimal((product.getPrice().subtract(product.getDiscountAmount())).toString()));
-			System.out.println("deliveryCharge: " + deliveryCharge + ", weight: " + weight + ", getDiscountAmount: " + product.getDiscountAmount());
 		}
 
 		if (weight >= 10) {
