@@ -1,0 +1,33 @@
+@startuml
+
+abstract class Creature
+interface Flyable
+interface Talkable
+abstract class Animal extends Creature
+interface Swimmable
+abstract class Fish extends Creature
+class Parrot implements Flyable, Talkable
+class People extends Animal implements Talkable
+class Tiger extends Animal
+class Whale extends Fish implements Swimmable
+
+@enduml
+
+@startuml
+
+abstract class Creature
+abstract class Animal extends Creature
+abstract class Fish extends Creature
+
+interface Flyable
+interface Swimmable
+interface Talkable
+
+class Parrot extends Animal implements Flyable, Talkable
+class Tiger extends Animal
+class People extends Animal implements Talkable
+
+
+class Whale extends Fish implements Swimmable
+
+@enduml
