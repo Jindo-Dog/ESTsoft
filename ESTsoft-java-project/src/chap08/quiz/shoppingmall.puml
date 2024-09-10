@@ -8,6 +8,7 @@ class Product implements Promotion{
     name
     price
     weight
+    getDiscountAmount()
 }
 
 class Grocery extends Product
