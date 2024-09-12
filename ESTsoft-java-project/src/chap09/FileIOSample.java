@@ -20,19 +20,15 @@ public class FileIOSample {
 		int result = 5 / b;        // ArithmeticException 발생 가능성이 있는 코드
 		System.out.println(result);
 
+		// 작업 디렉토리를 기준으로 경로를 찾는 방법
 		String file = System.getProperty("user.dir");
 		String filename = file + "/src/chap09/file1.txt";
 
-		try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {    // try-with-resources 구문
+		// 컴파일된 파일을 기준으로 경로를 찾는 방법
+		// String path = FileIOSample.class.getResource("").getPath();
 
-			// 작업 디렉토리를 기준으로 경로를 찾는 방법
-			/*String file = System.getProperty("user.dir");
-			String filename = file + "/src/chap09/file1.txt";
-			System.out.println(filename);*/
-
-			// 컴파일된 파일을 기준으로 경로를 찾는 방법
-			/*String path = FileIOSample.class.getResource("").getPath();
-			System.out.println(path);*/
+		// try-with-resources 구문 (자동 리소스 닫기)
+		try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
 
 			// BufferedReader reader = new BufferedReader(new FileReader(filename));
 			// BufferedReader reader = new BufferedReader(new FileReader(path + "file2.txt"));

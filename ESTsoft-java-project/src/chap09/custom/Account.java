@@ -14,8 +14,9 @@ public class Account {
 		this.balance = balance;
 	}
 
-	void deposit(long money) {
+	void deposit(long money) throws DepositException {
 		this.balance += money;
+		throw new DepositException("입금 오류 Error!!");
 	}
 
 	void withdraw(long money) throws BalanceInsufficientException {
@@ -23,5 +24,9 @@ public class Account {
 			throw new BalanceInsufficientException("잔액이 부족합니다. 남은 금액: " + balance);
 		}
 		this.balance -= money;
+	}
+
+	void depositRollback(long money) {
+		balance -= money;
 	}
 }
