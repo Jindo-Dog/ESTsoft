@@ -1,0 +1,8 @@
+@startuml
+
+class Person
+class Student extends Person
+class Worker extends Person
+class HighStudent extends Student
+
+@enduml

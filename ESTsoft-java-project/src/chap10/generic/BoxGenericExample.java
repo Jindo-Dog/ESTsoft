@@ -18,5 +18,8 @@ public class BoxGenericExample {
 
 		Box<Integer> value2 = Util.boxing(100);
 		System.out.println(value2.get());
+
+		Box<Double> value3 = Util.boxing(567.89);
+		System.out.println(value3.get());
 	}
 }
