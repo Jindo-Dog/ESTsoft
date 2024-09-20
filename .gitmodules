@@ -1,0 +1,3 @@
+[submodule "ESTsoft-weekly-quiz"]
+	path = ESTsoft-weekly-quiz
+	url = https://github.com/Jindo-Dog/ESTsoft-weekly-quiz.git
