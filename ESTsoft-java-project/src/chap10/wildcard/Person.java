@@ -16,4 +16,19 @@ public class Person {
 		return name;
 		// return getName();
 	}
+
+	@Override
+	public int hashCode() {
+		return name.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Person) {
+			Person p = (Person)obj;
+			return p.name.equals(name);
+		} else {
+			return super.equals(obj);
+		}
+	}
 }
