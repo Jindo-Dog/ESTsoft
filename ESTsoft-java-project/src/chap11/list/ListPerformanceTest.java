@@ -2,7 +2,11 @@ package chap11.list;
 
 import java.util.*;
 
-public class ListPerformance {
+/**
+ * LinkedList VS ArrayList
+ * 각각 요소 10_000건 추가 했을 때 성능 비교
+ */
+public class ListPerformanceTest {
 	public static void main(String[] args) {
 		List<String> arrayList = new ArrayList<>();
 		List<String> linkedList = new LinkedList<>();

@@ -17,11 +17,17 @@ public class Person {
 		// return getName();
 	}
 
+	/**
+	 * Set 객체의 중복체크시 호출될 hashCode() 재정의
+	 */
 	@Override
 	public int hashCode() {
 		return name.hashCode();
 	}
 
+	/**
+	 * Set 객체의 중복체크시 호출될 equals() 재정의
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof Person) {

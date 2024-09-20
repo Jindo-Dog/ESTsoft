@@ -26,13 +26,14 @@ public class HashSetExample {
 		while (iterator.hasNext()) {
 			String element = iterator.next();
 			System.out.println("\t" + element);
+			iterator.remove();
 		}
 
 		System.out.println("--------------------");
 
 		// 3. 값 삭제
-		hashSet.remove("카리나");
-		hashSet.clear();
+		/*hashSet.remove("카리나");
+		hashSet.clear();*/
 
 		if (hashSet.isEmpty()) {
 			System.out.println("비어있음" + hashSet);

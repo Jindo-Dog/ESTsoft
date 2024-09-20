@@ -24,7 +24,10 @@ public class LinkedListExample {
 		list.remove(2);
 		list.remove(2);
 
+		// 총 개수 출력
 		System.out.println("총 개수 : " + list.size());
+
+		// 향상된 for문으로 순회하면서 값 출력
 		for (String str : list) {
 			System.out.println("\t" + str);
 		}

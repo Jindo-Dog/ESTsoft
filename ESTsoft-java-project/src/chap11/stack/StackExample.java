@@ -11,6 +11,10 @@ public class StackExample {
 		coinStack.push(new Coin(50));
 		coinStack.push(new Coin(10));
 
+		System.out.println(coinStack.peek());
+		System.out.println(coinStack.peek());
+		System.out.println(coinStack.peek());
+
 		while (!coinStack.isEmpty()) {   // 동전케이스가 비었다면 반복문 종료
 			// Coin coin = coinStack.pop();    // Coin 객체로 꺼내기
 			System.out.println("꺼내온 동전: " + coinStack.pop().getValue() + "원");    // 동전케이스에서 제일 위에 동전 꺼내기

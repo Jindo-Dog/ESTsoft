@@ -11,6 +11,7 @@ public class HashMapExample {
 		hashmap.put("윈터", 30);
 
 		System.out.println(hashmap.get("key"));    // null
+		// key에 해당하는 값이 없을 경우 default value 값 리턴 - getOrDefault()
 		hashmap.getOrDefault("key", 0);    // 0
 
 		System.out.println("총 개수: " + hashmap.size());
