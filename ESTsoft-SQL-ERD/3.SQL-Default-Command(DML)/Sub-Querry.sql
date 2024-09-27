@@ -20,17 +20,20 @@ SELECT name,
 FROM students a;
 
 # 서브 쿼리는 하나의 row만 반환해야 한다
+# SELECT 절에 서브 쿼리를 사용하는 방법
 SELECT name,
        age,
        (SELECT AVG(age) FROM students) AS avg_age
 FROM students
 WHERE age < 30;
 
+# FROM 절에 서브 쿼리를 사용하는 방법
 SELECT *
 FROM (SELECT name, class_name
       FROM classes
       WHERE class_name IN ('데이터베이스', '알고리즘')) AS c;
 
+# FROM 절에 들어가는 서브 쿼리 + INNER JOIN
 SELECT c.*, s.*
 FROM (SELECT name, class_name
       FROM classes
@@ -44,7 +47,7 @@ WHERE name IN (SELECT name
                FROM classes
                WHERE class_name IN ('데이터베이스', '알고리즘'));
 
-# JOIN을 사용한 예
+# 위의 쿼리를 JOIN으로 변환한 예
 SELECT DISTINCT s.name, s.age, s.address
 FROM students AS s
          INNER JOIN classes AS c
