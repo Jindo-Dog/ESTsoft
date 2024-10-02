@@ -1,14 +1,17 @@
 INSERT INTO students
 VALUES ('jo', 10, '강원도');
 
+# 다른 세션에서도 조회 해보기
 SELECT *
 FROM students;
 
 COMMIT;
 
+# commit 후 다른 세션에서도 테이블 데이터 조회 해보기
 SELECT *
 FROM students;
 
+# UPDATE / 트랜잭션 ROLLBACK 테스트
 UPDATE students
 SET address='경기도'
 WHERE name = 'jo';
@@ -21,6 +24,7 @@ ROLLBACK;
 SELECT *
 FROM students;
 
+# DELETE / 트랜잭션 ROLLBACK 테스트
 DELETE
 FROM students;
 
@@ -61,6 +65,6 @@ UPDATE accounts
 SET balance = 15000
 WHERE name = 'B';
 
+# 트랜잭션 성공(commit) 혹은 취소(rollback) 실습 해보기
 ROLLBACK;
-
 COMMIT;
