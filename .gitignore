@@ -32,6 +32,7 @@ replay_pid*
 # User-specific stuff
 .env
 *.iml
+.gradle
 .idea
 .idea/**/workspace.xml
 .idea/**/tasks.xml
