@@ -1,0 +1,7 @@
+### GET student
+GET http://localhost:8080/student/name/list
+Content-Type: application/json
+
+### GET student by name
+GET http://localhost:8080/student/name?name=홍길동&age=28
+Content-Type: application/json
