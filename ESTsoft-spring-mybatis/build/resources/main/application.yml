@@ -1,0 +1,32 @@
+# https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://localhost:3306/estsoft_test_db
+    username: root
+    password: 0000
+    minimum-idle: 1
+    maximum-pool-size: 5
+    pool-name: SampleConnectionPool
+    connectionTimeout: 10000
+    validationTimeout: 5000
+    idleTimeout: 600000
+    minimumIdle: 3
+    maximumPoolSize: 10
+
+  flyway:
+    enabled: false
+
+  devtools:
+    restart:
+      enabled: true
+      additional-exclude: WEB-INF/**
+
+# Mapper Xml Location
+#mybatis:
+#  mapper-locations: classpath:mappers/**/*.xml
+
+logging:
+  config: classpath:logback-local.xml

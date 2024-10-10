@@ -1,0 +1,26 @@
+### GET Student Name
+GET http://localhost:8080/student/1
+Content-Type: application/json
+
+### save Student
+POST http://localhost:8080/student?name=chris&age=32
+Content-Type: application/json
+
+### save LectureCourse
+POST http://localhost:8080/lecture/course?title=spring-jpa&instructorId=1&capacity=30&from=2024-10-10&to=2024-10-11&desc="java_spring_jpa_강의"
+Content-Type: application/json
+
+###
+GET http://localhost:8080/post/list
+Content-Type: application/json
+
+### save post
+POST http://localhost:8080/post
+Content-Type: application/json
+
+{
+  "categoryId": 1,
+  "userId": 1,
+  "title": "게시글테스트",
+  "content": "게시글 내용\n게시글 내용 입력"
+}
