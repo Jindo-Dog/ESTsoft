@@ -47,7 +47,10 @@ public abstract class Wallet extends WalletEntityObject {
 	}
 
 	public WalletDTO convertToDTO() {
-		List<AccountDTO> accountDTOS = accounts.stream().filter(Account::isVisible).map(Account::convertToDTO).toList();
+		List<AccountDTO> accountDTOS = accounts.stream()
+			.filter(Account::isVisible)
+			.map(Account::convertToDTO)
+			.toList();
 
 		return new WalletDTO(id, userId, getDiscriminatorValue(), getTotalBalance(), accountDTOS);
 	}

@@ -7,6 +7,7 @@ import java.util.Map;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import jakarta.persistence.*;
+import lombok.Setter;
 
 @MappedSuperclass
 public class WalletEntityObject {
@@ -23,5 +24,6 @@ public class WalletEntityObject {
 
 	@Column(columnDefinition = "TEXT")
 	@Convert(converter = WalletMapConverter.class)
+	@Setter
 	private Map<String, String> metadata = new HashMap<>();
 }

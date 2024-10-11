@@ -44,6 +44,37 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testCompileOnly 'org.projectlombok:lombok'
     testAnnotationProcessor 'org.projectlombok:lombok'
+
+    // querydsl
+    implementation("com.querydsl:querydsl-jpa:5.0.0:jakarta")
+    implementation("com.querydsl:querydsl-apt:5.0.0:jakarta")
+    annotationProcessor("com.querydsl:querydsl-apt:5.0.0:jakarta")
+    annotationProcessor 'jakarta.annotation:jakarta.annotation-api'
+    annotationProcessor 'jakarta.persistence:jakarta.persistence-api'
+
+    // UUID generator
+    implementation group: 'com.fasterxml.uuid', name: 'java-uuid-generator', version: '5.1.0'
+}
+
+def querydslGenerated = file("build/generated/querydsl")
+
+sourceSets {
+    main {
+        java {
+            srcDirs += querydslGenerated
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.incremental = false
+    options.generatedSourceOutputDirectory = file(querydslGenerated)
+}
+
+tasks.named("clean") {
+    doLast {
+        querydslGenerated.deleteDir()
+    }
 }
 
 tasks.named('test') {

@@ -64,4 +64,16 @@ public class CustomerWallet extends Wallet {
 		long sum = cashback().getBalance().getAmounts() + prepaid().getBalance().getAmounts() + emoney().getBalance().getAmounts();
 		return sum;
 	}
+
+	public Account charageableAccount(AccountType accountType) {
+		if (accountType == AccountType.CASHBACK) {
+			return cashback();
+		} else if (accountType == AccountType.PREPAID) {
+			return prepaid();
+		} else if (accountType == AccountType.EMONEY) {
+			return emoney();
+		} else {
+			throw new RuntimeException("Invalid account type: " + accountType);
+		}
+	}
 }

@@ -28,3 +28,16 @@ Content-Type: application/json
 ### create customer wallet
 POST http://localhost:8080/api/wallet/customer/test1
 Content-Type: application/json
+
+### querydsl
+GET http://localhost:8080/post/list/test
+Content-Type: application/json
+
+### querydsl2
+GET http://localhost:8080/post/list/test2
+Content-Type: application/json
+
+//생성한 userId에 맞춰서 아래와 같이 실행후 account table확인하보면 PREPAID type의 account의 amounts가 50000이 된것을 확인할 수 있음.
+### CREDIT PREPAID ACCOUNT
+POST http://localhost:8080/api/wallet/PREPAID/credit/test1?amount=50000
+Content-Type: application/json
