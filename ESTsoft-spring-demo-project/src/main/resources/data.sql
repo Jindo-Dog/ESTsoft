@@ -55,3 +55,63 @@ CREATE TABLE likes
 
 INSERT INTO categories (type, name, description, image)
 VALUES ('BBS', '자유게시판', 'post/comment/', 'image link');
+
+# Wallet - account 실습
+DROP TABLE IF EXISTS account;
+CREATE TABLE `account`
+(
+    `id`         BIGINT(11)   NOT NULL AUTO_INCREMENT,
+    `visible`    BOOLEAN               DEFAULT FALSE,
+    `amounts`    BIGINT(11)   NOT NULL DEFAULT 0 COMMENT 'amount of balance for this account',
+    `currency`   VARCHAR(255) NOT NULL DEFAULT 'WON' COMMENT 'could be JPY, POINT/USD..',
+    `type`       VARCHAR(255) NOT NULL,
+    `metadata`   JSON,
+    `wallet_id`  BIGINT(11)   NOT NULL,
+    `created_at` DATETIME(3)           DEFAULT CURRENT_TIMESTAMP(3),
+    `version`    INT                   DEFAULT 1, #
+    `updated_at` DATETIME(3)           DEFAULT CURRENT_TIMESTAMP(3),
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4;
+
+DROP TABLE IF EXISTS wallet;
+CREATE TABLE `wallet`
+(
+    `id`         BIGINT(11)   NOT NULL AUTO_INCREMENT,
+-- `uuid` varchar(255) NOT NULL UNIQUE 'as identifier',
+    `user_id`    VARCHAR(255) NOT NULL,
+    `type`       VARCHAR(255) NOT NULL,
+    `metadata`   JSON,
+    `created_at` DATETIME(3) DEFAULT CURRENT_TIMESTAMP(3),
+    `version`    INT         DEFAULT 1,
+    `updated_at` DATETIME(3) DEFAULT CURRENT_TIMESTAMP(3),
+    PRIMARY KEY (`id`),
+    UNIQUE (`user_id`, `type`)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4;
+
+DROP TABLE IF EXISTS transaction;
+CREATE TABLE `transaction`
+(
+    `id`               BIGINT(11)   NOT NULL AUTO_INCREMENT,
+    `pid`              BIGINT(11)   NOT NULL COMMENT 'id for associated transactions',
+    `src_account_id`   BIGINT(11)   NOT NULL,
+    `dst_account_id`   BIGINT(11)   NOT NULL,
+    `src_user_id`      VARCHAR(255) NOT NULL,
+    `dst_user_id`      VARCHAR(255) NOT NULL,
+    `src_account_type` VARCHAR(255) NOT NULL,
+    `dst_account_type` VARCHAR(255) NOT NULL,
+    `src_currency`     VARCHAR(255) NOT NULL DEFAULT 'JPY' COMMENT 'could be POINT/USD..',
+    `dst_currency`     VARCHAR(255) NOT NULL DEFAULT 'JPY',
+    `src_amount`       BIGINT(11)   NOT NULL DEFAULT 0 COMMENT 'cents if it is money wise',
+    `dst_amount`       BIGINT(11)   NOT NULL DEFAULT 0,
+    `src_balance`      BIGINT(11)   NOT NULL DEFAULT 0 COMMENT 'up to date balance after this transaction',
+    `dst_balance`      BIGINT(11)   NOT NULL DEFAULT 0,
+    `metadata`         TEXT,
+    `version`          INT                   DEFAULT 1,
+    `created_at`       DATETIME(3)           DEFAULT CURRENT_TIMESTAMP(3),
+    `updated_at`       DATETIME(3)           DEFAULT CURRENT_TIMESTAMP(3),
+    PRIMARY KEY (`id`),
+    INDEX (pid)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4;

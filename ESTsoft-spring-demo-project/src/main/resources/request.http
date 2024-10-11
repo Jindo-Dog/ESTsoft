@@ -24,3 +24,7 @@ Content-Type: application/json
   "title": "게시글테스트",
   "content": "게시글 내용\n게시글 내용 입력"
 }
+
+### create customer wallet
+POST http://localhost:8080/api/wallet/customer/test1
+Content-Type: application/json

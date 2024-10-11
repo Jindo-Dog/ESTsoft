@@ -1,13 +1,11 @@
 package com.estsoft.estsoftspringdemoproject.entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -35,4 +33,8 @@ public class Post {
 	private LocalDateTime createdAt;
 	@Column(name = "updated_at")
 	private LocalDateTime updatedAt;
+
+	@OneToMany(mappedBy = "post")
+	@JsonManagedReference
+	private List<Comment> comments;
 }
