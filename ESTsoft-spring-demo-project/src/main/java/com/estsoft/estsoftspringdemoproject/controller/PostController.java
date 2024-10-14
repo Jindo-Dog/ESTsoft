@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.estsoft.estsoftspringdemoproject.entity.Post;
 import com.estsoft.estsoftspringdemoproject.model.PostRequest;
+import com.estsoft.estsoftspringdemoproject.model.TestDTO;
+import com.estsoft.estsoftspringdemoproject.model.TestDTO2;
 import com.estsoft.estsoftspringdemoproject.service.PostService;
 
 import lombok.RequiredArgsConstructor;
@@ -33,5 +35,15 @@ public class PostController {
 	public ResponseEntity<String> getPostList(@RequestBody PostRequest postRequest) {
 		postService.createPost(postRequest);
 		return ResponseEntity.ok("Success");
+	}
+
+	@GetMapping("/post/list/test")
+	public ResponseEntity<List<TestDTO>> getPostListTest() {
+		return ResponseEntity.ok(postService.getTest());
+	}
+
+	@GetMapping("/post/list/test2")
+	public ResponseEntity<List<TestDTO2>> getPostListTest2() {
+		return ResponseEntity.ok(postService.getPostWithCount());
 	}
 }

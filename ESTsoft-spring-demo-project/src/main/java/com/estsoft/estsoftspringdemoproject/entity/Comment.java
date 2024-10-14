@@ -27,6 +27,9 @@ public class Comment {
 	@JoinColumn(name = "post_id")
 	private Post post;
 
+	// @Column(name = "post_id")
+	// private Long postId;
+
 	@Column(name = "user_id")
 	private Long userId;
 	@Column(name = "content")

@@ -9,12 +9,17 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.estsoft.estsoftspringdemoproject.entity.Post;
 import com.estsoft.estsoftspringdemoproject.model.PostRequest;
+import com.estsoft.estsoftspringdemoproject.model.TestDTO;
+import com.estsoft.estsoftspringdemoproject.model.TestDTO2;
 import com.estsoft.estsoftspringdemoproject.repository.PostRepository;
+import com.estsoft.estsoftspringdemoproject.repository.TestRepository;
 
 @Service
 public class PostService {
 	@Autowired
 	private PostRepository postRepository;
+	@Autowired
+	private TestRepository testRepository;
 
 	public List<Post> getPostList(Boolean isDeleted) {
 		return postRepository.findAllByIsDeletedOrderByCreatedAtDesc(isDeleted);
@@ -36,5 +41,13 @@ public class PostService {
 		post.setUpdatedAt(LocalDateTime.now());
 
 		postRepository.save(post);
+	}
+
+	public List<TestDTO> getTest() {
+		return testRepository.selectPostTest();
+	}
+
+	public List<TestDTO2> getPostWithCount() {
+		return testRepository.selectPostWithCount();
 	}
 }
