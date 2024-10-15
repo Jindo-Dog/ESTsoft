@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.estsoft.estsoftspringproject.controller.MemberControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-10-15T06:39:47" hostname="HSH-DESKTOP" time="0.012">
+  <properties/>
+  <testcase name="testGetAllMember()" classname="com.estsoft.estsoftspringproject.controller.MemberControllerTest" time="0.012"/>
+  <system-out><![CDATA[2024-10-15T15:39:47.305+09:00  INFO 49860 --- [ESTsoft-spring-project] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.estsoft.estsoftspringproject.controller.MemberControllerTest]: MemberControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-10-15T15:39:47.316+09:00  INFO 49860 --- [ESTsoft-spring-project] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.estsoft.estsoftspringproject.EsTsoftSpringProjectApplication for test class com.estsoft.estsoftspringproject.controller.MemberControllerTest
+2024-10-15T15:39:47.320+09:00  INFO 49860 --- [ESTsoft-spring-project] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-10-15T15:39:47.320+09:00  INFO 49860 --- [ESTsoft-spring-project] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-10-15T15:39:47.321+09:00  INFO 49860 --- [ESTsoft-spring-project] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.name 
+    from
+        member m1_0
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

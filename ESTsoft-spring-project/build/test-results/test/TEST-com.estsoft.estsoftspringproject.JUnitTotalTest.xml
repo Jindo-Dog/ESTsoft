@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.estsoft.estsoftspringproject.JUnitTotalTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-10-15T06:39:46" hostname="HSH-DESKTOP" time="0.003">
+  <properties/>
+  <testcase name="test1()" classname="com.estsoft.estsoftspringproject.JUnitTotalTest" time="0.001"/>
+  <testcase name="test2()" classname="com.estsoft.estsoftspringproject.JUnitTotalTest" time="0.0"/>
+  <testcase name="test3()" classname="com.estsoft.estsoftspringproject.JUnitTotalTest" time="0.001"/>
+  <system-out><![CDATA[@BeforeAll
+@BeforeEach
+test1
+@AfterEach
+@BeforeEach
+test2
+@AfterEach
+@BeforeEach
+test3
+@AfterEach
+@AfterAll
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
