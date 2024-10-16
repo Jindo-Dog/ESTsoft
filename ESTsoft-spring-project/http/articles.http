@@ -1,8 +1,27 @@
-### GET request to example server
-POST http://localhost:8080/articles
+### 게시글 작성
+POST localhost:8080/articles
 Content-Type: application/json
 
 {
   "title": "blog title",
   "content": "blog content"
+}
+
+### 게시글 전체 조회 API
+GET localhost:8080/articles
+
+### 게시글 단건 조회 API
+@id = 1
+GET localhost:8080/articles/{{id}}
+
+### 게시글 단건 삭제 API
+DELETE localhost:8080/articles/{{id}}
+
+### 게시글 단건 수정 API
+PUT localhost:8080/articles/{{id}}
+Content-Type: application/json
+
+{
+  "title": "updated title",
+  "content": "updated content"
 }

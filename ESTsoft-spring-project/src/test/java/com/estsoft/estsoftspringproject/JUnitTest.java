@@ -3,10 +3,12 @@ package com.estsoft.estsoftspringproject;
 import static org.assertj.core.api.AssertionsForClassTypes.*;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class JUnitTest {
 	@Test
+	@DisplayName("Assertions 테스트")
 	public void test() {
 		// given
 		int a = 1;

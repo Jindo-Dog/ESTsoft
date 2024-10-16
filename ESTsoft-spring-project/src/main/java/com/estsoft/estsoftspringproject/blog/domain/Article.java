@@ -1,5 +1,7 @@
 package com.estsoft.estsoftspringproject.blog.domain;
 
+import com.estsoft.estsoftspringproject.blog.domain.dto.ArticleResponse;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -30,5 +32,16 @@ public class Article {
 	public Article(String title, String content) {
 		this.title = title;
 		this.content = content;
+	}
+
+	public ArticleResponse convert() {
+		return new ArticleResponse(this.id, this.title, this.content);
+	}
+
+	public void update(String title, String content) {
+		if (!title.isBlank() && !content.isBlank()) {
+			this.title = title;
+			this.content = content;
+		}
 	}
 }

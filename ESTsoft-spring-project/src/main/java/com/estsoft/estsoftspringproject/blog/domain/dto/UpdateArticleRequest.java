@@ -1,4 +1,4 @@
-package com.estsoft.estsoftspringproject.blog.domain;
+package com.estsoft.estsoftspringproject.blog.domain.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,14 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class AddArticleRequest {
+public class UpdateArticleRequest {
 	private String title;
 	private String content;
-
-	public Article toEntity() {
-		return Article.builder()
-			.title(this.title)
-			.content(this.content)
-			.build();
-	}
 }
