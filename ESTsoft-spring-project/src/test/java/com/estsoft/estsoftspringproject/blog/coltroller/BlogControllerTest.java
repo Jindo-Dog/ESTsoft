@@ -64,7 +64,7 @@ class BlogControllerTest {
 		String json = objectMapper.writeValueAsString(request);
 
 		// when: POST /articles aPI 호출
-		ResultActions resultActions = mockMvc.perform(post("/articles")
+		ResultActions resultActions = mockMvc.perform(post("/api/articles")
 			.contentType(MediaType.APPLICATION_JSON)
 			.content(json));
 
@@ -84,7 +84,7 @@ class BlogControllerTest {
 		Article article = repository.save(new Article("title", "content"));
 
 		// when: 조회 API
-		ResultActions resultActions = mockMvc.perform(get("/articles")
+		ResultActions resultActions = mockMvc.perform(get("/api/articles")
 			.accept(MediaType.APPLICATION_JSON));
 
 		// then: API 호출
@@ -93,7 +93,7 @@ class BlogControllerTest {
 			.andExpect(jsonPath("$[0].content").value(article.getContent()));
 	}
 
-	// data insert (id = 1), GET /articles/1
+	// data insert (id = 1), GET /api/articles/1
 	@Test
 	@DisplayName("블로그 게시글 단건 조회 API")
 	public void findOne() throws Exception {
@@ -101,7 +101,7 @@ class BlogControllerTest {
 		Article article = repository.save(new Article("blog title", "blog content"));
 
 		// when: API 호출
-		ResultActions resultActions = mockMvc.perform(get("/articles/{id}", article.getId())
+		ResultActions resultActions = mockMvc.perform(get("/api/articles/{id}", article.getId())
 			.accept(MediaType.APPLICATION_JSON));
 
 		// then: API 호출 결과 검증
@@ -115,7 +115,7 @@ class BlogControllerTest {
 	@DisplayName("블로그 게시글 단건 조회 API - 존재하지 않는 ID")
 	public void findOneException() throws Exception {
 		// when: API 호출
-		ResultActions resultActions = mockMvc.perform(get("/articles/{id}", 1L)
+		ResultActions resultActions = mockMvc.perform(get("/api/articles/{id}", 1L)
 			.accept(MediaType.APPLICATION_JSON));
 
 		// then: Exception 검증, resultActions STATUS CODE 검증
@@ -130,7 +130,7 @@ class BlogControllerTest {
 		Article article = repository.save(new Article("blog title", "blog content"));
 
 		// when: API 호출
-		ResultActions resultActions = mockMvc.perform(delete("/articles/{id}", article.getId()));
+		ResultActions resultActions = mockMvc.perform(delete("/api/articles/{id}", article.getId()));
 
 		// then: API 호출 결과 검증
 		resultActions.andExpect(status().isOk());    // status code 검증
@@ -138,7 +138,7 @@ class BlogControllerTest {
 		assertThat(articleList).isEmpty();    // 비어있는 Data 검증
 	}
 
-	// PUT /articles/{id} body(json content) 요청
+	// PUT /api/articles/{id} body(json content) 요청
 	@Test
 	@DisplayName("블로그 게시글 수정 API")
 	public void updateArticle() throws Exception {
@@ -148,7 +148,7 @@ class BlogControllerTest {
 		UpdateArticleRequest request = new UpdateArticleRequest("updated title", "updated content");
 		String updateJsonContent = objectMapper.writeValueAsString(request);
 
-		ResultActions resultActions = mockMvc.perform(put("/articles/{id}", article.getId())
+		ResultActions resultActions = mockMvc.perform(put("/api/articles/{id}", article.getId())
 			.contentType(MediaType.APPLICATION_JSON)
 			.content(updateJsonContent)
 		);
@@ -166,8 +166,8 @@ class BlogControllerTest {
 		UpdateArticleRequest request = new UpdateArticleRequest("updated title", "updated content");
 		String updateJsonContent = objectMapper.writeValueAsString(request);
 
-		// when: 수정 API 호출 (/articles/{id}, request body)
-		ResultActions resultActions = mockMvc.perform(put("/articles/{id}", notExisted)
+		// when: 수정 API 호출 (/api/articles/{id}, request body)
+		ResultActions resultActions = mockMvc.perform(put("/api/articles/{id}", notExisted)
 			.contentType(MediaType.APPLICATION_JSON)
 			.content(updateJsonContent)
 		);

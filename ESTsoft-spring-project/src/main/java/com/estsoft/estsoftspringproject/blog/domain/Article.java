@@ -1,9 +1,16 @@
 package com.estsoft.estsoftspringproject.blog.domain;
 
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 import com.estsoft.estsoftspringproject.blog.domain.dto.ArticleResponse;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -16,6 +23,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+@EntityListeners(AuditingEntityListener.class)    // 변경 시점 자동 반영
 public class Article {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +34,14 @@ public class Article {
 
 	@Column(nullable = false)
 	private String content;
+
+	@Column
+	@CreatedDate
+	private LocalDateTime createdAt;
+
+	@Column
+	@UpdateTimestamp
+	private LocalDateTime updatedAt;
 
 	// Article 생성자
 	@Builder
