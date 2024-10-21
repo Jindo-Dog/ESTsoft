@@ -1,7 +1,11 @@
 package com.estsoft.estsoftspringproject.blog.coltroller;
 
+import java.security.Principal;
 import java.util.List;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.estsoft.estsoftspringproject.blog.domain.Article;
 import com.estsoft.estsoftspringproject.blog.domain.dto.ArticleViewResponse;
 import com.estsoft.estsoftspringproject.blog.service.BlogService;
+import com.estsoft.estsoftspringproject.user.domain.Users;
+
+import lombok.extern.slf4j.Slf4j;
 
 @Controller
 public class BlogPageController {
@@ -34,7 +41,11 @@ public class BlogPageController {
 	}
 
 	@GetMapping("/articles/{id}")
-	public String showArticle(@PathVariable Long id, Model model) {
+	public String showArticle(@PathVariable Long id, Model model, @AuthenticationPrincipal Users users) {
+		// 인증 정보 받아오기
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		// Users users = (Users)authentication.getPrincipal();	// @AuthenticationPrincipal Users users와 같음
+
 		Article article = blogService.findBy(id);
 		model.addAttribute("article", new ArticleViewResponse(article));
 
