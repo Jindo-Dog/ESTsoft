@@ -1,9 +1,11 @@
 package com.estsoft.estsoftspringproject.blog.coltroller;
 
 import java.security.Principal;
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -29,6 +31,9 @@ public class BlogPageController {
 
 	@GetMapping("/articles")
 	public String getArticles(Model model) {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();    // 권한 목록 확인
+
 		List<Article> articleList = blogService.findAll();
 
 		List<ArticleViewResponse> list = articleList.stream()

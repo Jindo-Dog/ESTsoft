@@ -49,7 +49,9 @@ public class Users implements UserDetails {
 	// 인가와 관련된 메소드
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return List.of(new SimpleGrantedAuthority("user"));
+		// ROLE_ADMIN
+		return List.of(new SimpleGrantedAuthority("user"),
+			new SimpleGrantedAuthority("ROLE_ADMIN"));
 	}
 
 	@Override
