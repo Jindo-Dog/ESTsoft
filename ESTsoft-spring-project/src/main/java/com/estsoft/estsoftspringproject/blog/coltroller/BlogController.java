@@ -20,11 +20,17 @@ import com.estsoft.estsoftspringproject.blog.domain.dto.ArticleResponse;
 import com.estsoft.estsoftspringproject.blog.domain.dto.UpdateArticleRequest;
 import com.estsoft.estsoftspringproject.blog.service.BlogService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @RestController
+@Slf4j
 @RequestMapping("/api")
+@Tag(name = "블로그 CRUD API", description = "블로그 글을 생성, 조회, 수정, 삭제하는 API 목록")
 public class BlogController {
 	private final BlogService service;
 
@@ -54,7 +60,9 @@ public class BlogController {
 	}
 
 	// Request Mapping 조회 : HTTP METHOD? GET
-	@GetMapping("/articles")    // articles/1
+	@GetMapping("/articles")    // articles
+	@Operation(summary = "블로그 전체 목록 보기", description = "블로그 메인 화면에서 보여주는 전체 목록")
+	@ApiResponse(responseCode = "100", description = "요청 성공", content = @Content(mediaType = "application/json"))
 	public ResponseEntity<List<ArticleResponse>> findAll() {
 		// List<Article> -> List<ArticleResponse> 형태로 변환해서 응답으로 보내기
 		List<ArticleResponse> list = service.findAll().stream()
@@ -66,6 +74,7 @@ public class BlogController {
 
 	// 단건 조회 API (Request Mapping) 만들기
 	@GetMapping("/articles/{id}")
+	@Parameter(name = "id", description = "블로그 글 ID", example = "45")
 	public ResponseEntity<ArticleResponse> findById(@PathVariable(name = "id") Long id) {
 		Article article = service.findBy(id);    // Exception (5xx server error) -> 4xx Status Code (Client Error)
 

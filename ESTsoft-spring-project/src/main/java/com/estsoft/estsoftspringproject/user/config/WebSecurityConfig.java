@@ -29,7 +29,7 @@ public class WebSecurityConfig {
 	@Bean
 	public WebSecurityCustomizer ignore() {
 		return web -> web.ignoring().requestMatchers(toH2Console())    // /h2-console
-			.requestMatchers("/static/**");
+			.requestMatchers("/static/**", "/swagger-ui/**", "/v3/api-docs/**", "/swagger-ui.html");
 	}
 
 	/**
