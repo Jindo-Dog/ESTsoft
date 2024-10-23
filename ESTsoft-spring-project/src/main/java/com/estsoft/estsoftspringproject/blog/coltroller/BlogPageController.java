@@ -15,8 +15,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.estsoft.estsoftspringproject.blog.domain.Article;
+import com.estsoft.estsoftspringproject.blog.domain.Comment;
 import com.estsoft.estsoftspringproject.blog.domain.dto.ArticleViewResponse;
+import com.estsoft.estsoftspringproject.blog.domain.dto.CommentResponse;
 import com.estsoft.estsoftspringproject.blog.service.BlogService;
+import com.estsoft.estsoftspringproject.blog.service.CommentService;
 import com.estsoft.estsoftspringproject.user.domain.Users;
 
 import lombok.extern.slf4j.Slf4j;
@@ -24,9 +27,11 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 public class BlogPageController {
 	private final BlogService blogService;
+	private final CommentService commentService;
 
-	public BlogPageController(BlogService blogService) {
+	public BlogPageController(BlogService blogService, CommentService commentService) {
 		this.blogService = blogService;
+		this.commentService = commentService;
 	}
 
 	@GetMapping("/articles")
@@ -53,6 +58,11 @@ public class BlogPageController {
 
 		Article article = blogService.findBy(id);
 		model.addAttribute("article", new ArticleViewResponse(article));
+
+		List<CommentResponse> list = commentService.findByArticle(article).stream()
+			.map(Comment::convert)
+			.toList();
+		model.addAttribute("comments", list);
 
 		return "article";
 	}
