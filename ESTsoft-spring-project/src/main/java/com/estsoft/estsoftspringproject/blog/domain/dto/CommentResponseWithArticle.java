@@ -15,10 +15,11 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@Schema(description = "댓글 조회 결과", title = "댓글 조회")
+@Schema(description = "댓글 조회 결과 및 해당 게시글", title = "댓글 조회 및 게시글")
 public class CommentResponseWithArticle {
 	@Schema(description = "댓글 ID", type = "Long", example = "1")
 	private Long commentId;
+
 	@Schema(description = "댓글 내용", type = "String", example = "내용")
 	private String body;
 
