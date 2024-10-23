@@ -27,6 +27,7 @@ import lombok.Setter;
 public class Article {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "article_id")
 	private Long id;
 
 	@Column(nullable = false)
@@ -51,7 +52,7 @@ public class Article {
 	}
 
 	public ArticleResponse convert() {
-		return new ArticleResponse(this.id, this.title, this.content);
+		return new ArticleResponse(this.id, this.title, this.content, this.createdAt, this.updatedAt);
 	}
 
 	public void update(String title, String content) {

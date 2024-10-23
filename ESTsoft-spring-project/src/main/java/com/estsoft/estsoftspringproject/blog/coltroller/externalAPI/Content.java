@@ -1,4 +1,4 @@
-package com.estsoft.estsoftspringproject.blog.coltroller;
+package com.estsoft.estsoftspringproject.blog.coltroller.externalAPI;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

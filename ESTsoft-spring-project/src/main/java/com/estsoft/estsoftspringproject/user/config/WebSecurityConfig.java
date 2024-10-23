@@ -28,7 +28,8 @@ public class WebSecurityConfig {
 	 */
 	@Bean
 	public WebSecurityCustomizer ignore() {
-		return web -> web.ignoring().requestMatchers(toH2Console())    // /h2-console
+		return web -> web.ignoring()
+			// .requestMatchers(toH2Console())    // /h2-console
 			.requestMatchers("/static/**", "/swagger-ui/**", "/v3/api-docs/**", "/swagger-ui.html");
 	}
 
@@ -58,10 +59,11 @@ public class WebSecurityConfig {
 	public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
 		return httpSecurity.authorizeHttpRequests(custom -> custom.requestMatchers("/login", "/signup", "/user")
 				.permitAll()
-				.requestMatchers("/articles/**").hasRole("ADMIN")    // ROLE_ADMIN (ROLE_는 자동으로 붙음) 역할로 본다
+				// TODO .requestMatchers("/articles/**").hasRole("ADMIN")    // ROLE_ADMIN (ROLE_는 자동으로 붙음) 역할로 본다
 				// .requestMatchers("/articles/**").hasAuthority("ADMIN")    // ADMIN (ROLE_이 붙지 않음) 권한으로 본다
 				.anyRequest()
-				.authenticated())
+				// TODO .authenticated()
+				.permitAll())
 			.formLogin(custom -> custom.loginPage("/login")
 				.defaultSuccessUrl("/articles", true))
 			.logout(custom -> custom.logoutSuccessUrl("/login")

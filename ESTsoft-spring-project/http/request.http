@@ -1,0 +1,26 @@
+@id=2
+
+### 댓글 정보 생성 REST API
+POST http://localhost:8080/api/articles/{{id}}/comments
+Content-Type: application/json
+
+{
+  "body": "댓글 내용1"
+}
+
+### 댓글 정보 조회 REST API
+GET http://localhost:8080/api/comments/{{id}}
+
+### 댓글 정보 수정 REST API
+PUT http://localhost:8080/api/comments/{{id}}
+Content-Type: application/json
+
+{
+  "body": "댓글 내용 수정"
+}
+
+### 댓글 정보 삭제 REST API
+DELETE http://localhost:8080/api/comments/{{id}}
+
+### 게시글과 댓글 정보를 한번에 조회하는 REST API
+GET http://localhost:8080/api/articles/{{id}}/comments
