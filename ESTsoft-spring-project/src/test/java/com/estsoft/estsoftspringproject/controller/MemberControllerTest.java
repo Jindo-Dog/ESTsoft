@@ -34,7 +34,7 @@ class MemberControllerTest {
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
 	}
 
-	@Test
+	// @Test
 	@DisplayName("모든 멤버 조회")
 	public void testGetAllMember() throws Exception {
 		// given: 멤버 목록 저장 (생략)

@@ -2,11 +2,14 @@ package com.estsoft.estsoftspringproject.blog.coltroller;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.*;
+import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import java.util.List;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -14,6 +17,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.security.test.context.support.WithUserDetails;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -24,6 +32,7 @@ import com.estsoft.estsoftspringproject.blog.domain.Article;
 import com.estsoft.estsoftspringproject.blog.domain.dto.UpdateArticleRequest;
 import com.estsoft.estsoftspringproject.blog.repository.BlogRepository;
 import com.estsoft.estsoftspringproject.blog.service.BlogService;
+import com.estsoft.estsoftspringproject.user.domain.Users;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -47,7 +56,9 @@ class BlogControllerTest {
 
 	@BeforeEach
 	public void setUp() {
-		mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
+		mockMvc = MockMvcBuilders
+			.webAppContextSetup(context)
+			.build();
 		repository.deleteAll();
 	}
 
@@ -106,7 +117,7 @@ class BlogControllerTest {
 
 		// then: API 호출 결과 검증
 		resultActions.andExpect(status().isOk())
-			.andExpect(jsonPath("$.id").value(article.getId()))
+			.andExpect(jsonPath("$.articleId").value(article.getId()))
 			.andExpect(jsonPath("$.title").value(article.getTitle()))
 			.andExpect(jsonPath("$.content").value(article.getContent()));
 	}
