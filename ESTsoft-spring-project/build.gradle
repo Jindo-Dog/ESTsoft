@@ -43,3 +43,13 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+processResources {
+    filesMatching('application.properties') {
+        filter { line ->
+            line.replace('\${DATABASE_URL}', System.getenv('DATABASE_URL') ?: 'default_url')
+                    .replace('\${DATABASE_USERNAME}', System.getenv('DATABASE_USERNAME') ?: 'default_username')
+                    .replace('\${DATABASE_PASSWORD}', System.getenv('DATABASE_PASSWORD') ?: 'default_password')
+        }
+    }
+}
