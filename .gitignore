@@ -34,7 +34,6 @@ replay_pid*
 *.iml
 .env
 .gradle
-gradle
 .idea
 .idea/**/workspace.xml
 .idea/**/tasks.xml
