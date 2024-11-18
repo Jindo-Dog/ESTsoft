@@ -4,6 +4,6 @@
 [submodule "ESTsoft-1st-Project"]
 	path = ESTsoft-1st-Project
 	url = https://github.com/Jindo-Dog/ESTsoft-1st-Project.git
-[submodule "ESTsoft-2st-Project"]
-	path = ESTsoft-2st-Project
-	url = https://github.com/ESTsoft-Back-end-6th-2st-project-team3/ESTsoft-2st-Project.git
+[submodule "ESTsoft-2nd-Project"]
+	path = ESTsoft-2nd-Project
+	url = https://github.com/ESTsoft-Back-end-6th-2nd-project-team3/ESTsoft-2nd-Project.git
