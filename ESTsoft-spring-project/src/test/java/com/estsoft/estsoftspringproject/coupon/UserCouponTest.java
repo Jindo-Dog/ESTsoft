@@ -3,15 +3,13 @@ package com.estsoft.estsoftspringproject.coupon;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
-import org.mockito.BDDMockito;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 
+import com.estsoft.estsoftspringproject.user.coupon.DummyCoupon;
+import com.estsoft.estsoftspringproject.user.coupon.ICoupon;
+import com.estsoft.estsoftspringproject.user.coupon.User;
+
 public class UserCouponTest {
-
-	@Mock
-	ICoupon coupon;
-
 	@Test
 	public void testAddCoupon() {
 		User user = new User("area00");

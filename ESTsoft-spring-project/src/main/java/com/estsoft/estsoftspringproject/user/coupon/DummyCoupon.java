@@ -1,4 +1,4 @@
-package com.estsoft.estsoftspringproject.coupon;
+package com.estsoft.estsoftspringproject.user.coupon;
 
 public class DummyCoupon implements ICoupon {
 	@Override

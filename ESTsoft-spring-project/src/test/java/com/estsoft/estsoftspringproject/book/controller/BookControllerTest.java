@@ -20,13 +20,9 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.estsoft.estsoftspringproject.book.service.BookService;
-
 @SpringBootTest
 @AutoConfigureMockMvc
 class BookControllerTest {
-	@Mock
-	public BookService bookService;
 	@Autowired
 	private WebApplicationContext context;
 	@Autowired
@@ -53,13 +49,5 @@ class BookControllerTest {
 			.andExpect(view().name("bookManagement"))
 			.andExpect(model().attribute("bookList", hasSize(2)))
 		;
-	}
-
-	@Test
-	void showOne() {
-	}
-
-	@Test
-	void addBook() {
 	}
 }
