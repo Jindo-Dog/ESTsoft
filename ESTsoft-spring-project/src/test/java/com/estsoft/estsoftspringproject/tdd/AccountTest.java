@@ -12,6 +12,10 @@ public class AccountTest {
 	// 1. 꼐좌 생성
 	@Test
 	public void testAccount() {
-		Account account = new Account();
+		Account account = new Account(10_000);
+		// 잔금 조회가 잘 되는가?
+		if (account.getBalance() != 10_000) {
+			fail();
+		}
 	}
 }
