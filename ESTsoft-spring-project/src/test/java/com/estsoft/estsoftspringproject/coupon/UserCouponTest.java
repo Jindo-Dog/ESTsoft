@@ -4,9 +4,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.BDDMockito;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 
 public class UserCouponTest {
+
+	@Mock
+	ICoupon coupon;
 
 	@Test
 	public void testAddCoupon() {
@@ -25,12 +29,25 @@ public class UserCouponTest {
 		assertEquals(0, user.getTotalCouponCount());    // 쿠폰 수령 전
 
 		ICoupon coupon = Mockito.mock(ICoupon.class);    // mock객체 - 행위 정의 가능
-		Mockito.when(coupon.isValid()).thenReturn(true);
+		// Mockito.when(coupon.isValid()).thenReturn(true);    // stub
+		Mockito.doReturn(true).when(coupon).isValid();    // stub
 
-		BDDMockito.given(coupon.isValid())
-			.willReturn(true);    // isValid() 호출시 리턴값은 true
+		// BDDMockito.given(coupon.isValid())
+		// 	.willReturn(true);    // isValid() 호출시 리턴값은 true
 
 		user.addCoupon(coupon);
 		assertEquals(1, user.getTotalCouponCount());    // 쿠폰 수령 후 쿠폰 수 검증
+	}
+
+	@Test
+	public void 쿠폰이_유효하지_않을_경우_발급_불가() {
+		User user = new User("area00");
+		assertEquals(0, user.getTotalCouponCount());    // 쿠폰 수령 전
+
+		ICoupon coupon = Mockito.mock(ICoupon.class);    // mock객체 - 행위 정의 가능
+		Mockito.when(coupon.isValid()).thenReturn(false);
+
+		user.addCoupon(coupon);
+		assertEquals(0, user.getTotalCouponCount());
 	}
 }
