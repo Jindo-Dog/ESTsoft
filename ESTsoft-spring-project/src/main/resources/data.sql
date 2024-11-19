@@ -41,3 +41,23 @@ VALUES (1, '게시글 제목', '게시글 내용', NOW(), NOW()),
        (3, '게시글 제목3', '게시글 내용3', NOW(), NOW()),
        (4, '게시글 제목4', '게시글 내용4', NOW(), NOW()),
        (5, '게시글 제목5', '게시글 내용5', NOW(), NOW());*/
+
+INSERT INTO member (name)
+VALUES ('이름1');
+INSERT INTO member (name)
+VALUES ('이름2');
+INSERT INTO member (name)
+VALUES ('이름3');
+
+INSERT INTO article (title, content, created_at, updated_at)
+VALUES ('제목1', '내용1', NOW(), NOW());
+INSERT INTO article (title, content, created_at, updated_at)
+VALUES ('제목2', '내용2', NOW(), NOW());
+INSERT INTO article (title, content, created_at, updated_at)
+VALUES ('제목3', '내용3', NOW(), NOW());
+
+
+INSERT INTO book (id, name, author)
+VALUES ('첫번째', 'JPA 프로그래밍', '김영한');
+INSERT INTO book (id, name, author)
+VALUES ('두번째', '채식주의자', '한강');
