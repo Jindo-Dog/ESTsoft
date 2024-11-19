@@ -27,4 +27,11 @@ public class AccountTest {
 		account = new Account(500_000);
 		assertThat(account.getBalance(), is(500_000));
 	}
+
+	@Test
+	public void testDeposit() {
+		Account account = new Account(10_000);
+		account.deposit(100_000);
+		assertThat(account.getBalance(), is(110_000));
+	}
 }
