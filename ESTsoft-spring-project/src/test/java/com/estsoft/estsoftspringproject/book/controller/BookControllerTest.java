@@ -20,8 +20,6 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.estsoft.estsoftspringproject.book.domain.Book;
-import com.estsoft.estsoftspringproject.book.repository.BookRepository;
 import com.estsoft.estsoftspringproject.book.service.BookService;
 
 @SpringBootTest
@@ -33,15 +31,12 @@ class BookControllerTest {
 	private WebApplicationContext context;
 	@Autowired
 	private MockMvc mockMvc;
-	@Autowired
-	private BookRepository repository;
 
 	@BeforeEach
 	public void setUp() {
 		mockMvc = MockMvcBuilders
 			.webAppContextSetup(context)
 			.build();
-		repository.deleteAll();
 	}
 
 	@Test
