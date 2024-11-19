@@ -17,5 +17,15 @@ public class AccountTest {
 		if (account.getBalance() != 10_000) {
 			fail();
 		}
+
+		Account account2 = new Account(200_000);
+		if (account2.getBalance() != 200_000) {
+			fail();
+		}
+
+		Account account3 = new Account(500_000);
+		if (account3.getBalance() != 500_000) {
+			fail();
+		}
 	}
 }

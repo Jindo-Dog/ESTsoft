@@ -1,12 +1,14 @@
 package com.estsoft.estsoftspringproject.tdd;
 
 public class Account {
-	public Account(int i) {
+	private final int balance;
 
+	public Account(int i) {
+		balance = i;
 	}
 
 	public int getBalance() {
 
-		return 0;
+		return balance;
 	}
 }
