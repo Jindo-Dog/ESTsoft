@@ -3,12 +3,11 @@ package com.estsoft.estsoftspringproject.tdd;
 public class Account {
 	private final int balance;
 
-	public Account(int i) {
-		balance = i;
+	public Account(int balance) {
+		this.balance = balance;
 	}
 
 	public int getBalance() {
-
-		return balance;
+		return this.balance;
 	}
 }

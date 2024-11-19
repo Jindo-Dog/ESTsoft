@@ -1,6 +1,7 @@
 package com.estsoft.estsoftspringproject.tdd;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.hamcrest.MatcherAssert.*;
+import static org.hamcrest.Matchers.*;
 
 import org.junit.jupiter.api.Test;
 
@@ -13,19 +14,17 @@ public class AccountTest {
 	@Test
 	public void testAccount() {
 		Account account = new Account(10_000);
-		// 잔금 조회가 잘 되는가?
-		if (account.getBalance() != 10_000) {
+		// JUnit, AssertJ
+		/*if (account.getBalance() != 10_000) {
 			fail();
-		}
+		}*/
+		// hamcrest
+		assertThat(account.getBalance(), is(10_000));
 
-		Account account2 = new Account(200_000);
-		if (account2.getBalance() != 200_000) {
-			fail();
-		}
+		account = new Account(200_000);
+		assertThat(account.getBalance(), is(200_000));
 
-		Account account3 = new Account(500_000);
-		if (account3.getBalance() != 500_000) {
-			fail();
-		}
+		account = new Account(500_000);
+		assertThat(account.getBalance(), is(500_000));
 	}
 }
