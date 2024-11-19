@@ -25,13 +25,20 @@ public class AccountTest {
 		assertThat(account.getBalance(), is(200_000));
 
 		account = new Account(500_000);
-		assertThat(account.getBalance(), is(500_000));
+		assertThat(account.getBalance(), is(500_000));    // 잔액 조회 기능 검증 완료
 	}
 
 	@Test
 	public void testDeposit() {
 		Account account = new Account(10_000);
 		account.deposit(100_000);
-		assertThat(account.getBalance(), is(110_000));
+		assertThat(account.getBalance(), is(110_000));    // 입금 기능 검증 완료
+	}
+
+	@Test
+	public void testWithdraw() {
+		Account account = new Account(10_000);
+		account.withdraw(10_000);
+		assertThat(account.getBalance(), is(0));
 	}
 }
