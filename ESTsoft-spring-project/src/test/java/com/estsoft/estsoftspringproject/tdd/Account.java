@@ -1,7 +1,7 @@
 package com.estsoft.estsoftspringproject.tdd;
 
 public class Account {
-	private final int balance;
+	private int balance;
 
 	public Account(int balance) {
 		this.balance = balance;
@@ -11,7 +11,7 @@ public class Account {
 		return this.balance;
 	}
 
-	public void deposit(int i) {
-		
+	public void deposit(int balance) {
+		this.balance += balance;
 	}
 }
