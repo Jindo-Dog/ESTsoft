@@ -39,6 +39,6 @@ public class AccountTest {
 	public void testWithdraw() {
 		Account account = new Account(10_000);
 		account.withdraw(10_000);
-		assertThat(account.getBalance(), is(0));
+		assertThat(account.getBalance(), is(0));        // 출금 기능 검증 완료
 	}
 }
