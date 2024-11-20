@@ -35,6 +35,7 @@ replay_pid*
 .env
 .gradle
 docker
+build
 .idea
 .idea/**/workspace.xml
 .idea/**/tasks.xml
