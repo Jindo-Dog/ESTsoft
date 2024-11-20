@@ -1,9 +1,11 @@
 package com.estsoft.estsoftspringproject.user.service;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+// import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -29,6 +31,7 @@ class UserServiceTest {
 	BCryptPasswordEncoder encoder;
 
 	@Test
+	@DisplayName("회원가입 테스트")
 	public void testSave() {
 		// given
 		String email = "mock_email";
@@ -37,8 +40,11 @@ class UserServiceTest {
 		request.setEmail(email);
 		request.setPassword(encoder.encode(rawPassword));
 
-		Mockito.when(repository.save(any()))
-			.thenReturn(new Users(request.getEmail(), request.getPassword(), "user"));
+		// userRepository.save -> stub
+		/*Mockito.when(repository.save(any()))
+			.thenReturn(new Users(request.getEmail(), request.getPassword(), "user"));*/
+		Mockito.doReturn(new Users(request.getEmail(), request.getPassword(), "user"))
+			.when(repository).save(any(Users.class));
 
 		// when
 		Users returnUser = userService.save(request);
@@ -46,6 +52,7 @@ class UserServiceTest {
 		//then
 		assertEquals(request.getEmail(), returnUser.getEmail());
 		assertEquals(request.getPassword(), returnUser.getPassword());
+		// assertThat(returnUser.getEmail(), is(email));
 
 		verify(repository, times(1)).save(any(Users.class));
 		verify(encoder, times(2)).encode(any(String.class));
