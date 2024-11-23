@@ -9,28 +9,30 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 import jakarta.servlet.http.HttpServletRequest;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class FirstFilter implements Filter {
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-		System.out.println("FirstFilter.init()");
+		log.info("FirstFilter init()");
 	}
 
 	@Override
 	public void destroy() {
-		System.out.println("FirstFilter.destroy()");
+		log.info("FirstFilter destroy()");
 	}
 
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		System.out.println("FirstFilter.doFilter() request");
+		log.info("FirstFilter doFilter() request");
 
 		// requestURI
 		HttpServletRequest httpServletRequest = (HttpServletRequest)request;
-		System.out.println("RequestURI() = " + httpServletRequest.getRequestURI());
+		log.info("RequestURI() = {}", httpServletRequest.getRequestURI());
 
 		chain.doFilter(request, response);
 
-		System.out.println("FirstFilter.doFilter() response");
+		log.info("FirstFilter doFilter() response");
 	}
 }

@@ -4,30 +4,32 @@ import jakarta.servlet.FilterConfig;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletRequestWrapper;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 
+@Slf4j
 public class ThirdFilter implements Filter {
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-		System.out.println("ThirdFilter init()");
+		log.info("ThirdFilter init()");
 	}
 
 	@Override
 	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
 
-		System.out.println("ThirdFilter doFilter() reqeust");
+		log.info("ThirdFilter doFilter() reqeust");
 
 		// 클라이언트가 요청으로 넘긴 파라미터 수정
 		filterChain.doFilter(new RequestWrapper((HttpServletRequest)servletRequest), servletResponse);
 
-		System.out.println("ThirdFilter doFilter() response");
+		log.info("ThirdFilter doFilter() response");
 	}
 
 	@Override
 	public void destroy() {
-		System.out.println("ThirdFilter destroy()");
+		log.info("ThirdFilter destroy()");
 	}
 
 	private static class RequestWrapper extends HttpServletRequestWrapper {

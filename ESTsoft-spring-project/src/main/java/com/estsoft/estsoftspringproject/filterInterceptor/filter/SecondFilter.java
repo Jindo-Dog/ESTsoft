@@ -4,21 +4,23 @@ import jakarta.servlet.FilterConfig;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpServletResponseWrapper;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 
+@Slf4j
 public class SecondFilter implements Filter {
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-		System.out.println("SecondFilter init()");
+		log.info("SecondFilter init()");
 	}
 
 	@Override
 	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
 
-		System.out.println("SecondFilter doFilter() request");
+		log.info("SecondFilter doFilter() request");
 
 		// 서블릿 응답 객체를 래퍼 클래스로 포장합니다
 		ResponseWrapper responseWrapper = new ResponseWrapper((HttpServletResponse)servletResponse);
@@ -36,12 +38,12 @@ public class SecondFilter implements Filter {
 		out.write(responseString);
 		out.flush();
 
-		System.out.println("SecondFilter doFilter() response");
+		log.info("SecondFilter doFilter() response");
 	}
 
 	@Override
 	public void destroy() {
-		System.out.println("SecondFilter destroy()");
+		log.info("SecondFilter destroy()");
 	}
 
 	private static class ResponseWrapper extends HttpServletResponseWrapper {

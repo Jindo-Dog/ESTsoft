@@ -78,7 +78,6 @@ public class BlogControllerTest2 {
 		// stub (service.saveArticle 호출 시 위에서 만든 article을 리턴하도록 stub 처리)
 		Mockito.when(blogService.saveArticle(any()))
 			.thenReturn(new Article(title, content));
-		;
 
 		// when : API 호출
 		ResultActions resultActions = mockMvc.perform(

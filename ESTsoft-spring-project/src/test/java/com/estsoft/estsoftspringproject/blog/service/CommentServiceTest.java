@@ -11,7 +11,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 import com.estsoft.estsoftspringproject.blog.domain.Article;
@@ -61,9 +61,9 @@ class CommentServiceTest {
 		Comment result = commentService.saveComment(articleId, request);
 
 		// Then
-		assertNotNull(result);
-		assertEquals("New Comment", result.getBody());
-		assertEquals(testArticle, result.getArticle());
+		assertThat(result).isNotNull();
+		assertThat(result.getBody()).isEqualTo("New Comment");
+		assertThat(result.getArticle()).isEqualTo(testArticle);
 		verify(blogService).findBy(articleId);
 		verify(commentRepository).save(any(Comment.class));
 	}
@@ -79,8 +79,8 @@ class CommentServiceTest {
 		Comment result = commentService.findBy(commentId);
 
 		// Then
-		assertNotNull(result);
-		assertEquals(testComment, result);
+		assertThat(result).isNotNull();
+		assertThat(result).isEqualTo(testComment);
 		verify(commentRepository).findById(commentId);
 	}
 
@@ -92,8 +92,8 @@ class CommentServiceTest {
 		when(commentRepository.findById(commentId)).thenReturn(Optional.empty());
 
 		// When & Then
-		IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> commentService.findBy(commentId));
-		assertEquals("not found id: " + commentId, exception.getMessage());
+		IllegalArgumentException exception = catchThrowableOfType(() -> commentService.findBy(commentId), IllegalArgumentException.class);
+		assertThat(exception.getMessage()).isEqualTo("not found id: " + commentId);
 		verify(commentRepository).findById(commentId);
 	}
 
@@ -109,8 +109,8 @@ class CommentServiceTest {
 		Comment result = commentService.update(commentId, request);
 
 		// Then
-		assertNotNull(result);
-		assertEquals("Updated Comment", result.getBody());
+		assertThat(result).isNotNull();
+		assertThat(result.getBody()).isEqualTo("Updated Comment");
 		verify(commentRepository).findById(commentId);
 	}
 
@@ -137,9 +137,9 @@ class CommentServiceTest {
 		List<Comment> result = commentService.findByArticle(testArticle);
 
 		// Then
-		assertNotNull(result);
-		assertEquals(1, result.size());
-		assertEquals(testComment, result.get(0));
+		assertThat(result).isNotNull();
+		assertThat(result.size()).isEqualTo(1);
+		assertThat(result.get(0)).isEqualTo(testComment);
 		verify(commentRepository).findAllByArticle(testArticle);
 	}
 }
