@@ -7,3 +7,6 @@
 [submodule "ESTsoft-2nd-Project"]
 	path = ESTsoft-2nd-Project
 	url = https://github.com/ESTsoft-Back-end-6th-2nd-project-team3/ESTsoft-2nd-Project.git
+[submodule "InterStory"]
+	path = InterStory
+	url = https://github.com/InterStory/InterStory.git
